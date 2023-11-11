@@ -28,7 +28,6 @@ const navLinks = [
     url: "/blog",
   },
 ];
-const Logo = "/logo/logo.PNG";
 
 const containerVars = {
   initial: {
@@ -94,7 +93,7 @@ export default function Navbar() {
           <div className='flex justify-between w-full items-center'>
             <Link href={"/"} className='text-xl'>
               <Image
-                src={Logo}
+                src={"/logo/logo.png"}
                 alt='Logo'
                 width={60}
                 height={60}

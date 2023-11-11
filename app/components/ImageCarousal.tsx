@@ -12,6 +12,7 @@ export default function ImageCarousal() {
   const [imageData, setImageData] = useState<any>([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
+  const finalImageData = imageData.slice(0, 3);
 
   useEffect(() => {
     async function fetchData() {
@@ -32,13 +33,13 @@ export default function ImageCarousal() {
     const intervalId = setInterval(() => {
       setCurrent((prevCurrent) =>
         // Increment current index or reset to 0 if it reaches the end
-        prevCurrent < imageData.length - 1 ? prevCurrent + 1 : 0
+        prevCurrent < finalImageData.length - 1 ? prevCurrent + 1 : 0
       );
     }, 5000);
 
     // Cleanup the interval when the component is unmounted or when 'current' changes
     return () => clearInterval(intervalId);
-  }, [current, imageData]);
+  }, [current, finalImageData]);
 
   // Function to navigate to previous image
   const onPrevClick = () => {
@@ -49,23 +50,23 @@ export default function ImageCarousal() {
 
   // Function to navigate to next image
   const onClick = () => {
-    if (current < imageData.length - 1) {
+    if (current < finalImageData.length - 1) {
       setCurrent(current + 1);
     }
   };
 
   if (loading) {
     return (
-      <div className='flex items-center justify-center w-screen h-screen'>
+      <div className='flex items-center justify-center h-screen'>
         <h5 className='text-5xl text-white'>Loding...</h5>
       </div>
     );
   }
   return (
-    <div className='flex flex-col md:pt-16 md:pb-6'>
+    <div className='flex flex-col md:pb-6'>
       <MotionConfig>
-        <div className='flex flex-col justify-between items-center relative'>
-          <div className='relative w-full md:w-[80vw] h-full flex items-center overflow-hidden'>
+        <div className='flex flex-col justify-center items-center'>
+          <div className='relative h-full md:w-[95vw] md:h-[90vh] flex  overflow-hidden w-screen justify-center items-center'>
             <div className='flex absolute items-center justify-between z-20 left-2 right-2'>
               <BiSolidChevronLeft
                 onClick={onPrevClick}
@@ -79,8 +80,8 @@ export default function ImageCarousal() {
             <motion.div
               animate={{ x: `calc(-${current * 100}% - ${current}rem)` }}
               transition={{ duration: 2, ease: [0.32, 0.72, 0, 1] }}
-              className='flex flex-nowrap gap-4'>
-              {imageData.map((item: any) => {
+              className='flex flex-nowrap gap-4 object-cover '>
+              {finalImageData.map((item: any) => {
                 return (
                   <Image
                     key={item._id}
@@ -88,21 +89,29 @@ export default function ImageCarousal() {
                     alt='image'
                     width={3500}
                     height={2500}
-                    className='object-cover aspect-[16/9] rounded-xl'
+                    className=' object-cover aspect-[4/3] rounded-xl w-screen '
                   />
                 );
               })}
             </motion.div>
 
             <AnimatePresence>
-              <div className=''>
-                {imageData.map((item: any, index: any) => {
+              <div className='absolute left-10 md:top-[70%] lg:top-[80%] md:w-[20vw] text-white'>
+                {finalImageData.map((item: any, index: any) => {
                   return index === current ? (
-                    <div key={item._id}>
-                      <h3 className='text-white md:font-semibold mb-6 absolute left-10 top-[80%]'>
+                    <motion.div
+                      initial={{ x: "200", opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      transition={{ duration: 2 }}
+                      key={index}
+                      className='flex flex-col'>
+                      <h3 className='md:font-semibold mb-2 [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)]'>
                         {item.title}
                       </h3>
-                    </div>
+                      <p className='text-sm md:text-base [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)]'>
+                        {item.description}
+                      </p>
+                    </motion.div>
                   ) : (
                     ""
                   );
@@ -114,8 +123,8 @@ export default function ImageCarousal() {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 2, ease: [0.32, 0.72, 0, 1] }}
                 className='absolute bottom-2 md:bottom-10 left-1/2 transform -translate-x-1/2'>
-                <div className='flex px-2 md:gap-2 py-2 rounded-lg bg-secondaryDark/40'>
-                  {imageData.map((_: any, index: any) => {
+                <div className='flex px-2 md:gap-2 py-2 rounded-lg bg-secondaryDark/20'>
+                  {finalImageData.map((_: any, index: any) => {
                     return (
                       <button key={index} onClick={() => setCurrent(index)}>
                         <div

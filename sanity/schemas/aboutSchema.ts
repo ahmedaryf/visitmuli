@@ -1,6 +1,6 @@
-export const carousalSchema = {
-  name: "carousal",
-  title: "Carousal",
+export const aboutSchema = {
+  name: "aboutMuli",
+  title: "About Muli",
   type: "document",
   fields: [
     {
@@ -11,7 +11,7 @@ export const carousalSchema = {
     {
       name: "description",
       title: "Description",
-      type: "string",
+      type: "text",
     },
     {
       name: "image",
