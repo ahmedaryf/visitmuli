@@ -2,13 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-.bg-pattern {
+html {
   --s: 80px; /* the size */
-  --c: #00416e;
+  --c: #fcfcfc;
 
   --_s: calc(2 * var(--s)) calc(2 * var(--s));
   --_g: 35.36% 35.36% at;
-  --_c: #0000 66%, #aaaaaa 68% 70%, #0000 72%;
+  --_c: #0000 66%, #5a67bf18 68% 70%, #0000 72%;
   background: radial-gradient(var(--_g) 100% 25%, var(--_c)) var(--s) var(--s) /
       var(--_s),
     radial-gradient(var(--_g) 0 75%, var(--_c)) var(--s) var(--s) / var(--_s),

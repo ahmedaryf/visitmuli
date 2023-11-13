@@ -11,7 +11,12 @@ export const aboutSchema = {
     {
       name: "description",
       title: "Description",
-      type: "text",
+      type: "array",
+      of: [
+        {
+          type: "block",
+        },
+      ],
     },
     {
       name: "image",

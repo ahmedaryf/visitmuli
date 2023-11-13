@@ -8,6 +8,8 @@ import { MdClose } from "react-icons/md";
 import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import { AiFillFacebook, AiFillInstagram } from "react-icons/ai";
+import { FaSquareXTwitter } from "react-icons/fa6";
 
 const navLinks = [
   {
@@ -22,6 +24,10 @@ const navLinks = [
   {
     name: "Accommodations",
     url: "/accommodations",
+  },
+  {
+    name: "Gallery",
+    url: "/gallery",
   },
   {
     name: "Blog",
@@ -89,29 +95,34 @@ export default function Navbar() {
   return (
     <>
       {path !== "/admin" ? (
-        <nav className=' md:bg-gradient-to-t from-secondaryLight/30 via-secondary to-secondaryLight duration-1000 px-4  flex justify-between items-center fixed w-screen z-50'>
+        <nav className=' md:bg-gradient-to-t from-blue-200/60 via-blue-500 to-blue-200/60 dark:from-orange-200/60 dark:via-orange-500 dark:to-orange-200/60 duration-1000 px-4  flex justify-between items-center fixed w-screen z-50'>
           <div className='flex justify-between w-full items-center'>
-            <Link href={"/"} className='text-xl'>
-              <Image
-                src={"/logo/logo.png"}
-                alt='Logo'
-                width={60}
-                height={60}
-                className='md:w-[60px] md:h-[60px],'
-              />
-            </Link>
+            <div className='flex justify-center items-center'>
+              <Link href={"/"} className='text-xl'>
+                <Image
+                  src={"/logo/logo.png"}
+                  alt='Logo'
+                  width={60}
+                  height={60}
+                  className='md:w-[60px] md:h-[60px],'
+                />
+              </Link>
+              <h5 className='text-base md:text-xl font-semibold ms-2 md:ms-4 text-orange-100 md:text-white tracking-wider'>
+                VISIT MULI
+              </h5>
+            </div>
             <ThemeToggle />
             {isOpen ? (
               <MdClose
                 onClick={() => setIsOpen(false)}
                 size={32}
-                className='block md:hidden text-primaryLight '
+                className='block md:hidden text-orange-100 '
               />
             ) : (
               <GiHamburgerMenu
                 onClick={() => setIsOpen(true)}
                 size={32}
-                className='block md:hidden text-primaryLight '
+                className='block md:hidden text-orange-100 '
               />
             )}
           </div>
@@ -123,7 +134,7 @@ export default function Navbar() {
                   <li className='mx-4' key={index}>
                     <Link
                       href={navItem.url}
-                      className='text-primary md:text-white dark:text-gray-300 font-bold relative tracking-wider md:text-base'>
+                      className='text-primary md:text-white font-bold relative tracking-wider md:text-base'>
                       {navItem.url === path && (
                         <motion.span
                           layoutId='underline'
@@ -134,6 +145,11 @@ export default function Navbar() {
                   </li>
                 );
               })}
+              <div className='flex ms-4 gap-1'>
+                <AiFillFacebook size={22} color={"white"} />
+                <AiFillInstagram size={22} color={"white"} />
+                <FaSquareXTwitter size={20} color={"white"} />
+              </div>
             </ul>
           </div>
           {/* Mobile Navbar */}
@@ -149,7 +165,7 @@ export default function Navbar() {
                   duration: 0.5,
                   // ease: [0.12, 0, 0.39, 0],
                 }}
-                className='block md:hidden absolute left-0 top-28 w-full bg-gradient-to-r from-secondaryDark/60 to-secondaryLight dark:from-secondaryDark dark:to-secondary min-h-[50vh] pt-5 z-50'>
+                className='block md:hidden absolute left-0 top-28 w-full bg-gradient-to-r from-blue-300 to-blue-600 dark:from-black dark:to-orange-700 min-h-[60vh] pt-5 z-50'>
                 <motion.div
                   variants={containerVars}
                   initial='initial'

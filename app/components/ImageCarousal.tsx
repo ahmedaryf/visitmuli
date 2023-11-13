@@ -12,7 +12,7 @@ export default function ImageCarousal() {
   const [imageData, setImageData] = useState<any>([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
-  const finalImageData = imageData.slice(0, 3);
+  const finalImageData = imageData.slice(0, 4);
 
   useEffect(() => {
     async function fetchData() {
@@ -58,12 +58,12 @@ export default function ImageCarousal() {
   if (loading) {
     return (
       <div className='flex items-center justify-center h-screen'>
-        <h5 className='text-5xl text-white'>Loding...</h5>
+        <h5 className='text-5xl text-blue-600'>Loding...</h5>
       </div>
     );
   }
   return (
-    <div className='flex flex-col md:pb-6'>
+    <div className='flex flex-col md:pb-6 dark:bg-black pt-16'>
       <MotionConfig>
         <div className='flex flex-col justify-center items-center'>
           <div className='relative h-full md:w-[95vw] md:h-[90vh] flex  overflow-hidden w-screen justify-center items-center'>
@@ -89,7 +89,7 @@ export default function ImageCarousal() {
                     alt='image'
                     width={3500}
                     height={2500}
-                    className=' object-cover aspect-[4/3] rounded-xl w-screen '
+                    className=' object-cover aspect-[16/9]'
                   />
                 );
               })}
@@ -118,12 +118,13 @@ export default function ImageCarousal() {
                 })}
               </div>
               <motion.div
+                key={3}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 2, ease: [0.32, 0.72, 0, 1] }}
                 className='absolute bottom-2 md:bottom-10 left-1/2 transform -translate-x-1/2'>
-                <div className='flex px-2 md:gap-2 py-2 rounded-lg bg-secondaryDark/20'>
+                <div className='flex px-2 md:gap-2 py-2 rounded-lg'>
                   {finalImageData.map((_: any, index: any) => {
                     return (
                       <button key={index} onClick={() => setCurrent(index)}>
@@ -131,7 +132,7 @@ export default function ImageCarousal() {
                           className={`w-14 rounded relative flex justify-center`}>
                           <div
                             className={`w-3 h-3 rounded-full  ${
-                              current === index ? "bg-primaryLight" : "bg-white"
+                              current === index ? "bg-orange-100" : "bg-white"
                             }`}></div>
                         </div>
                       </button>
