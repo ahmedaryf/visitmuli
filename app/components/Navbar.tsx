@@ -17,6 +17,10 @@ const navLinks = [
     url: "/",
   },
   {
+    name: "Surf",
+    url: "/surf",
+  },
+  {
     name: "Activities",
     url: "/activities",
   },
@@ -98,7 +102,9 @@ export default function Navbar() {
         <nav className=' md:bg-gradient-to-t from-blue-200/60 via-blue-500 to-blue-200/60 dark:from-orange-200/60 dark:via-orange-500 dark:to-orange-200/60 duration-1000 px-4  flex justify-between items-center fixed w-screen z-50'>
           <div className='flex justify-between w-full items-center'>
             <div className='flex justify-center items-center'>
-              <Link href={"/"} className='text-xl'>
+              <Link
+                href={"/"}
+                className='text-xl flex justify-center items-center'>
                 <Image
                   src={"/logo/logo.png"}
                   alt='Logo'
@@ -106,10 +112,10 @@ export default function Navbar() {
                   height={60}
                   className='md:w-[60px] md:h-[60px],'
                 />
+                <h5 className='text-base md:text-xl font-semibold ms-2 md:ms-4 text-orange-100 md:text-white tracking-wider'>
+                  VISIT MULI
+                </h5>
               </Link>
-              <h5 className='text-base md:text-xl font-semibold ms-2 md:ms-4 text-orange-100 md:text-white tracking-wider'>
-                VISIT MULI
-              </h5>
             </div>
             <ThemeToggle />
             {isOpen ? (
@@ -165,7 +171,7 @@ export default function Navbar() {
                   duration: 0.5,
                   // ease: [0.12, 0, 0.39, 0],
                 }}
-                className='block md:hidden absolute left-0 top-28 w-full bg-gradient-to-r from-blue-300 to-blue-600 dark:from-black dark:to-orange-700 min-h-[60vh] pt-5 z-50'>
+                className='block md:hidden absolute left-0 top-28 w-full bg-gradient-to-r from-blue-300 to-blue-600 dark:from-black dark:to-orange-700 min-h-[70vh] pt-5 pb-10 z-50'>
                 <motion.div
                   variants={containerVars}
                   initial='initial'
@@ -181,7 +187,7 @@ export default function Navbar() {
                           <Link
                             onClick={() => setIsOpen(false)}
                             href={navItem.url}
-                            className='text-3xl text-white [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)]'>
+                            className='text-2xl text-white [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)]'>
                             {navItem.name}
                           </Link>
                         </motion.h5>
@@ -189,6 +195,23 @@ export default function Navbar() {
                     );
                   })}
                 </motion.div>
+                <div className='flex justify-center gap-6 w-screen mt-8'>
+                  <AiFillFacebook
+                    onClick={() => setIsOpen(false)}
+                    size={32}
+                    color={"white"}
+                  />
+                  <AiFillInstagram
+                    onClick={() => setIsOpen(false)}
+                    size={32}
+                    color={"white"}
+                  />
+                  <FaSquareXTwitter
+                    onClick={() => setIsOpen(false)}
+                    size={30}
+                    color={"white"}
+                  />
+                </div>
               </motion.div>
             )}
           </AnimatePresence>
