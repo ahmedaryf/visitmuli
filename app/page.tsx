@@ -1,6 +1,7 @@
 import React from "react";
 import HeroSection from "./components/HeroSection";
 import AboutMuli from "./components/AboutMuli";
+import SurfSummary from "./components/SurfSummary";
 
 export default function Home() {
   return (
@@ -8,7 +9,12 @@ export default function Home() {
       <div>
         <HeroSection />
       </div>
-      <AboutMuli />
+      <div>
+        <AboutMuli />
+      </div>
+      <div>
+        <SurfSummary />
+      </div>
     </main>
   );
 }
