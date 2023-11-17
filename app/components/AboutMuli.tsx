@@ -53,19 +53,21 @@ export default function AboutMuli() {
         {aboutData.map((item: any) => {
           return (
             <>
-              <div key={item._id} className='m-auto  overflow-hidden'>
+              <div key={item._id} className='m-auto  overflow-hidden px-4'>
                 <Image
                   src={urlForImage(item.image).url()}
                   alt='Muli'
                   objectFit='cover'
                   width={500}
                   height={500}
-                  className=' '
+                  className='rounded-md '
                   layout='responsive'
                 />
               </div>
               <div className=' px-2 '>
-                <div className='prose dark:prose-invert text-justify px-4 md:px-0'>
+                <div
+                  className='prose dark:prose-invert text-justify px-4 md:px-0 pt-4 md:pt-0'
+                  style={{ marginTop: -20 }}>
                   <PortableText content={item.description} />
                 </div>
 

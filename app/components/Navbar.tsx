@@ -9,7 +9,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { AiFillFacebook, AiFillInstagram } from "react-icons/ai";
-import { FaSquareXTwitter } from "react-icons/fa6";
+import { FaYoutubeSquare } from "react-icons/fa";
 
 const navLinks = [
   {
@@ -151,10 +151,23 @@ export default function Navbar() {
                   </li>
                 );
               })}
-              <div className='flex ms-4 gap-1'>
-                <AiFillFacebook size={22} color={"white"} />
-                <AiFillInstagram size={22} color={"white"} />
-                <FaSquareXTwitter size={20} color={"white"} />
+              <div className='flex ms-4 gap-1 justify-center items-center'>
+                <Link
+                  href={
+                    "https://www.facebook.com/people/visitmuli/61553317496665/"
+                  }>
+                  <AiFillFacebook size={22} color={"white"} />
+                </Link>
+                <Link
+                  href={
+                    "https://instagram.com/visitmuli?igshid=NGVhN2U2NjQ0Yg=="
+                  }>
+                  <AiFillInstagram size={22} color={"white"} />
+                </Link>
+                <Link
+                  href={"https://youtube.com/@visitmuli?si=sETJuYKSK7a5NkR3"}>
+                  <FaYoutubeSquare size={20} color={"white"} />
+                </Link>
               </div>
             </ul>
           </div>
@@ -196,21 +209,25 @@ export default function Navbar() {
                   })}
                 </motion.div>
                 <div className='flex justify-center gap-6 w-screen mt-8'>
-                  <AiFillFacebook
+                  <Link
                     onClick={() => setIsOpen(false)}
-                    size={32}
-                    color={"white"}
-                  />
-                  <AiFillInstagram
+                    href={
+                      "https://www.facebook.com/people/visitmuli/61553317496665/"
+                    }>
+                    <AiFillFacebook size={22} color={"white"} />
+                  </Link>
+                  <Link
                     onClick={() => setIsOpen(false)}
-                    size={32}
-                    color={"white"}
-                  />
-                  <FaSquareXTwitter
+                    href={
+                      "https://instagram.com/visitmuli?igshid=NGVhN2U2NjQ0Yg=="
+                    }>
+                    <AiFillInstagram size={22} color={"white"} />
+                  </Link>
+                  <Link
                     onClick={() => setIsOpen(false)}
-                    size={30}
-                    color={"white"}
-                  />
+                    href={"https://youtube.com/@visitmuli?si=sETJuYKSK7a5NkR3"}>
+                    <FaYoutubeSquare size={20} color={"white"} />
+                  </Link>
                 </div>
               </motion.div>
             )}

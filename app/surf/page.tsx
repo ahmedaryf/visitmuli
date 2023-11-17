@@ -3,6 +3,8 @@ import React from "react";
 import SurfCarousal from "../components/SurfCarousal";
 import { client } from "@/sanity/lib/client";
 import PortableText from "react-portable-text";
+import { FaArrowLeft } from "react-icons/fa";
+import Link from "next/link";
 
 async function getData() {
   const query = `*[_type == "surfDetailPage"]`;
@@ -15,13 +17,18 @@ export default async function Surf() {
 
   return (
     <div className='pt-24 pb-24 md:px-6 bg-gradient-to-b from-transparent to-blue-200/30 dark:from-black  dark:to-gray-700 w-screen'>
+      <Link href={"/"}>
+        <div className='ps-8'>
+          <FaArrowLeft size={28} color={"gray"} />
+        </div>
+      </Link>
       <div>
         <h1 className='text-5xl md:text-7xl font-bold bg-gradient-to-b from-blue-100 to-blue-600 dark:from-white dark:to-gray-100 bg-clip-text text-transparent text-center pt-6 mb-4 [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)]'>
           Muli Surf Guide
         </h1>
       </div>
       <div className='grid grid-cols-1 md:grid-cols-3 md:gap-4 md:px-4'>
-        <div className=''>
+        <div className='px-4 md:px-0'>
           <SurfCarousal />
           <div className='hidden md:block'>
             <Image

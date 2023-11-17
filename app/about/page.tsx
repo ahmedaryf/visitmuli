@@ -4,6 +4,8 @@ import { urlForImage } from "@/sanity/lib/image";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import PortableText from "react-portable-text";
+import { FaArrowLeft } from "react-icons/fa";
+import Link from "next/link";
 
 export default function AboutPage() {
   const [aboutMuliDetails, setAboutMuliDetails] = useState<any>([]);
@@ -35,8 +37,13 @@ export default function AboutPage() {
   }
   return (
     <div className=' bg-gradient-to-b dark:from-black dark:to-gray-600 pb-12 md:pb-24'>
+      <Link href={"/"}>
+        <div className='ps-8 pt-24'>
+          <FaArrowLeft size={28} color={"gray"} />
+        </div>
+      </Link>
       <div className='flex flex-col justify-center items-center'>
-        <h1 className='text-5xl md:text-8xl font-bold bg-gradient-to-b from-blue-100 to-blue-600 dark:from-tranparent dark:to-gray-200 bg-clip-text text-transparent pt-24 [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)]'>
+        <h1 className='text-5xl md:text-8xl font-bold bg-gradient-to-b from-blue-100 to-blue-600 dark:from-tranparent dark:to-gray-200 bg-clip-text text-transparent [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)]'>
           Welcome to Muli
         </h1>
         <h5 className='text-blue-700 dark:text-gray-300 font-semibold text-xs md:text-xl'>
@@ -47,7 +54,7 @@ export default function AboutPage() {
         {aboutMuliDetails.map((item: any) => {
           return (
             <div key={item._id} className=''>
-              <h5 className='text-3xl md:text-5xl font-bold bg-gradient-to-b from-blue-100 to-blue-600 dark:from-tranparent dark:to-gray-200 bg-clip-text text-transparent pt-12 md:pt-24 pb-2 md:pb-4 [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)] text-center'>
+              <h5 className='text-3xl md:text-5xl font-bold bg-gradient-to-b from-blue-100 to-blue-600 dark:from-tranparent dark:to-gray-200 bg-clip-text text-transparent pt-6 md:pt-16 pb-2 md:pb-4 [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)] text-center'>
                 {item.title}
               </h5>
               <div className='md:grid md:grid-cols-2 px-6 '>
