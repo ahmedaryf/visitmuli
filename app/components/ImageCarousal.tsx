@@ -39,7 +39,7 @@ export default function ImageCarousal() {
 
     // Cleanup the interval when the component is unmounted or when 'current' changes
     return () => clearInterval(intervalId);
-  }, [current, finalImageData]);
+  }, []);
 
   // Function to navigate to previous image
   const onPrevClick = () => {
