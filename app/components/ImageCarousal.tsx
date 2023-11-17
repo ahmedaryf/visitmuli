@@ -39,7 +39,7 @@ export default function ImageCarousal() {
 
     // Cleanup the interval when the component is unmounted or when 'current' changes
     return () => clearInterval(intervalId);
-  }, []);
+  }, [finalImageData]);
 
   // Function to navigate to previous image
   const onPrevClick = () => {
@@ -63,10 +63,10 @@ export default function ImageCarousal() {
     );
   }
   return (
-    <div className='flex flex-col md:pb-6 dark:bg-black pt-16'>
+    <div className='flex flex-col dark:bg-black pt-16 md:pt-0'>
       <MotionConfig>
         <div className='flex flex-col justify-center items-center'>
-          <div className='relative h-full md:w-[95vw] md:h-[90vh] flex  overflow-hidden w-screen justify-center items-center'>
+          <div className='relative h-full md:w-[95vw] flex  overflow-hidden w-screen justify-center items-center'>
             <div className='flex absolute items-center justify-between z-20 left-2 right-2'>
               <BiSolidChevronLeft
                 onClick={onPrevClick}
@@ -96,7 +96,7 @@ export default function ImageCarousal() {
             </motion.div>
 
             <AnimatePresence>
-              <div className='absolute left-10 md:top-[70%] lg:top-[80%] md:w-[20vw] text-white'>
+              <div className='absolute left-10 md:top-[70%] lg:top-[75%] md:w-[45vw] text-white'>
                 {finalImageData.map((item: any, index: any) => {
                   return index === current ? (
                     <motion.div
@@ -108,7 +108,7 @@ export default function ImageCarousal() {
                       <h3 className='md:font-semibold mb-2 [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)]'>
                         {item.title}
                       </h3>
-                      <p className='text-sm md:text-base [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)]'>
+                      <p className='text-sm md:text-base text-justify [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)] pe-8'>
                         {item.description}
                       </p>
                     </motion.div>
