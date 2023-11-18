@@ -34,8 +34,6 @@ export default function SurfCarousal() {
     return item.content;
   });
 
-  console.log(imageArray);
-
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrent(() => (current < 3 - 1 ? current + 1 : 0));

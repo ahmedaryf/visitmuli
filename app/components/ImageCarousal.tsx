@@ -57,7 +57,7 @@ export default function ImageCarousal() {
 
   if (loading) {
     return (
-      <div className='flex items-center justify-center h-screen'>
+      <div className='flex items-center justify-center'>
         <h5 className='text-5xl text-blue-600'>Loding...</h5>
       </div>
     );

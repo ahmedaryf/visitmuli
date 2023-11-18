@@ -8,7 +8,7 @@ import Footer from "./components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Meemu Muli | Your Ultimate Surfing Destination",
+  title: "Meemu Muli | Maldives | Surfing Destination",
   description:
     "Discover Surfing Paradise in Meemu Muli | Surf Adventures Await",
 };

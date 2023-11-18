@@ -15,6 +15,11 @@ export const surfDetailPage = {
       of: [{ type: "block" }],
     },
     {
+      name: "image",
+      title: "Main Image",
+      type: "image",
+    },
+    {
       name: "images",
       title: "Carousal Images",
       type: "array",

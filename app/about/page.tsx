@@ -38,7 +38,7 @@ export default function AboutPage() {
   return (
     <div className=' bg-gradient-to-b dark:from-black dark:to-gray-600 pb-12 md:pb-24'>
       <Link href={"/"}>
-        <div className='ps-8 pt-24'>
+        <div className='ps-8 pt-20 mb-4 md:mb-0'>
           <FaArrowLeft size={28} color={"gray"} />
         </div>
       </Link>
@@ -54,31 +54,33 @@ export default function AboutPage() {
         {aboutMuliDetails.map((item: any) => {
           return (
             <div key={item._id} className=''>
-              <h5 className='text-3xl md:text-5xl font-bold bg-gradient-to-b from-blue-100 to-blue-600 dark:from-white dark:to-gray-200 bg-clip-text text-transparent pt-6 md:pt-16 pb-2 md:pb-4 [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)] text-center'>
-                {item.title}
-              </h5>
-              <div className='md:grid md:grid-cols-2 px-6 '>
-                <div className='mx-auto'>
-                  {
-                    <Image
-                      src={urlForImage(item.image).url()}
-                      alt={item.title}
-                      width={600}
-                      height={500}
-                      className='md:rounded-lg'
-                    />
-                  }
-                </div>
-                <div className='mt-6 md:mt-0 prose dark:prose-invert  text-justify  px-2'>
-                  <PortableText content={item.content} />
+              <div className='w-[90vw] md:w-[85vw] mx-auto'>
+                <h5 className='text-3xl md:text-5xl font-bold bg-gradient-to-b from-blue-100 to-blue-600 dark:from-white dark:to-gray-200 bg-clip-text text-transparent pt-6 md:pt-16 pb-2 md:pb-4 [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)] text-center tracking-wider'>
+                  {item.title}
+                </h5>
+                <div className='md:grid md:grid-cols-2 md:px-6 '>
+                  <div className='mx-auto'>
+                    {
+                      <Image
+                        src={urlForImage(item.image).url()}
+                        alt={item.title}
+                        width={600}
+                        height={500}
+                        className='md:rounded-lg'
+                      />
+                    }
+                  </div>
+                  <div className='mt-6 md:-mt-6 prose dark:prose-invert  text-justify ps-2 md:ps-6'>
+                    <PortableText content={item.content} />
+                  </div>
                 </div>
               </div>
-              <div className='grid grid-cols-2 md:grid-cols-3 gap-4 mt-6 px-2 md:px-4'>
+              <div className='grid grid-cols-2 md:grid-cols-2 gap-8 mt-6 px-2 md:px-4 w-[90vw] md:w-[85vw] mx-auto'>
                 {item.images.map((image: any) => {
                   return (
                     <div
                       key={image._id}
-                      className='flex flex-col items-center justify-between gap-2 bg-gradient-to-b from-blue-200/40 to-blue-400/20 rounded md:rounded-lg p-4'>
+                      className='flex flex-col items-center justify-between gap-2 bg-gradient-to-b from-transparent to-blue-200/20 dark:from-gray-700 dark:to-black/70 cardPattern rounded md:rounded-lg p-4 border-2 border-blue-300/50 dark:border-gray-400 shadow-2xl'>
                       <Image
                         src={urlForImage(image).url()}
                         alt={image.title}
@@ -86,7 +88,7 @@ export default function AboutPage() {
                         height={300}
                         className='rounded-t md:rounded-t-lg'
                       />
-                      <h5 className='text-sm md:text-xl font-semibold text-gray-600 dark:text-gray-300'>
+                      <h5 className='text-sm md:text-xl font-semibold text-blue-600 dark:text-gray-300'>
                         {image.title}
                       </h5>
                     </div>

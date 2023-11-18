@@ -9,6 +9,7 @@ export default function Home() {
       <div>
         <HeroSection />
       </div>
+
       <div>
         <AboutMuli />
       </div>

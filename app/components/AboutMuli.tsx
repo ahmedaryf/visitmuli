@@ -45,41 +45,43 @@ export default function AboutMuli() {
   }
 
   return (
-    <div className='pb-6 md:px-6 bg-gradient-to-b from-transparent to-blue-200/30 dark:from-black  dark:to-gray-700'>
-      <h1 className='text-5xl md:text-8xl font-bold bg-gradient-to-b from-blue-100 to-blue-500 dark:from-white dark:to-gray-200 bg-clip-text text-transparent text-center pt-6 mb-4 [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)]'>
-        Meemu Muli
-      </h1>
-      <div className='md:grid grid-cols-2'>
-        {aboutData.map((item: any) => {
-          return (
-            <>
-              <div key={item._id} className='m-auto  overflow-hidden px-4'>
-                <Image
-                  src={urlForImage(item.image).url()}
-                  alt='Muli'
-                  objectFit='cover'
-                  width={500}
-                  height={500}
-                  className='rounded-md '
-                  layout='responsive'
-                />
-              </div>
-              <div className=' px-2 '>
-                <div
-                  className='prose dark:prose-invert text-justify px-4 md:px-0 pt-4 md:pt-0'
-                  style={{ marginTop: -20 }}>
-                  <PortableText content={item.description} />
+    <div className='pb-6 md:px-6 bg-gradient-to-b from-transparent to-blue-100/20 dark:from-black  dark:to-gray-700'>
+      <div className='md:max-w-[90vw] lg:max-w-[80vw] mx-auto'>
+        <h1 className='text-5xl md:text-8xl font-bold bg-gradient-to-b from-blue-100 to-blue-500 dark:from-white dark:to-gray-200 bg-clip-text text-transparent text-center pt-6 mb-4 [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)]'>
+          Meemu Muli
+        </h1>
+        <div className='md:grid grid-cols-2'>
+          {aboutData.map((item: any) => {
+            return (
+              <>
+                <div key={item._id} className='m-auto  overflow-hidden px-4'>
+                  <Image
+                    src={urlForImage(item.image).url()}
+                    alt='Muli'
+                    objectFit='cover'
+                    width={500}
+                    height={500}
+                    className='rounded-md '
+                    layout='responsive'
+                  />
                 </div>
+                <div className=' px-2 '>
+                  <div
+                    className='prose dark:prose-invert text-justify px-4 md:px-0 pt-4 md:pt-0'
+                    style={{ marginTop: -20 }}>
+                    <PortableText content={item.description} />
+                  </div>
 
-                <Link
-                  href={"/about"}
-                  className='rounded font-bold  mt-2 ps-4 md:ps-0'>
-                  Read more...
-                </Link>
-              </div>
-            </>
-          );
-        })}
+                  <Link
+                    href={"/about"}
+                    className='rounded font-bold  mt-2 ps-4 md:ps-0'>
+                    Read more...
+                  </Link>
+                </div>
+              </>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
