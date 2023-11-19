@@ -27,6 +27,13 @@ export const surfDetailPage = {
         {
           type: "image",
           options: { hotspot: true },
+          fields: [
+            {
+              name: "title",
+              title: "Title",
+              type: "string",
+            },
+          ],
         },
       ],
     },

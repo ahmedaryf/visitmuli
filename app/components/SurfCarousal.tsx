@@ -63,14 +63,16 @@ export default function SurfCarousal() {
                 const img = item.images;
 
                 return img.map((image: any) => (
-                  <Image
-                    key={image._id}
-                    src={urlForImage(image).url()}
-                    alt='image'
-                    width={3000}
-                    height={3000}
-                    className='object-cover aspect-[4/3]'
-                  />
+                  <>
+                    <Image
+                      key={image._id}
+                      src={urlForImage(image).url()}
+                      alt='image'
+                      width={3000}
+                      height={3000}
+                      className='object-cover aspect-[4/3]'
+                    />
+                  </>
                 ));
               })}
             </motion.div>
