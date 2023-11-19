@@ -2,6 +2,7 @@
 import { client } from "@/sanity/lib/client";
 import { urlForImage } from "@/sanity/lib/image";
 import { AnimatePresence, MotionConfig, motion } from "framer-motion";
+import { BiSolidChevronLeft, BiSolidChevronRight } from "react-icons/bi";
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -42,6 +43,20 @@ export default function SurfCarousal() {
     return () => clearInterval(intervalId);
   }, [current, imageArray]);
 
+  // Function to navigate to previous image
+  const onPrevClick = () => {
+    if (current > 0) {
+      setCurrent(current - 1);
+    }
+  };
+
+  // Function to navigate to next image
+  const onClick = () => {
+    if (current < 3 - 1) {
+      setCurrent(current + 1);
+    }
+  };
+
   if (loading) {
     return (
       <div className='flex justify-center items-center'>
@@ -55,6 +70,16 @@ export default function SurfCarousal() {
       <MotionConfig>
         <div className='flex flex-col justify-center'>
           <div className='relative flex overflow-hidden'>
+            <div className='flex absolute items-center justify-between z-20 left-2 right-2 top-1/2'>
+              <BiSolidChevronLeft
+                onClick={onPrevClick}
+                className='text-2xl text-white cursor-pointer'
+              />
+              <BiSolidChevronRight
+                onClick={onClick}
+                className='text-2xl text-white cursor-pointer'
+              />
+            </div>
             <motion.div
               animate={{ x: `calc(-${current * 100}% - ${current}rem)` }}
               transition={{ duration: 2, ease: [0.32, 0.72, 0, 1] }}
@@ -78,7 +103,31 @@ export default function SurfCarousal() {
             </motion.div>
 
             <AnimatePresence>
-              <motion.div
+              <div className='absolute left-0 top-[80%] md:top-[75%] lg:top-[80%] md:w-[45vw] text-white w-screen'>
+                {finalImageData.map((item: any) => {
+                  const title = item.images;
+                  return title.map((item: any, index: any) => (
+                    <>
+                      {current === index ? (
+                        <motion.div
+                          initial={{ x: "200", opacity: 0 }}
+                          animate={{ x: 0, opacity: 1 }}
+                          transition={{ duration: 2 }}
+                          key={index}
+                          className='flex flex-col'>
+                          <h3 className='md:font-semibold mb-2 [text-shadow:_4px_1px_2px_rgb(0_0_0_/_40%)] bg-gradient-to-r from-black/40 to-transparent px-4'>
+                            {item.title}
+                          </h3>
+                        </motion.div>
+                      ) : (
+                        ""
+                      )}
+                    </>
+                  ));
+                })}
+              </div>
+
+              {/* <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
@@ -100,7 +149,7 @@ export default function SurfCarousal() {
                     ));
                   })}
                 </div>
-              </motion.div>
+              </motion.div> */}
             </AnimatePresence>
           </div>
         </div>
