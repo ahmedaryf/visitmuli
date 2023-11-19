@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import PortableText from "react-portable-text";
 import { FaArrowLeft } from "react-icons/fa";
 import Link from "next/link";
+import BackButton from "../components/backButton";
 
 export default function AboutPage() {
   const [aboutMuliDetails, setAboutMuliDetails] = useState<any>([]);
@@ -37,11 +38,9 @@ export default function AboutPage() {
   }
   return (
     <div className=' bg-gradient-to-b dark:from-black dark:to-gray-600 pb-12 md:pb-24'>
-      <Link href={"/"}>
-        <div className='ps-8 pt-20 mb-4 md:mb-0'>
-          <FaArrowLeft size={28} color={"gray"} />
-        </div>
-      </Link>
+      <div className='ps-8 pt-20 mb-4 md:mb-0 '>
+        <BackButton />
+      </div>
       <div className='flex flex-col justify-center items-center'>
         <h1 className='text-5xl md:text-8xl font-bold bg-gradient-to-b from-blue-100 to-blue-600 dark:from-white dark:to-gray-200 bg-clip-text text-transparent [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)]'>
           Welcome to Muli
@@ -86,7 +85,7 @@ export default function AboutPage() {
                         alt={image.title}
                         width={400}
                         height={300}
-                        className='rounded-t md:rounded-t-lg'
+                        className='rounded-t md:rounded-lg'
                       />
                       <h5 className='text-sm md:text-xl font-semibold text-blue-600 dark:text-gray-300'>
                         {image.title}
