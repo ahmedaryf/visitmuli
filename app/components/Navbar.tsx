@@ -185,11 +185,19 @@ export default function Navbar() {
             )}
           </AnimatePresence>
 
-          <div
-            onClick={() => setIsNavbarOpen(!isNavbarOpen)}
-            className='hidden md:block ms-4 bg-blue-400/80 dark:bg-orange-400/80 rounded p-1 cursor-pointer'>
-            <GiHamburgerMenu size={32} className=' text-white' />
-          </div>
+          {isNavbarOpen ? (
+            <div
+              onClick={() => setIsNavbarOpen(!isNavbarOpen)}
+              className='hidden md:block ms-4 bg-blue-400/80 dark:bg-orange-400/80 rounded p-1 cursor-pointer'>
+              <MdClose size={32} className=' text-white' />
+            </div>
+          ) : (
+            <div
+              onClick={() => setIsNavbarOpen(!isNavbarOpen)}
+              className='hidden md:block ms-4 bg-blue-400/80 dark:bg-orange-400/80 rounded p-1 cursor-pointer'>
+              <GiHamburgerMenu size={32} className=' text-white' />
+            </div>
+          )}
           {/* Mobile Navbar */}
 
           <AnimatePresence mode='wait'>
