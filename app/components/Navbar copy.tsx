@@ -95,12 +95,11 @@ const menuVars = {
 export default function Navbar() {
   const path = usePathname();
   const [isOpen, setIsOpen] = useState(false);
-  const [isNavbarOpen, setIsNavbarOpen] = useState(false);
 
   return (
     <>
       {path !== "/admin" ? (
-        <nav className=' duration-1000 px-2 md:px-10  flex justify-between items-center fixed w-screen z-50'>
+        <nav className=' md:bg-gradient-to-t from-blue-200/60 via-blue-500 to-blue-200/60 dark:from-orange-200/60 dark:via-orange-500 dark:to-orange-200/60 duration-1000 px-4  flex justify-between items-center fixed w-screen z-50'>
           <div className='flex justify-between w-full items-center'>
             <div className='flex justify-center items-center'>
               <Link
@@ -111,11 +110,14 @@ export default function Navbar() {
                   alt='Logo'
                   width={60}
                   height={60}
-                  className='md:w-[70px] md:h-[70px],'
+                  className='md:w-[60px] md:h-[60px],'
                 />
+                <h5 className='text-base md:text-xl font-semibold ms-2 md:ms-4 text-orange-100 md:text-white tracking-wider'>
+                  VISIT MULI
+                </h5>
               </Link>
             </div>
-            {/* <ThemeToggle /> */}
+            <ThemeToggle />
             {isOpen ? (
               <MdClose
                 onClick={() => setIsOpen(false)}
@@ -130,65 +132,44 @@ export default function Navbar() {
               />
             )}
           </div>
-
           {/* Desktop Navbar */}
-          <AnimatePresence mode='wait'>
-            {isNavbarOpen ? (
-              <motion.div
-                initial={{ y: -80, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.3, ease: "easeIn" }}
-                exit={{ y: -100, opacity: 0, transition: { duration: 0.8 } }}
-                className=' md:bg-gradient-to-t from-blue-200/60 via-blue-500 to-blue-200/60 dark:from-orange-200/60 dark:via-orange-500 dark:to-orange-200/60 duration-500 px-4 py-2 rounded-3xl'>
-                <ul className=' hidden md:flex'>
-                  <ThemeToggle />
-                  {navLinks.map((navItem, index) => {
-                    return (
-                      <li className='mx-4' key={index}>
-                        <Link
-                          href={navItem.url}
-                          className='text-primary md:text-white font-bold relative tracking-wider md:text-base'>
-                          {navItem.url === path && (
-                            <motion.span
-                              layoutId='underline'
-                              className='absolute left-0 top-full bg-white  block h-[3px] w-full'></motion.span>
-                          )}
-                          {navItem.name}
-                        </Link>
-                      </li>
-                    );
-                  })}
-                  <div className='flex ms-4 gap-1 justify-center items-center'>
+          <div>
+            <ul className=' hidden md:flex'>
+              {navLinks.map((navItem, index) => {
+                return (
+                  <li className='mx-4' key={index}>
                     <Link
-                      href={
-                        "https://www.facebook.com/people/visitmuli/61553317496665/"
-                      }>
-                      <AiFillFacebook size={22} color={"white"} />
+                      href={navItem.url}
+                      className='text-primary md:text-white font-bold relative tracking-wider md:text-base'>
+                      {navItem.url === path && (
+                        <motion.span
+                          layoutId='underline'
+                          className='absolute left-0 top-full bg-white  block h-[3px] w-full'></motion.span>
+                      )}
+                      {navItem.name}
                     </Link>
-                    <Link
-                      href={
-                        "https://instagram.com/visitmuli?igshid=NGVhN2U2NjQ0Yg=="
-                      }>
-                      <AiFillInstagram size={22} color={"white"} />
-                    </Link>
-                    <Link
-                      href={
-                        "https://youtube.com/@visitmuli?si=sETJuYKSK7a5NkR3"
-                      }>
-                      <FaYoutubeSquare size={20} color={"white"} />
-                    </Link>
-                  </div>
-                </ul>
-              </motion.div>
-            ) : (
-              ""
-            )}
-          </AnimatePresence>
-
-          <div
-            onClick={() => setIsNavbarOpen(!isNavbarOpen)}
-            className='hidden md:block ms-4 bg-blue-400/80 dark:bg-orange-400/80 rounded p-1 cursor-pointer'>
-            <GiHamburgerMenu size={32} className=' text-white' />
+                  </li>
+                );
+              })}
+              <div className='flex ms-4 gap-1 justify-center items-center'>
+                <Link
+                  href={
+                    "https://www.facebook.com/people/visitmuli/61553317496665/"
+                  }>
+                  <AiFillFacebook size={22} color={"white"} />
+                </Link>
+                <Link
+                  href={
+                    "https://instagram.com/visitmuli?igshid=NGVhN2U2NjQ0Yg=="
+                  }>
+                  <AiFillInstagram size={22} color={"white"} />
+                </Link>
+                <Link
+                  href={"https://youtube.com/@visitmuli?si=sETJuYKSK7a5NkR3"}>
+                  <FaYoutubeSquare size={20} color={"white"} />
+                </Link>
+              </div>
+            </ul>
           </div>
           {/* Mobile Navbar */}
 

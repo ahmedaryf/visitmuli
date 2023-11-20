@@ -19,14 +19,14 @@ export default async function Surf() {
   const data = await getData();
 
   return (
-    <div className='pb-24 md:px-6 bg-gradient-to-b from-transparent to-blue-200/30 dark:from-black  dark:to-gray-700 w-screen'>
+    <div className='pb-24 md:px-6 bg-gradient-to-b from-transparent to-white/50 dark:from-black  dark:to-gray-700 w-screen'>
       <Link href={"/"}>
         <div className='ps-8 pt-20 mb-4 md:mb-0'>
           <FaArrowLeft size={28} color={"gray"} />
         </div>
       </Link>
 
-      <div className='grid grid-cols-1 md:grid-cols-3 md:gap-8 md:px-4 mt-24  md:w-[90vw] mx-auto'>
+      <div className='grid grid-cols-1 md:grid-cols-3 md:gap-8 md:px-4 mt-16  md:w-[90vw] mx-auto'>
         <div className=' col-span-2'>
           <div>
             <h1 className='text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-b from-blue-100 to-blue-600 dark:from-white dark:to-gray-100 bg-clip-text text-transparent text-center mb-4 [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)]'>
@@ -55,7 +55,7 @@ export default async function Surf() {
             );
           })}
         </div>
-        <div className='px-4 md:px-0 bg-gradient-to-b md:bg-gradient-to-r from-blue-200/20 to-transparent dark:from-black dark:to-transparent md:border-l-2 md:border-t-2 md:border-blue-200/50 dark:border-gray-300/40 rounded-md'>
+        <div className='px-4 md:px-0 bg-gradient-to-b md:bg-gradient-to-r from-blue-100/10 to-transparent dark:from-black dark:to-transparent md:border-l-2 md:border-t-2 md:border-blue-200/50 dark:border-gray-300/40 rounded-md'>
           <h5 className='text-xl md:text-2xl lg:text-2xl font-bold bg-gradient-to-b from-blue-100 to-blue-600 dark:from-white dark:to-gray-100 bg-clip-text text-transparent text-center mb-4 pt-4 [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)] tracking-wider'>
             TOP STORIES
           </h5>

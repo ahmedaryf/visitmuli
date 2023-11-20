@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import PortableText from "react-portable-text";
 import { FaArrowLeft } from "react-icons/fa";
 import Link from "next/link";
-import BackButton from "../components/backButton";
+import BackButton from "../components/BackButton";
 
 export default function AboutPage() {
   const [aboutMuliDetails, setAboutMuliDetails] = useState<any>([]);

@@ -28,7 +28,7 @@ export default function SurfSummary() {
     );
   }
   return (
-    <div className='pt-12 md:pt-16 pb-24 md:px-6 bg-gradient-to-b from-transparent to-blue-100/30 dark:from-black  dark:to-gray-700 '>
+    <div className='pt-12 md:pt-16 pb-24 md:px-6 bg-gradient-to-b from-transparent to-white/30 dark:from-black  dark:to-gray-700 '>
       <div className='md:max-w-[90vw] lg:max-w-[80vw] mx-auto'>
         <div>
           <h2 className='flex flex-col text-2xl md:text-4xl font-bold bg-gradient-to-r from-blue-100 to-blue-500 dark:from-white dark:to-gray-100  bg-clip-text text-transparent text-center [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)] pt-6 tracking-[6px] md:tracking-[8px]'>
