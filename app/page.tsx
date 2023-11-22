@@ -3,6 +3,8 @@ import HeroSection from "./components/HeroSection";
 import AboutMuli from "./components/AboutMuli";
 import SurfSummary from "./components/SurfSummary";
 import PlacesToStay from "./components/PlacesToStay";
+import HomePage from "./components/HomePageCard";
+import HomePageCards from "./components/HomePageCard";
 
 export default function Home() {
   return (
@@ -19,6 +21,12 @@ export default function Home() {
       </div>
       <div>
         <PlacesToStay />
+      </div>
+      <div className='md:grid md:grid-cols-4 md:max-w-[95vw] lg:max-w-[90vw] mx-auto'>
+        <div className='col-span-3'>
+          <HomePageCards />
+        </div>
+        <div className='border-t-2 border-l-2'>Hello</div>
       </div>
     </main>
   );

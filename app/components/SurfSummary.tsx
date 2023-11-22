@@ -2,80 +2,74 @@
 import { client } from "@/sanity/lib/client";
 import { urlForImage } from "@/sanity/lib/image";
 import Image from "next/image";
-import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import PortableText from "react-portable-text";
 
-export default function SurfSummary() {
-  const [data, setData] = useState([]);
+import Link from "next/link";
+
+export default function HomePage() {
+  const [aboutData, setAboutData] = useState<any>([]);
+  const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    async function getData() {
-      const query = `*[_type == "surfSummery"]`;
-      const fetchedData = await client.fetch(query);
-      setData(fetchedData);
-      setLoading(false);
+    async function fetchData() {
+      try {
+        const query = `*[_type == "surfSummery"]`;
+        const data = await client.fetch(query);
+        setAboutData(data);
+        setLoading(false);
+      } catch (err: any) {
+        setError(err);
+        setLoading(false);
+      }
     }
-    getData();
+    fetchData();
   }, []);
 
   if (loading) {
     return (
-      <div className='h-screen flex justify-center items-center'>
-        <h5 className='text-5xl'>Loading</h5>
+      <div className='flex items-center justify-center h-screen'>
+        <h5 className='text-5xl text-blue-700'>Loding...</h5>
       </div>
     );
   }
+
   return (
-    <div className='pt-12 md:pt-16 pb-24 md:px-6 bg-gradient-to-b from-transparent to-white/30 dark:from-black  dark:to-gray-700 '>
+    <div className='pb-6 pt-6 md:pt-10 md:px-6 bg-gradient-to-b from-transparent to-white/50 dark:from-black  dark:to-gray-700'>
       <div className='md:max-w-[90vw] lg:max-w-[80vw] mx-auto'>
-        <div>
-          <h2 className='flex flex-col text-2xl md:text-4xl font-bold bg-gradient-to-r from-blue-100 to-blue-500 dark:from-white dark:to-gray-100  bg-clip-text text-transparent text-center [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)] pt-6 tracking-[6px] md:tracking-[8px]'>
-            Your Ultimate
-            <span className='text-3xl md:text-6xl font-bold bg-gradient-to-l from-blue-100 to-blue-500 dark:from-white dark:to-gray-100 bg-clip-text text-transparent text-center mb-4 [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)] tracking-wider -mt-2'>
-              Surfing Destination
-            </span>
-          </h2>
-        </div>
-        <div>
-          {data.map((item: any) => {
+        <h1 className='text-3xl md:text-6xl font-bold bg-gradient-to-b from-blue-100 to-blue-500 dark:from-white dark:to-gray-200 bg-clip-text text-transparent text-center pt-6 mb-4 [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)]'>
+          Surf Adventures Await
+        </h1>
+        <div className='md:grid grid-cols-2'>
+          {aboutData.map((item: any) => {
             return (
-              <div
-                key={item._id}
-                className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-                <div className='block md:hidden px-4'>
+              <>
+                <div key={item._id} className='m-auto  overflow-hidden px-4'>
                   <Image
                     src={urlForImage(item.image).url()}
-                    alt={item.title}
-                    width={600}
-                    height={600}
-                    className='rounded-md'
+                    alt='Muli'
+                    objectFit='cover'
+                    width={500}
+                    height={500}
+                    className='rounded-md '
+                    // layout='responsive'
                   />
                 </div>
-                <div>
+                <div className=' px-2 '>
                   <div
-                    className='prose dark:prose-invert text-justify px-4 md:px-0'
+                    className='prose dark:prose-invert text-justify px-4 md:px-0 pt-4 md:pt-0'
                     style={{ marginTop: -20 }}>
                     <PortableText content={item.content} />
                   </div>
+
                   <Link
-                    href={"/surf"}
+                    href={"/accommodations"}
                     className='rounded font-bold  mt-2 ps-4 md:ps-0'>
                     Read more...
                   </Link>
                 </div>
-
-                <div className='hidden md:block'>
-                  <Image
-                    src={urlForImage(item.image).url()}
-                    alt={item.title}
-                    width={600}
-                    height={600}
-                    className='rounded-md'
-                  />
-                </div>
-              </div>
+              </>
             );
           })}
         </div>

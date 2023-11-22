@@ -1,6 +1,6 @@
 export const aboutSchema = {
   name: "aboutMuli",
-  title: "About Muli Summary",
+  title: "About Muli Home Page",
   type: "document",
   fields: [
     {

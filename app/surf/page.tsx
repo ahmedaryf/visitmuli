@@ -20,8 +20,18 @@ export default async function Surf() {
 
   return (
     <div className='pb-24 md:px-6 bg-gradient-to-b from-transparent to-white/50 dark:from-black  dark:to-gray-700 w-screen'>
+      <div className='w-full md:h-[50vh] overflow-hidden'>
+        <Image
+          src={"/images/IMG_3887.JPG"}
+          alt='Image'
+          width={3000}
+          height={200}
+          layout='responsive'
+          className=' aspect-[16/9]'
+        />
+      </div>
       <Link href={"/"}>
-        <div className='ps-8 pt-20 mb-4 md:mb-0'>
+        <div className='ps-8 pt-6 mb-4 md:mb-0'>
           <FaArrowLeft size={28} color={"gray"} />
         </div>
       </Link>

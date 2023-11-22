@@ -5,6 +5,8 @@ import { aboutMuliDetails } from "./schemas/aboutMuliDetalSchema";
 import { surfDetailPage } from "./schemas/surfDetailPage";
 import { surfSummarySchema } from "./schemas/surfSummarySchema";
 import { placesToStay } from "./schemas/placesToStay";
+import { accomodationDetails } from "./schemas/accommodationDetails";
+import { homePageCardsSchema } from "./schemas/homePageCardsSchema";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -14,5 +16,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     surfDetailPage,
     surfSummarySchema,
     placesToStay,
+    accomodationDetails,
+    homePageCardsSchema,
   ],
 };

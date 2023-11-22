@@ -38,7 +38,17 @@ export default function AboutPage() {
   }
   return (
     <div className=' bg-gradient-to-b dark:from-black dark:to-gray-600 pb-12 md:pb-24'>
-      <div className='ps-8 pt-20 mb-4 md:mb-0 '>
+      <div className='w-full md:h-[50vh] overflow-hidden'>
+        <Image
+          src={"/images/IMG_3887.JPG"}
+          alt='Image'
+          width={3000}
+          height={200}
+          layout='responsive'
+          className=' aspect-[16/9]'
+        />
+      </div>
+      <div className='ps-8 pt-4 mb-4 md:mb-0 '>
         <BackButton />
       </div>
       <div className='flex flex-col justify-center items-center'>

@@ -63,7 +63,7 @@ export default function ImageCarousal() {
     );
   }
   return (
-    <div className='flex flex-col dark:bg-black pt-16 md:pt-0'>
+    <div className='flex flex-col dark:bg-black pt-0'>
       <MotionConfig>
         <div className='flex flex-col justify-center items-center'>
           <div className='relative h-full md:w-[95vw] flex  overflow-hidden w-screen justify-center items-center'>
@@ -89,7 +89,7 @@ export default function ImageCarousal() {
                     alt='image'
                     width={3500}
                     height={2500}
-                    className=' object-cover aspect-[16/9]'
+                    className=' object-cover md:aspect-[16/9]'
                   />
                 );
               })}
