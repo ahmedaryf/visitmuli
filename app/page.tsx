@@ -22,11 +22,11 @@ export default function Home() {
       <div>
         <PlacesToStay />
       </div>
-      <div className='md:grid md:grid-cols-4 md:max-w-[95vw] lg:max-w-[90vw] mx-auto'>
-        <div className='col-span-3'>
+      <div className='md:grid md:grid-cols-4 md:max-w-[95vw] lg:max-w-[90vw] mx-auto pt-24'>
+        <div className='col-span-3'></div>
+        <div className='border-t-2 border-l-2'>
           <HomePageCards />
         </div>
-        <div className='border-t-2 border-l-2'>Hello</div>
       </div>
     </main>
   );

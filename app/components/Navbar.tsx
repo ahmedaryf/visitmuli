@@ -139,7 +139,7 @@ export default function Navbar() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.3, ease: "easeIn" }}
                 exit={{ y: -100, opacity: 0, transition: { duration: 0.8 } }}
-                className=' md:bg-gradient-to-t from-blue-200/60 via-blue-500 to-blue-200/60 dark:from-orange-200/60 dark:via-orange-500 dark:to-orange-200/60 duration-500 px-4 py-2 rounded-3xl'>
+                className=' md:bg-gradient-to-t from-blue-200/60 via-blue-500 to-blue-200/60 dark:from-orange-200/60 dark:via-orange-500 dark:to-orange-200/60 duration-500 px-8 py-2 rounded-3xl'>
                 <ul className=' hidden md:flex'>
                   <ThemeToggle />
                   {navLinks.map((navItem, index) => {
@@ -188,13 +188,13 @@ export default function Navbar() {
           {isNavbarOpen ? (
             <div
               onClick={() => setIsNavbarOpen(!isNavbarOpen)}
-              className='hidden md:block ms-4 bg-blue-400/80 dark:bg-orange-400/80 rounded p-1 cursor-pointer'>
+              className='hidden md:block ms-4 bg-blue-400/80 dark:bg-orange-400/80 rounded-full p-2 cursor-pointer shadow-xl'>
               <MdClose size={32} className=' text-white' />
             </div>
           ) : (
             <div
               onClick={() => setIsNavbarOpen(!isNavbarOpen)}
-              className='hidden md:block ms-4 bg-blue-400/80 dark:bg-orange-400/80 rounded p-1 cursor-pointer'>
+              className='hidden md:block ms-4 bg-blue-400/80 dark:bg-orange-400/80 rounded-full p-2 cursor-pointer shadow-xl'>
               <GiHamburgerMenu size={32} className=' text-white' />
             </div>
           )}

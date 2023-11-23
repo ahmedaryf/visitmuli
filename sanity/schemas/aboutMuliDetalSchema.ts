@@ -4,6 +4,12 @@ export const aboutMuliDetails = {
   type: "document",
   fields: [
     {
+      name: "bannerImage",
+      title: "Banner Image",
+      type: "image",
+      options: { hotspot: true },
+    },
+    {
       name: "title",
       title: "Title",
       type: "string",
@@ -21,8 +27,8 @@ export const aboutMuliDetails = {
       of: [{ type: "block" }],
     },
     {
-      name: "images",
-      title: "Images",
+      name: "subContent",
+      title: "Sub Content",
       type: "array",
       of: [
         {
@@ -33,6 +39,18 @@ export const aboutMuliDetails = {
               name: "title",
               title: "Title",
               type: "string",
+            },
+            {
+              name: "content",
+              title: "Content",
+              type: "array",
+              of: [{ type: "block" }],
+            },
+            {
+              name: "link",
+              title: "Link",
+              type: "array",
+              of: [{ type: "block" }],
             },
           ],
         },

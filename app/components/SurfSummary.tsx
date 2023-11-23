@@ -64,7 +64,7 @@ export default function HomePage() {
                   </div>
 
                   <Link
-                    href={"/accommodations"}
+                    href={"/surf"}
                     className='rounded font-bold  mt-2 ps-4 md:ps-0'>
                     Read more...
                   </Link>

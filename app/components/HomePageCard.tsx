@@ -41,12 +41,12 @@ export default function HomePageCards() {
         <div
           key={item.key}
           className='pb-6 pt-6 md:pt-10 md:px-6 bg-gradient-to-b from-transparent to-white/50 dark:from-black  dark:to-gray-700'>
-          <div className=' mx-auto'>
-            <h1 className='text-3xl md:text-6xl font-bold bg-gradient-to-b from-blue-100 to-blue-500 dark:from-white dark:to-gray-200 bg-clip-text text-transparent text-center pt-6 mb-4 [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)]'>
+          <div className='bg-gray-100/80 shadow-lg rounded-md mx-auto'>
+            <h1 className='text-xl md:text-2xl font-bold bg-gradient-to-b from-gray-100 to-black dark:from-white dark:to-gray-200 bg-clip-text text-transparent text-center pt-6 mb-2 [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)]'>
               {item.title}
             </h1>
 
-            <div className='md:grid grid-cols-2'>
+            <div className=' px-2 pb-6 rounded-md'>
               <div className='overflow-hidden px-4'>
                 <Image
                   src={urlForImage(item.image).url()}
@@ -57,16 +57,17 @@ export default function HomePageCards() {
                   className='rounded-md '
                 />
               </div>
-              <div className=' px-2 '>
-                <div className='prose dark:prose-invert text-justify px-4 md:px-0 '>
+              <div className='px-2'>
+                <div className='prose dark:prose-invert text-justify px-4 md:px-0 line-clamp-3'>
                   <PortableText content={item.content} />
                 </div>
-
-                {/* <Link
-                  href={"/accommodations"}
-                  className='rounded font-bold  mt-2 ps-4 md:ps-0'>
-                  Read more...
-                </Link> */}
+                <div className='pt-6'>
+                  <Link
+                    href={`../homePage/sideBar/${item.slug.current}`}
+                    className=' font-semibold mt-2 ps-4 md:ps-0'>
+                    Read more...
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

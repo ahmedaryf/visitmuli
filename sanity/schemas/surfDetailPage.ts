@@ -4,6 +4,12 @@ export const surfDetailPage = {
   type: "document",
   fields: [
     {
+      name: "bannerImage",
+      title: "Banner Image",
+      type: "image",
+      options: { hotspot: true },
+    },
+    {
       name: "title",
       title: "Title",
       type: "string",

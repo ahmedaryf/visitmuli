@@ -1,6 +1,6 @@
 export const placesToStay = {
   name: "placesToStay",
-  title: "Places to Stay Home Page",
+  title: "Cozy Retreats Home Page",
   type: "document",
   fields: [
     {
