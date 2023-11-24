@@ -3,7 +3,6 @@ import HeroSection from "./components/HeroSection";
 import AboutMuli from "./components/AboutMuli";
 import SurfSummary from "./components/SurfSummary";
 import PlacesToStay from "./components/PlacesToStay";
-import HomePage from "./components/HomePageCard";
 import HomePageCards from "./components/HomePageCard";
 import HomePageMainCards from "./components/HomePageMainCards";
 

@@ -25,23 +25,23 @@ export default async function MainCardSlug({
   const data = (await getData(params.slug)) as Post;
   return (
     <div className='bg-gradient-to-b from-transparent to-white/50 dark:from-black  dark:to-gray-700 px4'>
-      <div className='pt-12 md:pt-24 pb-24 md:w-[80vw] mx-auto'>
-        <Link href={"/"}>
-          <div className='ps-8 pt-6 mb-4 md:mb-0'>
+      <div className='pt-12 md:pt-24 pb-24 md:w-[60vw] mx-auto'>
+        <div className='ps-8 pt-6 mb-4 md:mb-0 w-9'>
+          <Link href={"/"}>
             <FaArrowLeft size={28} color={"gray"} />
-          </div>
-        </Link>
-        <div className='bg-gradient-to-b from-blue-100/20 to-blue-200/10 dark:from-gray-700/90  dark:to-gray-700 px-4 md:px-6 mt-2 pt-4 md:pt-6 pb-6 md:pb-10 rounded-md'>
-          <h1 className='text-3xl md:text-6xl font-bold bg-gradient-to-b from-blue-100 to-blue-600 dark:from-white dark:to-gray-200 bg-clip-text text-transparent text-center pt-2 mb-4 [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)]'>
+          </Link>
+        </div>
+        <div className='bg-gradient-to-b from-white to-white dark:from-gray-700/90  dark:to-gray-700 px-4 md:px-6 mt-2 pt-4 md:pt-6 pb-6 md:pb-10 rounded-md'>
+          <h1 className='text-3xl md:text-6xl font-bold bg-gradient-to-b from-blue-100 to-blue-600 dark:from-white dark:to-gray-200 bg-clip-text text-transparent text-center  mb-4 [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)]'>
             {data.title}
           </h1>
-          <div className='md:grid md:grid-cols-2 gap-4 '>
+          <div className=''>
             <Image
               src={urlForImage(data.image).url()}
               alt='Image'
-              width={500}
-              height={400}
-              className='mb-6 md:mb-0 rounded-lg'
+              width={800}
+              height={600}
+              className='mb-6 rounded-lg mx-auto'
             />
             <div className=' text-justify'>
               <PortableText content={data.content} />

@@ -24,7 +24,7 @@ export default async function HomePageMainCards() {
         {data.map((item: any) => (
           <div
             key={item._id}
-            className='border-2 border-blue-300/50 dark:border-gray-300 bg-white dark:bg-gray-700 md:w-64 p-4 rounded-lg'>
+            className='border-2 border-blue-300/50 dark:border-gray-300 bg-white dark:bg-gray-700 md:w-64 p-4 rounded-lg shadow-xl'>
             <Image
               src={urlForImage(item.image).url()}
               alt={item.title}
@@ -38,7 +38,7 @@ export default async function HomePageMainCards() {
               <PortableText content={item.content} />
             </div>
             <div className='pt-5 font-semibold cursor-pointer'>
-              <Link href={`../homePage/mainCard/${item.slug.current}`}>
+              <Link href={`../mainCard/${item.slug.current}`}>
                 Read more...
               </Link>
             </div>
