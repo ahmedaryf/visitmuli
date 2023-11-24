@@ -43,7 +43,7 @@ export default async function MainCardSlug({
               height={600}
               className='mb-6 rounded-lg mx-auto'
             />
-            <div className=' text-justify'>
+            <div className=' text-justify prose dark:prose-invert custom-prose'>
               <PortableText content={data.content} />
             </div>
           </div>

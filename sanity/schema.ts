@@ -8,6 +8,8 @@ import { placesToStay } from "./schemas/placesToStay";
 import { accomodationDetails } from "./schemas/accommodationDetails";
 import { homePageCardsSchema } from "./schemas/homePageCardsSchema";
 import { homePageMainCards } from "./schemas/homePageMainCards";
+import { bannerImages } from "./schemas/bannerImages";
+import { test } from "./schemas/test";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -20,5 +22,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     accomodationDetails,
     homePageCardsSchema,
     homePageMainCards,
+    bannerImages,
+    test,
   ],
 };

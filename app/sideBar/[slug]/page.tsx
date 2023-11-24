@@ -27,11 +27,11 @@ export default async function Slug({ params }: { params: { slug: string } }) {
             <FaArrowLeft size={28} color={"gray"} />
           </Link>
         </div>
-        <div className='bg-gradient-to-b from-white to-white dark:from-gray-700/90  dark:to-gray-700 px-4 md:px-6 mt-2 pt-4 md:pt-6 pb-6 md:pb-10 rounded-md'>
+        <div className='bg-gradient-to-b from-white to-white dark:from-gray-700/90  dark:to-gray-700 px-4 md:px-6 mt-2 pt-4 md:pt-6 pb-6 md:pb-10 rounded-md w-full'>
           <h1 className='text-3xl md:text-6xl font-bold bg-gradient-to-b from-blue-100 to-blue-600 dark:from-white dark:to-gray-200 bg-clip-text text-transparent text-center mb-4 [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)]'>
             {data.title}
           </h1>
-          <div className=' '>
+          <div className='w-full'>
             <Image
               src={urlForImage(data.image).url()}
               alt='Image'
@@ -39,7 +39,7 @@ export default async function Slug({ params }: { params: { slug: string } }) {
               height={600}
               className='mb-6 rounded-lg mx-auto'
             />
-            <div className=' text-justify'>
+            <div className='text-justify prose dark:prose-invert custom-prose'>
               <PortableText content={data.content} />
             </div>
           </div>
