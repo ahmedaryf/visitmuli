@@ -10,7 +10,7 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { AiFillFacebook, AiFillInstagram } from "react-icons/ai";
 import { FaYoutubeSquare } from "react-icons/fa";
-import Logo from "public/logo/logo.png";
+import Logo from "logo/logo.png";
 
 const navLinks = [
   {
