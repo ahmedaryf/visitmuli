@@ -7,7 +7,7 @@ import { FaYoutubeSquare } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className='h-64 bg-gradient-to-b from-blue-500 to-blue-700 dark:from-orange-400 dark:to-orange-700 flex flex-col justify-between py-6 text-white'>
+    <footer className='min-h-[60vh] bg-gradient-to-b from-blue-500 to-blue-700 dark:from-orange-400 dark:to-orange-700 flex flex-col justify-between py-6 text-white'>
       <div className=' flex justify-between px-10'>
         <div className=''>
           <div className='flex gap-1 justify-center items-center'>
@@ -28,20 +28,48 @@ export default function Footer() {
             </Link>
           </div>
         </div>
+        <div>
+          <h1 className='text-xl font-bold mb-2 md:mb-4 tracking-wider'>
+            Links
+          </h1>
+          <div>
+            <div className='mb-2 text-sm'>
+              <Link href={"https://meem.gov.mv/"}>Meem Atoll</Link>
+            </div>
+            <div className='mb-2 text-sm'>
+              <Link href={"https://www.tourism.gov.mv/"}>Maldives Tourism</Link>
+            </div>
+            <div className='mb-2 text-sm'>
+              <Link href={"https://www.meteorology.gov.mv/"}>
+                Maldives Weather
+              </Link>
+            </div>
+            <div className='mb-2 text-sm'>
+              <Link href={"https://imuga.immigration.gov.mv/"}>
+                Maldives Immigration
+              </Link>
+            </div>
+            <div className='mb-2 text-sm'>
+              <Link href={"https://bodyboardingmv.org/"}>
+                bodyboardingmv.org
+              </Link>
+            </div>
+          </div>
+        </div>
         <div className=''>
-          <h1 className='text-xl text-center font-samibold mb-2 md:mb-4'>
+          <h1 className='text-xl font-bold mb-2 md:mb-4 tracking-wider'>
             Contacts
           </h1>
           <div className='flex gap-2 items-center mb-2'>
             <FaPhone size={20} />
             <Link href={"tel:9609518486"}>
-              <p className='text-sm md:text-base'>Phone: +960 9518486</p>
+              <p className='text-sm md:text-sm'>Phone: +960 9518486</p>
             </Link>
           </div>
           <div className='flex gap-2 items-center'>
             <IoIosMail size={24} />
             <Link href='mailto:visitmuli@gmail.com'>
-              <p className='text-sm md:text-base'>Email: visitmuli@gmail.com</p>
+              <p className='text-sm md:text-sm'>Email: visitmuli@gmail.com</p>
             </Link>
           </div>
         </div>

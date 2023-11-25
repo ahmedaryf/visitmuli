@@ -95,7 +95,7 @@ const menuVars = {
 export default function Navbar() {
   const path = usePathname();
   const [isOpen, setIsOpen] = useState(false);
-  const [isNavbarOpen, setIsNavbarOpen] = useState(false);
+  const [isNavbarOpen, setIsNavbarOpen] = useState(true);
 
   return (
     <>

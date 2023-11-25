@@ -4,6 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { FaArrowLeft } from "react-icons/fa";
+import { FaWifi } from "react-icons/fa6";
+import { GiMeal } from "react-icons/gi";
+import { MdSurfing } from "react-icons/md";
+import { TbSpeedboat } from "react-icons/tb";
+import { IoStar } from "react-icons/io5";
+
 import PortableText from "react-portable-text";
 
 export const revalidate = 60;
@@ -47,7 +53,7 @@ export default async function Accommodations() {
         </Link>
       </div>
       <div className='px-4 md:w-[80vw] mx-auto '>
-        <div className='bg-gradient-to-b from-white to-gray-100/50 dark:from-black dark:to-gray-600 p-6 mt-6'>
+        {/* <div className='bg-gradient-to-b from-white to-gray-100/50 dark:from-black dark:to-gray-600 p-6 mt-6'>
           {data.map((item: any) => (
             <div
               key={item._id}
@@ -64,13 +70,13 @@ export default async function Accommodations() {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
         <div className='mt-12 flex flex-wrap gap-6'>
           {data.map((item: any) =>
             item.guesthouses.map((guesthouse: any) => (
               <div
                 key={item._id}
-                className='bg-white dark:bg-black/40 p-4 rounded-lg  md:w-72 border-2 border-blue-200/50 dark:border-gray-400/50 shadow-xl'>
+                className='bg-white dark:bg-black/40 p-4 rounded-lg  md:w-72 border-2 border-orange-300/30 dark:border-gray-400/50 shadow-xl'>
                 <Image
                   src={urlForImage(guesthouse.guesthouseImage).url()}
                   alt={guesthouse.guesthouseName}
@@ -78,17 +84,46 @@ export default async function Accommodations() {
                   height={300}
                   className='rounded-md'
                 />
-
-                <h5 className='text-xl md:text-2xl font-bold bg-gradient-to-b from-gray-100 to-black dark:from-white dark:to-gray-200 bg-clip-text text-transparent text-center pt-6 mb-2 [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)]'>
-                  {guesthouse.guesthouseName}
-                </h5>
-                <div className='prose dark:prose-invert line-clamp-4'>
-                  {/* <PortableText content={guesthouse.guesthotseDescription} /> */}
+                <div>
+                  <h5 className='text-xl md:text-2xl font-bold bg-gradient-to-b from-gray-100 to-black dark:from-white dark:to-gray-200 bg-clip-text text-transparent pt-6 [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)]'>
+                    {guesthouse.guesthouseName}
+                  </h5>
+                  <div className='mb-10 flex  text-base text-orange-200 dark:text-gray-200'>
+                    <IoStar />
+                    <IoStar />
+                    <IoStar />
+                    <IoStar />
+                    <IoStar />
+                  </div>
                 </div>
-                <div className='pt-5 font-semibold cursor-pointer'>
-                  <Link href={`../guesthouse/${guesthouse.slug.current}`}>
-                    Read more...
-                  </Link>
+                <div className='flex gap-4 justify-around text-xl md:text-2xl'>
+                  <div className='flex flex-col items-center justify-center'>
+                    <FaWifi />
+                    <p className='text-xs'>Wi-Fi</p>
+                  </div>
+                  <div className='flex flex-col items-center justify-center'>
+                    <GiMeal />
+                    <p className='text-xs'>Breakfast</p>
+                  </div>
+                  <div className='flex flex-col items-center justify-center'>
+                    <MdSurfing />
+                    <p className='text-xs'>Activities</p>
+                  </div>
+                  <div className='flex flex-col items-center justify-center'>
+                    <TbSpeedboat />
+                    <p className='text-xs'>Transfer</p>
+                  </div>
+                </div>
+
+                {/* <div className='prose dark:prose-invert line-clamp-3 text-justify'>
+                  <PortableText content={guesthouse.guesthouseDescription} />
+                </div> */}
+                <div className='flex justify-end pt-5 font-semibold cursor-pointer '>
+                  <div className='bg-orange-300 dark:bg-gray-500 hover:bg-orange-400 px-6 py-1 rounded-xl text-sm text-white'>
+                    <Link href={`../guesthouse/${guesthouse.slug.current}`}>
+                      View
+                    </Link>
+                  </div>
                 </div>
               </div>
             ))

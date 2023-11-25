@@ -4,11 +4,11 @@
 
 html {
   --s: 80px; /* the size */
-  --c: #fcfcfc;
+  --c: #ffffff;
 
   --_s: calc(2 * var(--s)) calc(2 * var(--s));
   --_g: 35.36% 35.36% at;
-  --_c: #0000 66%, #5a67bf18 68% 70%, #0000 72%;
+  --_c: #0000 66%, #8693e910 68% 70%, #0000 72%;
   background: radial-gradient(var(--_g) 100% 25%, var(--_c)) var(--s) var(--s) /
       var(--_s),
     radial-gradient(var(--_g) 0 75%, var(--_c)) var(--s) var(--s) / var(--_s),
@@ -20,4 +20,19 @@ html {
 
 .custom-prose {
   max-width: none;
+}
+
+.youtubePlayer {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio (height:width) */
+  height: 0;
+  overflow: hidden;
+}
+
+.youtubePlayer iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
