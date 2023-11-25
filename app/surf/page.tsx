@@ -6,6 +6,7 @@ import PortableText from "react-portable-text";
 import { FaArrowLeft } from "react-icons/fa";
 import Link from "next/link";
 import { urlForImage } from "@/sanity/lib/image";
+import Logo from "../../public/logo/logo.png";
 
 export const revalidate = 60;
 
@@ -74,7 +75,7 @@ export default async function Surf() {
           <div>
             <div className=''>
               <Image
-                src={"/logo/logo.png"}
+                src={Logo}
                 alt='Logo'
                 width={250}
                 height={250}

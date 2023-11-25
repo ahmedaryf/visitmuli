@@ -10,6 +10,7 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { AiFillFacebook, AiFillInstagram } from "react-icons/ai";
 import { FaYoutubeSquare } from "react-icons/fa";
+import Logo from "../../public/logo/logo.png";
 
 const navLinks = [
   {
@@ -107,8 +108,8 @@ export default function Navbar() {
                 href={"/"}
                 className='text-xl flex justify-center items-center'>
                 <Image
-                  src={"/logo/logo.png"}
-                  alt='Logo'
+                  src={Logo}
+                  alt='visitmuli Logo'
                   width={60}
                   height={60}
                   className='md:w-[70px] md:h-[70px],'

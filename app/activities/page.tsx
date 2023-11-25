@@ -15,9 +15,9 @@ export default function Activities() {
     <div className='h-screen'>
       <h1 className='pt-24 text-5xl font-bold text-center'>Activity</h1>
       <div className='md:w-[60vw]'>
-        <div className={"youtubePlayer"}>
+        {/* <div className={"youtubePlayer"}>
           <YouTube videoId={"4Ff2ZrhVkp0"} opts={opts} />
-        </div>
+        </div> */}
       </div>
     </div>
   );
