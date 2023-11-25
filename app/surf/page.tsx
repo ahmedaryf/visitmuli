@@ -6,7 +6,7 @@ import PortableText from "react-portable-text";
 import { FaArrowLeft } from "react-icons/fa";
 import Link from "next/link";
 import { urlForImage } from "@/sanity/lib/image";
-import Logo from "/public/logo/logo.png";
+import Logo from "/logo/logo.png";
 
 export const revalidate = 60;
 
