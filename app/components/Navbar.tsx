@@ -139,11 +139,11 @@ export default function Navbar() {
           <AnimatePresence mode='wait'>
             {isNavbarOpen ? (
               <motion.div
-                initial={{ y: -80, opacity: 0 }}
+                initial={{ y: -100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.3, ease: "easeIn" }}
-                exit={{ y: -100, opacity: 0, transition: { duration: 0.8 } }}
-                className='hidden md:bg-gradient-to-t from-blue-200/60 via-blue-500 to-blue-200/60 dark:from-orange-200/60 dark:via-orange-500 dark:to-orange-200/60 duration-500 px-8 py-2 rounded-3xl'>
+                transition={{ duration: 0.1, ease: "easeIn" }}
+                exit={{ y: -100, opacity: 0, transition: { duration: 0.3 } }}
+                className='hidden md:block md:bg-gradient-to-t from-blue-200/60 via-blue-500 to-blue-200/60 dark:from-orange-200/60 dark:via-orange-500 dark:to-orange-200/60 duration-500 px-8 py-2 rounded-3xl'>
                 <ul className=' hidden md:flex'>
                   <ThemeToggle />
                   {navLinks.map((navItem, index) => {
