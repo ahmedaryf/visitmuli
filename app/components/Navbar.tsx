@@ -101,7 +101,7 @@ export default function Navbar() {
     <>
       {path !== "/admin" ? (
         <nav className=' duration-1000 px-2 md:px-10  flex justify-between items-center fixed w-screen z-50'>
-          <div className='flex justify-between w-full items-center'>
+          <div className='flex justify-between w-screen items-center'>
             <div className='flex justify-center items-center'>
               <Link
                 href={"/"}
@@ -114,6 +114,9 @@ export default function Navbar() {
                   className='md:w-[70px] md:h-[70px],'
                 />
               </Link>
+            </div>
+            <div className='block md:hidden'>
+              <ThemeToggle />
             </div>
             {/* <ThemeToggle /> */}
             {isOpen ? (
@@ -139,7 +142,7 @@ export default function Navbar() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.3, ease: "easeIn" }}
                 exit={{ y: -100, opacity: 0, transition: { duration: 0.8 } }}
-                className=' md:bg-gradient-to-t from-blue-200/60 via-blue-500 to-blue-200/60 dark:from-orange-200/60 dark:via-orange-500 dark:to-orange-200/60 duration-500 px-8 py-2 rounded-3xl'>
+                className='hidden md:bg-gradient-to-t from-blue-200/60 via-blue-500 to-blue-200/60 dark:from-orange-200/60 dark:via-orange-500 dark:to-orange-200/60 duration-500 px-8 py-2 rounded-3xl'>
                 <ul className=' hidden md:flex'>
                   <ThemeToggle />
                   {navLinks.map((navItem, index) => {

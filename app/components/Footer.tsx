@@ -7,8 +7,8 @@ import { FaYoutubeSquare } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className='min-h-[60vh] bg-gradient-to-b from-blue-500 to-blue-700 dark:from-orange-400 dark:to-orange-700 flex flex-col justify-between py-6 text-white'>
-      <div className=' flex justify-between px-10'>
+    <footer className='min-h-[60vh] w-screen bg-gradient-to-b from-blue-500 to-blue-700 dark:from-orange-400 dark:to-orange-700 flex flex-col justify-between py-6 text-white'>
+      <div className=' md:flex justify-between px-10'>
         <div className=''>
           <div className='flex gap-1 justify-center items-center'>
             <Link
@@ -28,7 +28,7 @@ export default function Footer() {
             </Link>
           </div>
         </div>
-        <div>
+        <div className='mt-24 md:mt-0'>
           <h1 className='text-xl font-bold mb-2 md:mb-4 tracking-wider'>
             Links
           </h1>
@@ -56,7 +56,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className=''>
+        <div className='mt-24 md:mt-0 mb-24 md:mb-0'>
           <h1 className='text-xl font-bold mb-2 md:mb-4 tracking-wider'>
             Contacts
           </h1>

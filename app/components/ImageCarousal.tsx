@@ -66,7 +66,7 @@ export default function ImageCarousal() {
     <div className='flex flex-col dark:bg-black pt-0'>
       <MotionConfig>
         <div className='flex flex-col justify-center items-center'>
-          <div className='relative h-full md:w-[95vw] flex  overflow-hidden w-screen justify-center items-center'>
+          <div className='relative md:w-[95vw] flex  overflow-hidden justify-center items-center'>
             <div className='flex absolute items-center justify-between z-20 left-2 right-2'>
               <BiSolidChevronLeft
                 onClick={onPrevClick}
@@ -89,7 +89,7 @@ export default function ImageCarousal() {
                     alt='image'
                     width={3500}
                     height={2500}
-                    className=' object-cover md:aspect-[16/9]'
+                    className=' object-cover aspect-[16/9]'
                   />
                 );
               })}
