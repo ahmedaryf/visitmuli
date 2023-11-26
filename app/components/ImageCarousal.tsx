@@ -96,7 +96,7 @@ export default function ImageCarousal() {
             </motion.div>
 
             <AnimatePresence>
-              <div className='absolute left-0 md:top-[70%] lg:top-[75%] md:w-[45vw] text-white'>
+              <div className='absolute left-0 md:bottom-16 lg:bottom-24 md:w-[45vw] text-white'>
                 {finalImageData.map((item: any, index: any) => {
                   return index === current ? (
                     <motion.div
@@ -105,7 +105,7 @@ export default function ImageCarousal() {
                       transition={{ duration: 2 }}
                       key={index}
                       className='flex flex-col'>
-                      <div className='bg-gradient-to-r from-black/40 to-transparent ps-4 pe-10 py-4'>
+                      <div className='bg-gradient-to-r from-black/40 to-transparent ps-12 md:ps-8 pe-10 py-4'>
                         <h3 className='md:font-semibold mb-2 [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)]'>
                           {item.title}
                         </h3>
