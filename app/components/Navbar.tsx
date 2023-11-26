@@ -135,12 +135,12 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Navbar */}
-          <AnimatePresence mode='wait'>
+          <AnimatePresence>
             {isNavbarOpen ? (
               <motion.div
                 initial={{ y: -100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.1, ease: "easeIn" }}
+                transition={{ duration: 0.1, ease: "linear" }}
                 exit={{ y: -100, opacity: 0, transition: { duration: 0.3 } }}
                 className='hidden md:block md:bg-gradient-to-t from-blue-200/60 via-blue-500 to-blue-200/60 dark:from-orange-200/60 dark:via-orange-500 dark:to-orange-200/60 duration-500 px-8 py-2 rounded-3xl'>
                 <ul className=' hidden md:flex'>
@@ -203,7 +203,7 @@ export default function Navbar() {
           )}
           {/* Mobile Navbar */}
 
-          <AnimatePresence mode='wait'>
+          <AnimatePresence>
             {isOpen && (
               <motion.div
                 variants={menuVars}
@@ -214,12 +214,17 @@ export default function Navbar() {
                   duration: 0.5,
                   // ease: [0.12, 0, 0.39, 0],
                 }}
-                className='block md:hidden absolute left-0 top-28 w-full bg-gradient-to-r from-blue-300 to-blue-600 dark:from-black dark:to-orange-700 min-h-[70vh] pt-5 pb-10 z-50'>
+                className='block md:hidden absolute inset-0 h-screen w-screen bg-gradient-to-r from-blue-300 to-blue-600 dark:from-black dark:to-orange-700 pt-5 pb-10 z-50'>
                 <motion.div
                   variants={containerVars}
                   initial='initial'
                   animate='open'
                   exit='initial'>
+                  <div
+                    className='flex justify-end pe-4'
+                    onClick={() => setIsOpen(false)}>
+                    <MdClose size={32} className=' text-white' />
+                  </div>
                   {navLinks.map((navItem, index) => {
                     return (
                       <div key={index} className='overflow-hidden pt-5'>

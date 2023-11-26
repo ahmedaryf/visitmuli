@@ -109,7 +109,7 @@ export default function ImageCarousal() {
                         <h3 className='md:font-semibold mb-2 [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)]'>
                           {item.title}
                         </h3>
-                        <p className='text-sm md:text-base text-justify [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)] pe-8'>
+                        <p className='text-sm md:text-base text-justify [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)] pe-8 line-clamp-2 md:line-clamp-none'>
                           {item.description}
                         </p>
                       </div>
