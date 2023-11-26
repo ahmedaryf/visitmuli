@@ -71,17 +71,7 @@ export default async function Surf() {
           <h5 className='text-xl md:text-2xl lg:text-2xl font-bold bg-gradient-to-b from-blue-100 to-blue-600 dark:from-white dark:to-gray-100 bg-clip-text text-transparent text-center mb-4 pt-4 [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)] tracking-wider'>
             UPCOMING EVENTS
           </h5>
-          <div>
-            <div className=''>
-              <Image
-                src={"/logo/logo.png"}
-                alt='Logo'
-                width={250}
-                height={250}
-                className='mx-auto'
-              />
-            </div>
-          </div>
+
           <div className='mt-10'>
             <h5 className='text-xl md:text-2xl lg:text-2xl font-bold bg-gradient-to-b from-blue-100 to-blue-600 dark:from-white dark:to-gray-100 bg-clip-text text-transparent text-center mb-4 pt-4 [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)] tracking-wider'>
               PRODUCTS
