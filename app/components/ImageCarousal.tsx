@@ -89,7 +89,7 @@ export default function ImageCarousal() {
                     alt='image'
                     width={3500}
                     height={2500}
-                    className=' object-cover aspect-[16/9]'
+                    className=' object-cover aspect-[4/3] md:aspect-[16/9]'
                   />
                 );
               })}
