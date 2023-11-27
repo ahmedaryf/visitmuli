@@ -30,11 +30,11 @@ export default async function UpcomingEvents() {
             alt={item.title}
             className='mx-auto rounded-lg'
           />
-          <h5 className='text-xl md:text-2xl lg:text-2xl font-bold bg-gradient-to-b from-blue-100 to-blue-600 dark:from-white dark:to-gray-100 bg-clip-text text-transparent text-center mb-4 pt-4 [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)] tracking-wider'>
+          <h5 className='text-xl md:text-2xl lg:text-2xl font-bold bg-gradient-to-b from-blue-100 to-blue-600 dark:from-white dark:to-gray-100 bg-clip-text text-transparent text-center mb-4 pt-4 tracking-wider'>
             {item.title}
           </h5>
           <div>
-            <p className='text-sm mb-4 font-bold [text-shadow:_4px_1px_2px_rgb(0_0_0_/_20%)]'>
+            <p className='text-sm mb-4 font-bold '>
               {format(new Date(item.date), "MMM - dd, yyyy")}
             </p>
           </div>

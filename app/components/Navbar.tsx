@@ -123,13 +123,13 @@ export default function Navbar() {
               <MdClose
                 onClick={() => setIsOpen(false)}
                 size={32}
-                className='block md:hidden text-orange-100 '
+                className='block md:hidden text-orange-100 dark:text-white'
               />
             ) : (
               <GiHamburgerMenu
                 onClick={() => setIsOpen(true)}
                 size={32}
-                className='block md:hidden text-orange-100 '
+                className='block md:hidden text-orange-100 dark:text-white '
               />
             )}
           </div>
@@ -142,7 +142,7 @@ export default function Navbar() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.1, ease: "linear" }}
                 exit={{ y: -100, opacity: 0, transition: { duration: 0.3 } }}
-                className='hidden md:block md:bg-gradient-to-t from-blue-200/60 via-blue-500 to-blue-200/60 dark:from-orange-200/60 dark:via-orange-500 dark:to-orange-200/60 duration-500 px-8 py-2 rounded-3xl'>
+                className='hidden md:block md:bg-gradient-to-t from-blue-200/60 via-blue-500 to-blue-200/60 dark:from-gray-500/60 dark:via-gray-700 dark:to-gray-500/60 duration-500 px-8 py-2 rounded-3xl'>
                 <ul className=' hidden md:flex'>
                   <ThemeToggle />
                   {navLinks.map((navItem, index) => {
@@ -191,13 +191,13 @@ export default function Navbar() {
           {isNavbarOpen ? (
             <div
               onClick={() => setIsNavbarOpen(!isNavbarOpen)}
-              className='hidden md:block ms-4 bg-blue-400/80 dark:bg-orange-400/80 rounded-full p-2 cursor-pointer shadow-xl'>
+              className='hidden md:block ms-4 bg-blue-400/80 dark:bg-gray-600 rounded-full p-2 cursor-pointer shadow-xl'>
               <MdClose size={32} className=' text-white' />
             </div>
           ) : (
             <div
               onClick={() => setIsNavbarOpen(!isNavbarOpen)}
-              className='hidden md:block ms-4 bg-blue-400/80 dark:bg-orange-400/80 rounded-full p-2 cursor-pointer shadow-xl'>
+              className='hidden md:block ms-4 bg-blue-400/80 dark:bg-gray-600 rounded-full p-2 cursor-pointer shadow-xl'>
               <GiHamburgerMenu size={32} className=' text-white' />
             </div>
           )}
@@ -214,7 +214,7 @@ export default function Navbar() {
                   duration: 0.5,
                   // ease: [0.12, 0, 0.39, 0],
                 }}
-                className='block md:hidden absolute inset-0 h-screen w-screen bg-gradient-to-r from-blue-300 to-blue-600 dark:from-black dark:to-orange-700 pt-5 pb-10 z-50'>
+                className='block md:hidden absolute inset-0 h-screen w-screen bg-gradient-to-r from-blue-300 to-blue-600 dark:from-black dark:to-gray-600 pt-5 pb-10 z-50'>
                 <motion.div
                   variants={containerVars}
                   initial='initial'

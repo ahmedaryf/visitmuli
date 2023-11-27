@@ -42,7 +42,7 @@ export default function HomePageCards() {
           key={item.key}
           className='pb-6 pt-6 md:pt-10 px-4 md:px-6 bg-gradient-to-b from-transparent to-white/50 dark:from-black  dark:to-black/90'>
           <div className='bg-white dark:bg-gray-700 shadow-lg rounded-md mx-auto'>
-            <h1 className='text-xl md:text-2xl font-bold bg-gradient-to-b from-gray-100 to-black dark:from-white dark:to-gray-200 bg-clip-text text-transparent text-center pt-6 mb-2 [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)]'>
+            <h1 className='text-xl md:text-2xl font-bold bg-gradient-to-b from-gray-100 to-black dark:from-white dark:to-gray-200 bg-clip-text text-transparent text-center pt-6 mb-2 '>
               {item.title}
             </h1>
 

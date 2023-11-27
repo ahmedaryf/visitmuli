@@ -50,7 +50,7 @@ export default function AboutPage() {
           />
         ))}
         <div className='w-full flex flex-col justify-center items-center absolute top-1/2 left-1/2 -translate-x-1/2 bg-white/40 dark:bg-black/60 py-2'>
-          <h1 className='text-5xl md:text-8xl font-bold bg-gradient-to-b from-orange-100 to-orange-600 dark:from-white dark:to-gray-200 bg-clip-text text-transparent [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)]'>
+          <h1 className='text-5xl md:text-8xl font-bold bg-gradient-to-b from-orange-100 to-orange-600 dark:from-white dark:to-gray-200 bg-clip-text text-transparent'>
             Welcome to Muli
           </h1>
           <h5 className='text-orange-600 dark:text-gray-300 font-semibold text-xs md:text-xl'>
@@ -67,7 +67,7 @@ export default function AboutPage() {
           return (
             <div key={item._id} className=''>
               <div className='w-[90vw] md:w-[85vw] mx-auto'>
-                <h5 className='text-3xl md:text-5xl font-bold bg-gradient-to-b from-blue-100 to-blue-600 dark:from-white dark:to-gray-200 bg-clip-text text-transparent pt-6 md:pt-16 pb-2 md:pb-4 [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)] text-center tracking-wider'>
+                <h5 className='text-3xl md:text-5xl font-bold bg-gradient-to-b from-blue-100 to-blue-600 dark:from-white dark:to-gray-200 bg-clip-text text-transparent pt-6 md:pt-16 pb-2 md:pb-4  text-center tracking-wider'>
                   {item.title}
                 </h5>
                 <div className='md:grid md:grid-cols-2 md:px-6 '>

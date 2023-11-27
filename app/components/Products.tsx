@@ -41,7 +41,7 @@ export default function Products({ product }: any) {
           ) : (
             ""
           )}
-          <h5 className='text-xl md:text-2xl lg:text-2xl font-bold bg-gradient-to-b from-blue-100 to-blue-600 dark:from-white dark:to-gray-100 bg-clip-text text-transparent text-center [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)] tracking-wider'>
+          <h5 className='text-xl md:text-2xl lg:text-2xl font-bold bg-gradient-to-b from-blue-200 to-blue-700 dark:from-white dark:to-gray-100 bg-clip-text text-transparent text-center tracking-wider'>
             {item.productName}
           </h5>
           <div className=' p-2 min-h-[28vh] overflow-hidden flex justify-center items-center'>

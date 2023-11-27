@@ -47,7 +47,7 @@ export default function AboutMuli() {
   return (
     <div className='pb-6 md:px-6 bg-gradient-to-b from-transparent to-white/50 dark:from-black  dark:to-gray-700 pt-6 md:pt-10'>
       <div className='md:max-w-[90vw] lg:max-w-[80vw] mx-auto'>
-        <h1 className='text-5xl md:text-8xl font-bold bg-gradient-to-b from-blue-100 to-blue-500 dark:from-white dark:to-gray-200 bg-clip-text text-transparent text-center pt-6 mb-4 [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)]'>
+        <h1 className='text-5xl md:text-8xl font-bold bg-gradient-to-b from-blue-200 to-blue-700 dark:from-white dark:to-gray-200 bg-clip-text text-transparent text-center pt-6 mb-4 '>
           Meemu Muli
         </h1>
         <div className='md:grid grid-cols-2 gap-4'>

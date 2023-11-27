@@ -20,7 +20,7 @@ function ThemeToggle() {
   return (
     <div className='mr-6 text-black-800'>
       {theme === "dark" ? (
-        <div className='text-orange-100 md:text-white'>
+        <div className='text-orange-100 dark:text-white md:text-white'>
           <BsFillSunFill
             size={30}
             cursor='pointer'
