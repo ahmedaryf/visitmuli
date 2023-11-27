@@ -31,7 +31,7 @@ export default function Products({ product }: any) {
       {product.map((item: any, productIndex: number) => (
         <div
           key={item._id}
-          className='px-12 py-6 border-2 border-blue-300/40 dark:border-gray-400 rounded-lg shadow-xl mb-4 bg-white dark:bg-gray-600'>
+          className='px-4 lg:px-12 py-6 border-2 border-blue-300/40 dark:border-gray-400 rounded-lg shadow-xl mb-4 bg-white dark:bg-gray-600'>
           {isNew(item) ? (
             <div className='flex justify-end'>
               <p className='bg-green-200 dark:bg-gray-400 text-xs px-2 rounded-lg text-white'>
@@ -63,8 +63,8 @@ export default function Products({ product }: any) {
                 <Image
                   src={urlForImage(image).url()}
                   alt={item.productName}
-                  width={60}
-                  height={60}
+                  width={50}
+                  height={50}
                   className={`${
                     imageIndex === selectedItems[productIndex] && "opacity-50"
                   }`}
@@ -73,7 +73,7 @@ export default function Products({ product }: any) {
             ))}
           </div>
 
-          <div className='flex justify-between'>
+          <div className='flex gap-4 justify-between'>
             <p className='text-xs text-gray-500 dark:text-gray-100 font-semibold'>
               Color: {item.color}
             </p>

@@ -46,7 +46,7 @@ export default async function Surf() {
             Muli Surf Guide
           </h1>
           <h5 className='text-orange-600 dark:text-gray-300 font-semibold text-xs md:text-xl'>
-            Riding Waves: Your Ultimate Muli Surf Guide Experience
+            Riding Waves: Your Ultimate Surf Guide Experience
           </h5>
         </div>
       </div>
@@ -59,11 +59,7 @@ export default async function Surf() {
 
       <div className='grid grid-cols-1 md:grid-cols-3 md:gap-8 md:px-4 mt-16  md:w-[90vw] mx-auto'>
         <div className=' col-span-2'>
-          <div>
-            {/* <h1 className='text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-b from-blue-100 to-blue-600 dark:from-white dark:to-gray-100 bg-clip-text text-transparent text-center mb-4 [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)]'>
-              Muli Surf Guide
-            </h1> */}
-          </div>
+          <div></div>
           {data.map((item: any) => {
             return (
               <div key={item._id} className='px-4'>
