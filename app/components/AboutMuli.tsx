@@ -67,7 +67,7 @@ export default function AboutMuli() {
                 </div>
                 <div className=' px-2 '>
                   <div
-                    className='prose dark:prose-invert text-justify px-4 md:px-0 pt-4 md:pt-0'
+                    className='prose dark:prose-invert text-justify px-4 md:px-0 pt-4 md:pt-0 line-clamp-6'
                     style={{ marginTop: -20 }}>
                     <PortableText content={item.description} />
                   </div>
