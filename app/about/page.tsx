@@ -58,7 +58,7 @@ export default function AboutPage() {
           </h5>
         </div>
       </div>
-      <div className='ps-8 pt-4 mb-4 md:mb-0 '>
+      <div className='ps-6 pt-6 mb-4 md:mb-0 text-xl md:text-3xl'>
         <BackButton />
       </div>
 

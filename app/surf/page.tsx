@@ -1,11 +1,12 @@
 import Image from "next/image";
 import React from "react";
-import SurfCarousal from "../components/SurfCarousal";
 import { client } from "@/sanity/lib/client";
 import PortableText from "react-portable-text";
 import { FaArrowLeft } from "react-icons/fa";
 import Link from "next/link";
 import { urlForImage } from "@/sanity/lib/image";
+import UpcomingEvents from "../components/UpcomingEvents";
+import Products from "../components/Products";
 
 export const revalidate = 60;
 
@@ -14,13 +15,21 @@ async function getData() {
   const data = await client.fetch(query);
   return data;
 }
+async function getProductData() {
+  const query = `*[_type == "products"] `;
+
+  const data = await client.fetch(query);
+
+  return data;
+}
 
 export default async function Surf() {
   const data = await getData();
+  const product = await getProductData();
 
   return (
     <div className='pb-24 md:px-6 bg-gradient-to-b from-transparent to-white/50 dark:from-black  dark:to-gray-700 w-screen'>
-      <div className='w-full md:h-[60vh] overflow-hidden'>
+      <div className='w-full md:h-[70vh] overflow-hidden relative'>
         {data.map((image: any) => (
           <Image
             key={image._id}
@@ -28,22 +37,32 @@ export default async function Surf() {
             alt='Image'
             width={3000}
             height={200}
+            layout='responsive'
             className=' aspect-[16/9]'
           />
         ))}
+        <div className='flex flex-col justify-center items-center absolute top-1/2 left-1/2 -translate-x-1/2  bg-white/40 dark:bg-black/60 py-2 w-full'>
+          <h1 className='text-5xl md:text-6xl lg:text-8xl font-bold bg-gradient-to-b from-orange-100 to-orange-600 dark:from-white dark:to-gray-200 bg-clip-text text-transparent [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)]'>
+            Muli Surf Guide
+          </h1>
+          <h5 className='text-orange-600 dark:text-gray-300 font-semibold text-xs md:text-xl'>
+            Riding Waves: Your Ultimate Muli Surf Guide Experience
+          </h5>
+        </div>
       </div>
+
       <Link href={"/"}>
-        <div className='ps-8 pt-6 mb-4 md:mb-0'>
-          <FaArrowLeft size={28} color={"gray"} />
+        <div className='ps-6 pt-6 mb-4 md:mb-0 text-xl md:text-3xl'>
+          <FaArrowLeft color={"gray"} />
         </div>
       </Link>
 
       <div className='grid grid-cols-1 md:grid-cols-3 md:gap-8 md:px-4 mt-16  md:w-[90vw] mx-auto'>
         <div className=' col-span-2'>
           <div>
-            <h1 className='text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-b from-blue-100 to-blue-600 dark:from-white dark:to-gray-100 bg-clip-text text-transparent text-center mb-4 [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)]'>
+            {/* <h1 className='text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-b from-blue-100 to-blue-600 dark:from-white dark:to-gray-100 bg-clip-text text-transparent text-center mb-4 [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)]'>
               Muli Surf Guide
-            </h1>
+            </h1> */}
           </div>
           {data.map((item: any) => {
             return (
@@ -68,14 +87,20 @@ export default async function Surf() {
           })}
         </div>
         <div className='px-4 md:px-0 bg-gradient-to-b md:border-l-2 border-t-2 border-blue-200/50 dark:border-gray-300/40 rounded-md'>
-          <h5 className='text-xl md:text-2xl lg:text-2xl font-bold bg-gradient-to-b from-blue-100 to-blue-600 dark:from-white dark:to-gray-100 bg-clip-text text-transparent text-center mb-4 pt-4 [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)] tracking-wider'>
-            UPCOMING EVENTS
-          </h5>
+          <div>
+            <h5 className='text-xl md:text-2xl lg:text-2xl font-bold bg-gradient-to-b from-blue-100 to-blue-600 dark:from-white dark:to-gray-100 bg-clip-text text-transparent text-center mb-4 pt-4 [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)] tracking-wider'>
+              UPCOMING EVENTS
+            </h5>
+            <UpcomingEvents />
+          </div>
 
           <div className='mt-10'>
             <h5 className='text-xl md:text-2xl lg:text-2xl font-bold bg-gradient-to-b from-blue-100 to-blue-600 dark:from-white dark:to-gray-100 bg-clip-text text-transparent text-center mb-4 pt-4 [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)] tracking-wider'>
               PRODUCTS
             </h5>
+            <div>
+              <Products product={product} />
+            </div>
           </div>
         </div>
         <div></div>

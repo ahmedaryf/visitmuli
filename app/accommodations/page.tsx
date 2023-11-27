@@ -10,8 +10,6 @@ import { MdSurfing } from "react-icons/md";
 import { TbSpeedboat } from "react-icons/tb";
 import { IoStar } from "react-icons/io5";
 
-import PortableText from "react-portable-text";
-
 export const revalidate = 60;
 
 async function getData() {
@@ -47,8 +45,8 @@ export default async function Accommodations() {
       </div>
       <div className=' w-16'>
         <Link href={"/"}>
-          <div className='ps-8 pt-6 mb-4 md:mb-0'>
-            <FaArrowLeft size={28} color={"gray"} />
+          <div className='ps-6 pt-6 mb-4 md:mb-0 text-xl md:text-3xl'>
+            <FaArrowLeft color={"gray"} />
           </div>
         </Link>
       </div>
@@ -119,7 +117,7 @@ export default async function Accommodations() {
                   <PortableText content={guesthouse.guesthouseDescription} />
                 </div> */}
                 <div className='flex justify-end pt-5 font-semibold cursor-pointer '>
-                  <div className='bg-orange-300 dark:bg-gray-500 hover:bg-orange-400 px-6 py-1 rounded-xl text-sm text-white'>
+                  <div className=' px-4 rounded-xl text-sm text-orange-300 dark:text-gray-100 border border-orange-300/50 dark:border-gray-200'>
                     <Link href={`../guesthouse/${guesthouse.slug.current}`}>
                       View
                     </Link>

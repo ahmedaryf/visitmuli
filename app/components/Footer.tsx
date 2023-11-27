@@ -7,7 +7,7 @@ import { FaYoutubeSquare } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className='min-h-[60vh] w-screen bg-gradient-to-b from-blue-500 to-blue-700 dark:from-orange-400 dark:to-orange-700 flex flex-col justify-between py-6 text-white'>
+    <footer className='min-h-[60vh] w-screen bg-gradient-to-b from-blue-500 to-blue-700 dark:from-gray-700 dark:border-t border-white dark:to-gray-700 flex flex-col justify-between py-6 text-white'>
       <div className=' md:flex justify-between px-10'>
         <div className=''>
           <div className='flex gap-1 justify-center items-center'>

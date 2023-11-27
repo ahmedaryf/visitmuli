@@ -9,7 +9,8 @@ import { accomodationDetails } from "./schemas/accommodationDetails";
 import { homePageCardsSchema } from "./schemas/homePageCardsSchema";
 import { homePageMainCards } from "./schemas/homePageMainCards";
 import { bannerImages } from "./schemas/bannerImages";
-import { test } from "./schemas/test";
+import { upcommingEvents } from "./schemas/upcomingEvents";
+import { products } from "./schemas/products";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -23,6 +24,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     homePageCardsSchema,
     homePageMainCards,
     bannerImages,
-    test,
+    upcommingEvents,
+    products,
   ],
 };

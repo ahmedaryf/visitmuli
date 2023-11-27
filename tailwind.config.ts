@@ -47,6 +47,16 @@ const config: Config = {
         600: "#4E4E4E",
         700: "#2E2E2E",
       },
+      green: {
+        100: "#04CC00",
+        200: "#00A400",
+        300: "#007C00",
+      },
+      red: {
+        100: "#ED2B0E",
+        200: "#CB0000",
+        300: "#A90000",
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],
