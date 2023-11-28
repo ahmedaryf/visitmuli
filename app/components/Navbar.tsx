@@ -231,10 +231,10 @@ export default function Navbar() {
                   </div>
                   {navLinks.map((navItem, index) => {
                     return (
-                      <div key={index} className='overflow-hidden pt-5'>
+                      <div key={index} className='overflow-hidden pt-4'>
                         <motion.h5
                           variants={linkVars}
-                          className='mx-4 py-4 text-center'
+                          className='mx-4 py-2 text-center'
                           key={index}>
                           <Link
                             onClick={() => setIsOpen(false)}

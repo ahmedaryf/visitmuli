@@ -58,7 +58,7 @@ export default function Footer() {
         </div>
         <div className='mt-24 md:mt-0 mb-24 md:mb-0'>
           <h1 className='text-xl font-bold mb-2 md:mb-4 tracking-wider'>
-            Contacts
+            Contact & Reservations
           </h1>
           <div className='flex gap-2 items-center mb-2'>
             <FaPhone size={20} />
