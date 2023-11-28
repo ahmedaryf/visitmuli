@@ -21,6 +21,10 @@ const navLinks = [
     url: "/surf",
   },
   {
+    name: "About",
+    url: "/about",
+  },
+  {
     name: "Activities",
     url: "/activities",
   },

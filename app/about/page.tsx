@@ -88,31 +88,33 @@ export default function AboutPage() {
                 </div>
               </div>
               <div className='w-[90vw] md:w-[85vw] mx-auto pt-24'>
-                {item.subContent.map((image: any) => {
-                  return (
-                    <div
-                      key={image._id}
-                      className='grid grid-cols-1 md:grid-cols-2 gap-2 bg-gradient-to-b from-transparent to-blue-200/20 dark:from-gray-700 dark:to-black/70 cardPattern rounded-md md:rounded-lg p-4 border-2 border-blue-300/50 dark:border-gray-400 shadow-2xl'>
-                      <div className='mx-auto'>
-                        <Image
-                          src={urlForImage(image).url()}
-                          alt={image.title}
-                          width={400}
-                          height={300}
-                          className='rounded-t md:rounded-lg'
-                        />
-                      </div>
-                      <div className=''>
-                        <h5 className='text-2xl md:text-4xl font-bold bg-gradient-to-b from-blue-100 to-blue-600 dark:from-white dark:to-gray-200 bg-clip-text text-transparent  [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)] text-center tracking-wider pb-6'>
-                          {image.title}
-                        </h5>
-                        <div className='mt-6 md:-mt-6 prose dark:prose-invert  text-justify ps-2 md:ps-6'>
-                          <PortableText content={image.content} />
+                {item.subContent
+                  ? item.subContent.map((image: any) => {
+                      return (
+                        <div
+                          key={image._id}
+                          className='grid grid-cols-1 md:grid-cols-2 gap-2 bg-gradient-to-b from-white/60 to-white dark:from-gray-700 dark:to-black/70 cardPattern rounded-md md:rounded-lg p-4 shadow-md'>
+                          <div className='mx-auto'>
+                            <Image
+                              src={urlForImage(image).url()}
+                              alt={image.title}
+                              width={500}
+                              height={400}
+                              className='rounded-t md:rounded-lg'
+                            />
+                          </div>
+                          <div className=''>
+                            <h5 className='text-2xl md:text-4xl font-bold bg-gradient-to-b from-blue-100 to-blue-600 dark:from-white dark:to-gray-200 bg-clip-text text-transparent  [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)] text-center tracking-wider pb-6'>
+                              {image.title}
+                            </h5>
+                            <div className='mt-6 md:-mt-6 prose dark:prose-invert  text-justify ps-2 md:ps-6'>
+                              <PortableText content={image.content} />
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                    </div>
-                  );
-                })}
+                      );
+                    })
+                  : null}
               </div>
             </div>
           );
