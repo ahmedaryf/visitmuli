@@ -234,7 +234,7 @@ export default function Navbar() {
                       <div key={index} className='overflow-hidden pt-4'>
                         <motion.h5
                           variants={linkVars}
-                          className='mx-4 py-2 text-center'
+                          className='mx-4 py-2  text-center'
                           key={index}>
                           <Link
                             onClick={() => setIsOpen(false)}
