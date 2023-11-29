@@ -11,6 +11,7 @@ import { homePageMainCards } from "./schemas/homePageMainCards";
 import { bannerImages } from "./schemas/bannerImages";
 import { upcommingEvents } from "./schemas/upcomingEvents";
 import { products } from "./schemas/products";
+import { photoGallery } from "./schemas/photoGallery";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -26,5 +27,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     bannerImages,
     upcommingEvents,
     products,
+    photoGallery,
   ],
 };
