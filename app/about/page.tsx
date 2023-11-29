@@ -1,40 +1,21 @@
-"use client";
 import { client } from "@/sanity/lib/client";
 import { urlForImage } from "@/sanity/lib/image";
 import Image from "next/image";
-import { useState, useEffect } from "react";
 import PortableText from "react-portable-text";
 
 import BackButton from "../components/BackButton";
 
-export default function AboutPage() {
-  const [aboutMuliDetails, setAboutMuliDetails] = useState<any>([]);
-  const [error, setError] = useState(null);
+export const revalidate = 60;
 
-  const [loading, setLoading] = useState(true);
+async function getData() {
+  const query = `*[_type == "aboutMuliDetails"]`;
+  const data = await client.fetch(query);
+  return data;
+}
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const query = `*[_type == "aboutMuliDetails"]`;
-        const data = await client.fetch(query);
-        setAboutMuliDetails(data);
-        setLoading(false);
-      } catch (err: any) {
-        setError(err);
-        setLoading(false);
-      }
-    }
-    fetchData();
-  }, []);
+export default async function AboutPage() {
+  const aboutMuliDetails = await getData();
 
-  if (loading) {
-    return (
-      <div className='flex items-center justify-center h-screen'>
-        <h5 className='text-5xl text-blue-700'>Loding...</h5>
-      </div>
-    );
-  }
   return (
     <div className=' bg-gradient-to-b dark:from-black dark:to-gray-600 pb-12 md:px-6 md:pb-24'>
       <div className='w-full md:h-[60vh] overflow-hidden relative'>

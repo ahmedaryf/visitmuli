@@ -1,48 +1,19 @@
-"use client";
 import { client } from "@/sanity/lib/client";
 import { urlForImage } from "@/sanity/lib/image";
 import Image from "next/image";
-import { useState, useEffect } from "react";
 import PortableText from "react-portable-text";
-// import { PortableText } from "@portabletext/react";
-
 import Link from "next/link";
-import { PortableTextComponents } from "@portabletext/react";
 
-export default function AboutMuli() {
-  const [aboutData, setAboutData] = useState<any>([]);
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
+export const revalidate = 60;
 
-  const components: PortableTextComponents = {
-    block: {
-      // Ex. 1: custom renderer for paragraph (p) elements
-      h1: ({ children }) => <h1 style={{ fontWeight: "bold" }}>{children}</h1>,
-    },
-  };
+async function getData() {
+  const query = `*[_type == "aboutMuli"]`;
+  const data = await client.fetch(query);
+  return data;
+}
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const query = `*[_type == "aboutMuli"]`;
-        const data = await client.fetch(query);
-        setAboutData(data);
-        setLoading(false);
-      } catch (err: any) {
-        setError(err);
-        setLoading(false);
-      }
-    }
-    fetchData();
-  }, []);
-
-  if (loading) {
-    return (
-      <div className='flex items-center justify-center h-screen'>
-        <h5 className='text-5xl text-blue-700'>Loding...</h5>
-      </div>
-    );
-  }
+export default async function AboutMuli() {
+  const aboutData = await getData();
 
   return (
     <div className='pb-6 md:px-6 bg-gradient-to-b from-transparent to-white/50 dark:from-black  dark:to-gray-700 pt-6 md:pt-10'>

@@ -1,39 +1,18 @@
-"use client";
 import { client } from "@/sanity/lib/client";
 import { urlForImage } from "@/sanity/lib/image";
 import Image from "next/image";
-import { useState, useEffect } from "react";
 import PortableText from "react-portable-text";
-
 import Link from "next/link";
 
-export default function HomePageCards() {
-  const [cardData, setCardData] = useState<any>([]);
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
+export const revalidate = 60;
+async function getData() {
+  const query = `*[_type == "homePageCardsSchema"]`;
+  const data = await client.fetch(query);
+  return data;
+}
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const query = `*[_type == "homePageCardsSchema"]`;
-        const data = await client.fetch(query);
-        setCardData(data);
-        setLoading(false);
-      } catch (err: any) {
-        setError(err);
-        setLoading(false);
-      }
-    }
-    fetchData();
-  }, []);
-
-  if (loading) {
-    return (
-      <div className='flex items-center justify-center h-screen'>
-        <h5 className='text-5xl text-blue-700'>Loding...</h5>
-      </div>
-    );
-  }
+export default async function HomePageCards() {
+  const cardData = await getData();
 
   return (
     <>
