@@ -20,14 +20,14 @@ export default function GalleryImages({ images }: any) {
   };
 
   return (
-    <div className='p-4'>
+    <div className='p-4 bg-gradient-to-b from-transparent to-white/50 dark:from-black  dark:to-gray-700'>
       <div className=' px-2 my-3 grid grid-cols-gallery gap-4'>
         {images.map((item: any, index: any) => (
           <div
             key={index}
             onClick={() => setSelectedImage(item.image || "")}
             className='p-1 border-2 rounded-lg cursor-pointer'>
-            <div className=' relative h-40 overflow-hidden group'>
+            <div className=' relative h-32 md:h-40 overflow-hidden group'>
               <Image
                 src={urlForImage(item.image).url()}
                 fill={true}
@@ -46,8 +46,8 @@ export default function GalleryImages({ images }: any) {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            exit={{ opacity: 0, transition: { duration: 1 } }}
+            transition={{ duration: 0.3 }}
+            exit={{ opacity: 0, transition: { duration: 0.4 } }}
             onClick={handleCloseClick}
             className='bg-gray-500/90 p-2 fixed inset-0 w-full h-full flex flex-col justify-center items-center'>
             <MdClose
@@ -58,8 +58,8 @@ export default function GalleryImages({ images }: any) {
             <motion.div
               initial={{ opacity: 0, scale: 0.7 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              exit={{ opacity: 0, scale: 0.7, transition: { duration: 1 } }}
+              transition={{ duration: 0.3 }}
+              exit={{ opacity: 0, scale: 0.7, transition: { duration: 0.4 } }}
               className='rounded-lg bg-gold relative'
               ref={imageContainerRef}>
               <Image

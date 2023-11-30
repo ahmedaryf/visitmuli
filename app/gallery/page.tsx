@@ -33,7 +33,7 @@ export default async function Gallery() {
           </h1>
         </div>
       </div>
-      <div className='px-2 md:px-24'>
+      <div className='px-2 md:px-24 bg-gradient-to-b from-transparent to-white/50 dark:from-black  dark:to-gray-700'>
         <GalleryImages images={images} />
       </div>
     </div>
