@@ -2,7 +2,7 @@
 import { urlForImage } from "@/sanity/lib/image";
 import Image from "next/image";
 import React, { useState } from "react";
-import { format, differenceInMilliseconds } from "date-fns";
+import { differenceInMilliseconds } from "date-fns";
 
 export default function Products({ product }: any) {
   const [selectedItems, setSelectedItems] = useState(

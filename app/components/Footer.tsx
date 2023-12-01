@@ -64,7 +64,7 @@ export default function Footer() {
           </Link>
         </div>
 
-        <div className='mt-12 md:mt-0'>
+        <div className='mt-12 md:mt-0 mb-24 md:mb-0'>
           <h1 className='text-xl font-bold mb-2 md:mb-4 tracking-wider'>
             Links
           </h1>

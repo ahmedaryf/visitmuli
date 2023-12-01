@@ -37,9 +37,11 @@ export default async function HomePageCards() {
                 />
               </div>
               <div className='px-2'>
-                <div className='prose dark:prose-invert text-justify px-4 md:px-0 line-clamp-3'>
-                  <PortableText content={item.content} />
-                </div>
+                {item.content && (
+                  <div className='prose dark:prose-invert text-justify px-4 md:px-0 line-clamp-3'>
+                    <PortableText content={item.content} />
+                  </div>
+                )}
                 <div className='pt-6'>
                   <Link
                     href={`../sideBar/${item.slug.current}`}

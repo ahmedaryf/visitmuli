@@ -16,7 +16,7 @@ async function getData() {
 export default async function HomePageMainCards() {
   const data = await getData();
   return (
-    <div className=''>
+    <div className='mb-24'>
       <h5 className='text-3xl md:text-6xl font-bold bg-gradient-to-b from-blue-200 to-blue-700 dark:from-white dark:to-gray-200 bg-clip-text text-transparent text-center mb-4 '>
         Island Essentials
       </h5>
