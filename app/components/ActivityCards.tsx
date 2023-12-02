@@ -11,6 +11,7 @@ export default function ActivityCards({ data }: any) {
           <div className=' flex flex-col justify-between bg-white dark:bg-gray-700 rounded-md shadow-md p-2 border-2 border-blue-300 dark:border-gray-200'>
             <div className='p-4'>
               <Image
+                key={item._id}
                 src={urlForImage(item.image).url()}
                 width={300}
                 height={200}
