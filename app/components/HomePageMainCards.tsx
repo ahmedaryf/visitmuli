@@ -17,7 +17,7 @@ export default async function HomePageMainCards() {
   const data = await getData();
   return (
     <div className='mb-24'>
-      <h5 className='text-3xl md:text-6xl font-bold bg-gradient-to-b from-blue-200 to-blue-700 dark:from-white dark:to-gray-200 bg-clip-text text-transparent text-center mb-4 '>
+      <h5 className='text-3xl md:text-6xl font-bold bg-gradient-to-b from-gray-700/80 to-gray-500 dark:from-white dark:to-gray-200 bg-clip-text text-transparent text-center mb-4 '>
         Island Essentials
       </h5>
       <div className='flex flex-wrap justify-around gap-4 mt-6 px-4'>
@@ -34,7 +34,7 @@ export default async function HomePageMainCards() {
             <h5 className='text-center mt-4 mb-2 font-semibold'>
               {item.title}
             </h5>
-            <div className=' text-justify line-clamp-4'>
+            <div className='text-justify line-clamp-3'>
               <PortableText content={item.content} />
             </div>
             <div className='pt-5 font-semibold cursor-pointer'>

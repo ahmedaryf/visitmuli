@@ -74,7 +74,7 @@ export default async function Accommodations() {
             item.guesthouses.map((guesthouse: any) => (
               <div
                 key={item._id}
-                className='bg-white dark:bg-black/40 p-4 rounded-lg  md:w-72 border-2 border-orange-300/30 dark:border-gray-400/50 shadow-xl'>
+                className='bg-white dark:bg-black/40 p-4 rounded-lg  md:w-72 border-2 border-orange-300/30 dark:border-gray-400/50 shadow-xl flex flex-col justify-between'>
                 <Image
                   src={urlForImage(guesthouse.guesthouseImage).url()}
                   alt={guesthouse.guesthouseName}
@@ -94,7 +94,7 @@ export default async function Accommodations() {
                     <IoStar />
                   </div>
                 </div>
-                <div className='flex gap-4 justify-around text-xl md:text-2xl'>
+                <div className='flex gap-4 justify-around text-xl md:text-2xl '>
                   <div className='flex flex-col items-center justify-center'>
                     <FaWifi />
                     <p className='text-xs'>Wi-Fi</p>

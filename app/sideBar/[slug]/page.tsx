@@ -30,7 +30,7 @@ export default async function Slug({ params }: { params: { slug: string } }) {
               </Link>
             </div>
             <div className='bg-gradient-to-b from-white to-white dark:from-gray-700/90  dark:to-gray-700 px-4 md:px-6 mt-2 pt-4 md:pt-6 pb-6 md:pb-10 rounded-md w-full'>
-              <h1 className='text-3xl md:text-6xl font-bold bg-gradient-to-b from-blue-200 to-blue-700 dark:from-white dark:to-gray-200 bg-clip-text text-transparent text-center mb-4 '>
+              <h1 className='text-3xl md:text-6xl font-bold bg-gradient-to-b from-gray-700/80 to-gray-500 dark:from-white dark:to-gray-200 bg-clip-text text-transparent text-center mb-4 py-1'>
                 {data.title}
               </h1>
               <div className='w-full'>

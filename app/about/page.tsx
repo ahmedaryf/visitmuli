@@ -48,7 +48,7 @@ export default async function AboutPage() {
           return (
             <div key={item._id} className=''>
               <div className='w-[90vw] md:w-[85vw] mx-auto'>
-                <h5 className='text-3xl md:text-5xl font-bold bg-gradient-to-b from-blue-100 to-blue-600 dark:from-white dark:to-gray-200 bg-clip-text text-transparent pt-6 md:pt-16 pb-2 md:pb-4  text-center tracking-wider'>
+                <h5 className='text-3xl md:text-5xl font-bold bg-gradient-to-b from-gray-700/80 to-gray-500 dark:from-white dark:to-gray-200 bg-clip-text text-transparent pt-6 md:pt-16 pb-2 md:pb-4  text-center tracking-wider'>
                   {item.title}
                 </h5>
                 <div className='md:grid md:grid-cols-2 md:px-6 '>

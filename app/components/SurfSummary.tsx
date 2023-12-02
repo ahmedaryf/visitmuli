@@ -18,7 +18,7 @@ export default async function HomePage() {
   return (
     <div className='pb-6 pt-6 md:pt-10 md:px-6 bg-gradient-to-b from-transparent to-white/50 dark:from-black  dark:to-gray-700'>
       <div className='md:max-w-[90vw] lg:max-w-[80vw] mx-auto'>
-        <h2 className='text-3xl md:text-6xl font-bold bg-gradient-to-b from-blue-200 to-blue-700 dark:from-white dark:to-gray-200 bg-clip-text text-transparent text-center pt-6 mb-4'>
+        <h2 className='text-3xl md:text-6xl font-bold bg-gradient-to-b from-gray-700/80 to-gray-500 dark:from-white dark:to-gray-200 bg-clip-text text-transparent text-center pt-6 mb-4'>
           Surf Adventures Await
         </h2>
         <div className='md:grid grid-cols-2'>
