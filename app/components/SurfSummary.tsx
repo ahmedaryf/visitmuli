@@ -33,16 +33,13 @@ export default async function HomePage() {
                     width={500}
                     height={500}
                     className='rounded-md '
-                    // layout='responsive'
                   />
                 </div>
                 <div className=' px-2 '>
                   <div
                     className='prose dark:prose-invert text-justify px-4 md:px-0 pt-4 md:pt-0'
                     style={{ marginTop: -20 }}>
-                    <div className='line-clamp-4 md:line-clamp-6'>
-                      <PortableText content={item.content} />
-                    </div>
+                    <PortableText content={item.content} />
                   </div>
 
                   <Link

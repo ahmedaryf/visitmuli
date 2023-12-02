@@ -43,13 +43,7 @@ export default async function Accommodations() {
           </h5>
         </div>
       </div>
-      <div className=' w-16'>
-        <Link href={"/"}>
-          <div className='ps-6 pt-6 mb-4 md:mb-0 text-xl md:text-3xl'>
-            <FaArrowLeft color={"gray"} />
-          </div>
-        </Link>
-      </div>
+
       <div className='px-4 md:w-[80vw] mx-auto '>
         {/* <div className='bg-gradient-to-b from-white to-gray-100/50 dark:from-black dark:to-gray-600 p-6 mt-6'>
           {data.map((item: any) => (

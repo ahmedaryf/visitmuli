@@ -12,6 +12,7 @@ import { bannerImages } from "./schemas/bannerImages";
 import { upcommingEvents } from "./schemas/upcomingEvents";
 import { products } from "./schemas/products";
 import { photoGallery } from "./schemas/photoGallery";
+import { activity } from "./schemas/activitySchema";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -28,5 +29,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     upcommingEvents,
     products,
     photoGallery,
+    activity,
   ],
 };

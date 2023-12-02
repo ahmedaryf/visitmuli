@@ -37,6 +37,7 @@ export default async function GuesthouseSlug({
 }) {
   const data = await getData();
   const imageData = await getImageData();
+  console.log(imageData);
 
   return (
     <div className='bg-gradient-to-b from-transparent to-white/50 dark:from-black  dark:to-gray-700 px4'>

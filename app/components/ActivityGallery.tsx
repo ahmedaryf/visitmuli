@@ -3,7 +3,7 @@ import { urlForImage } from "@/sanity/lib/image";
 import Image from "next/image";
 import React, { useState } from "react";
 
-export default function GuesthouseGallery({
+export default function ActivityGallery({
   imageData,
   params,
 }: {
@@ -28,22 +28,18 @@ export default function GuesthouseGallery({
           {item.images && item.slug.current === params.slug && (
             <div
               key={item._id}
-              className=' py-6 rounded-lg mb-4 bg-white dark:bg-gray-600'>
-              <div className='relative p-2 md:h-[60vh] overflow-hidden flex justify-center items-center rounded-md'>
-                <Image
-                  src={urlForImage(
-                    item.images[selectedItems[productIndex]]
-                  ).url()}
-                  width={800}
-                  height={600}
-                  alt={"image"}
-                  className='mx-auto rounded-md object-cover aspect-[4/3]'
-                />
-
-                <div className=' bg-gradient-to-r from-black/50 to-transparent w-[80%] font-bold absolute left-6 md:left-10 bottom-6 md:bottom-10 ps-4 py-1 rounded-md'>
-                  <h5 className='text-sm md:text-base tracking-wider text-white'>
-                    {item.images[selectedItems[productIndex]].title}
-                  </h5>
+              className=' py-6 rounded-lg mb-4  dark:bg-gray-600'>
+              <div className='p-2 md:px-10'>
+                <div className='relative  md:h-[50vh] overflow-hidden flex justify-center items-center rounded-md '>
+                  <Image
+                    src={urlForImage(
+                      item.images[selectedItems[productIndex]]
+                    ).url()}
+                    width={800}
+                    height={600}
+                    alt={"image"}
+                    className='mx-auto rounded-lg object-cover aspect-[4/3]'
+                  />
                 </div>
               </div>
 

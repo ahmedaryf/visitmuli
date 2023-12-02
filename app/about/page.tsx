@@ -3,8 +3,6 @@ import { urlForImage } from "@/sanity/lib/image";
 import Image from "next/image";
 import PortableText from "react-portable-text";
 
-import BackButton from "../components/BackButton";
-
 export const revalidate = 60;
 
 async function getData() {
@@ -38,9 +36,6 @@ export default async function AboutPage() {
             The Ultimate Surf Haven: Where Every Wave is an Adventure!
           </h5>
         </div>
-      </div>
-      <div className='ps-6 pt-6 mb-4 md:mb-0 text-xl md:text-3xl'>
-        <BackButton />
       </div>
 
       <div>

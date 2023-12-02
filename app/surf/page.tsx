@@ -51,12 +51,6 @@ export default async function Surf() {
         </div>
       </div>
 
-      <Link href={"/"}>
-        <div className='ps-6 pt-6 mb-4 md:mb-0 text-xl md:text-3xl'>
-          <FaArrowLeft color={"gray"} />
-        </div>
-      </Link>
-
       <div className='grid grid-cols-1 md:grid-cols-3 md:gap-8 md:px-4 mt-16  md:w-[90vw] mx-auto'>
         <div className=' col-span-2'>
           <div></div>
