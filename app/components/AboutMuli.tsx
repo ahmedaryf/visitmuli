@@ -38,9 +38,11 @@ export default async function AboutMuli() {
                 </div>
                 <div className=' px-2 '>
                   <div
-                    className='prose dark:prose-invert text-justify px-4 md:px-0 pt-4 md:pt-0 line-clamp-6'
+                    className='prose dark:prose-invert text-justify px-4 md:px-0 pt-4 md:pt-0 line-clamp-4 md:line-clamp-6'
                     style={{ marginTop: -20 }}>
-                    <PortableText content={item.description} />
+                    <div className='line-clamp-4 md:line-clamp-6'>
+                      <PortableText content={item.description} />
+                    </div>
                   </div>
 
                   <Link
