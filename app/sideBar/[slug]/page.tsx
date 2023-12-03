@@ -4,6 +4,7 @@ import { Post } from "@/sanity/lib/interface";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { BiRightArrow } from "react-icons/bi";
 import { FaArrowLeft } from "react-icons/fa";
 import PortableText from "react-portable-text";
 
@@ -24,9 +25,9 @@ export default async function Slug({ params }: { params: { slug: string } }) {
       {data && (
         <div className='bg-gradient-to-b from-transparent to-white/50 dark:from-black  dark:to-gray-700 px4'>
           <div className='pt-12 md:pt-24 pb-24 md:w-[60vw] mx-auto'>
-            <div className='ps-8 pt-6 mb-4 md:mb-0 w-9'>
+            <div className='ps-8 pt-6 mb-4 md:mb-0 w-9 text-base md:text-xl'>
               <Link href={"/"}>
-                <FaArrowLeft size={28} color={"gray"} />
+                <FaArrowLeft color={"gray"} />
               </Link>
             </div>
             <div className='bg-gradient-to-b from-white to-white dark:from-gray-700/90  dark:to-gray-700 px-4 md:px-6 mt-2 pt-4 md:pt-6 pb-6 md:pb-10 rounded-md w-full'>
@@ -48,6 +49,14 @@ export default async function Slug({ params }: { params: { slug: string } }) {
                 )}
               </div>
             </div>
+            <Link href={"/productGallery"}>
+              <div className=' mt-6 flex justify-end items-center'>
+                <p className=' text-blue-600 font-semibold text-xs md:text-base hover:underline me-2'>
+                  Product Gallery
+                </p>
+                <BiRightArrow />
+              </div>
+            </Link>
           </div>
         </div>
       )}

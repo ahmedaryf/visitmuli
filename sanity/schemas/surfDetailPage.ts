@@ -27,7 +27,7 @@ export const surfDetailPage = {
     },
     {
       name: "images",
-      title: "Carousal Images",
+      title: "Images",
       type: "array",
       of: [
         {
@@ -38,6 +38,12 @@ export const surfDetailPage = {
               name: "title",
               title: "Title",
               type: "string",
+            },
+            {
+              name: "description",
+              title: "Description",
+              type: "array",
+              of: [{ type: "block" }],
             },
           ],
         },

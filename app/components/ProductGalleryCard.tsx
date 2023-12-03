@@ -41,7 +41,7 @@ export default function ProductGalleryCard({ imageData }: { imageData: any }) {
                 {item.productImage.map((image: any, imageIndex: any) => (
                   <div
                     onClick={() => handleItemClick(productIndex, imageIndex)}
-                    key={imageIndex}
+                    key={image._id}
                     className='cursor-pointer'>
                     <Image
                       src={urlForImage(image).url()}

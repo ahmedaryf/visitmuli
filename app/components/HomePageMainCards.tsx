@@ -9,7 +9,7 @@ export const revalidate = 60;
 
 async function getData() {
   const query = `*[_type == "homePageMainCards"]`;
-  const data = await client.fetch(query, { cache: "no-store" });
+  const data = await client.fetch(query);
   return data;
 }
 

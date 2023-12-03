@@ -3,8 +3,7 @@ import { urlForImage } from "@/sanity/lib/image";
 import Image from "next/image";
 import React from "react";
 import ProductGalleryCard from "../components/ProductGalleryCard";
-import Link from "next/link";
-import { FaArrowLeft } from "react-icons/fa";
+import BackButton from "../components/BackButton";
 
 export const revalidate = 60;
 
@@ -41,9 +40,7 @@ export default async function ProductGallery() {
       </div>
       <div>
         <div className='ps-8 pt-6 mb-4 md:mb-0 w-9 text-xl md:text-2xl'>
-          <Link href={"/surf"}>
-            <FaArrowLeft color={"white"} />
-          </Link>
+          <BackButton />
         </div>
         <ProductGalleryCard imageData={data} />
       </div>

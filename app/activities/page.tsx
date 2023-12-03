@@ -29,7 +29,6 @@ const opts = {
 export default async function Activities() {
   const data = await getData();
   const bannerImageData = await getBannerImage();
-  console.log(bannerImageData);
 
   return (
     <div className='pb-12 md:px-6 md:pb-24 bg-gradient-to-b dark:from-black/90 dark:to-gray-700 flex flex-col items-center'>

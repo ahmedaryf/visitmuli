@@ -16,7 +16,7 @@ export default function Motion({ children }: PropType) {
         style={{
           opacity: isInView ? 1 : 0,
           transform: isInView ? "translateY(0)" : "translateY(100px)",
-          transition: "opacity 3s, transform 1s",
+          transition: "opacity 1s, transform 1s",
         }}>
         {children}
       </div>
