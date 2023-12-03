@@ -3,7 +3,6 @@ import { urlForImage } from "@/sanity/lib/image";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { FaArrowLeft } from "react-icons/fa";
 import { FaWifi } from "react-icons/fa6";
 import { GiMeal } from "react-icons/gi";
 import { MdSurfing } from "react-icons/md";

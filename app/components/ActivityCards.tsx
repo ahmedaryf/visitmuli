@@ -10,7 +10,7 @@ export default function ActivityCards({ data }: any) {
         {data.map((item: any) => (
           <div
             key={item._id}
-            className=' flex flex-col justify-between bg-white dark:bg-gray-700 rounded-md shadow-md p-2 border-2 border-blue-300 dark:border-gray-200'>
+            className=' flex flex-col justify-between bg-white dark:bg-gray-700 rounded-md shadow-md p-2 border border-blue-300 dark:border-gray-200'>
             <div className='p-4'>
               <Image
                 src={urlForImage(item.image).url()}
@@ -23,7 +23,7 @@ export default function ActivityCards({ data }: any) {
             <h2 className='text-center text-xl md:text-2xl font-bold bg-gradient-to-b from-gray-700/80 to-gray-500 dark:from-white dark:to-gray-200 bg-clip-text text-transparent mb-4 '>
               {item.title}
             </h2>
-            <div className='font-semibold cursor-pointer w-[90%] rounded-full border-2 border-blue-300 dark:border-gray-200 mt-10 self-center mb-8'>
+            <div className='font-semibold cursor-pointer w-[90%] rounded-full border border-blue-300 dark:border-gray-200 mt-10 self-center mb-8'>
               <Link href={`../activity/${item.slug.current}`}>
                 <p className='text-center text-blue-400 dark:text-gray-200 text-xs md:text-sm'>
                   Details

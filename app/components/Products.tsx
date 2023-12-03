@@ -3,6 +3,7 @@ import { urlForImage } from "@/sanity/lib/image";
 import Image from "next/image";
 import React, { useState } from "react";
 import { differenceInMilliseconds } from "date-fns";
+import Link from "next/link";
 
 export default function Products({ product }: any) {
   const [selectedItems, setSelectedItems] = useState(
@@ -90,6 +91,13 @@ export default function Products({ product }: any) {
               </p>
             )}
           </div>
+          <Link href={"/productGallery"}>
+            <div className=' mt-6 '>
+              <p className='text-end text-blue-600 font-semibold text-xs hover:underline'>
+                View All
+              </p>
+            </div>
+          </Link>
         </div>
       ))}
     </div>
