@@ -66,7 +66,7 @@ export default async function Accommodations() {
           {data.map((item: any) =>
             item.guesthouses.map((guesthouse: any) => (
               <div
-                key={item._id}
+                key={guesthouse._id}
                 className='bg-white dark:bg-black/40 p-4 rounded-lg  md:w-72 border-2 border-orange-300/30 dark:border-gray-400/50 shadow-xl flex flex-col justify-between'>
                 <Image
                   src={urlForImage(guesthouse.guesthouseImage).url()}

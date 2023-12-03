@@ -18,7 +18,7 @@ export default async function ProductGallery() {
 
   return (
     <div className='bg-[#00314E] dark:bg-black'>
-      <div className='w-full md:h-[55vh] overflow-hidden relative'>
+      <div className='w-full md:h-[55vh] overflow-hidden relative pt-20'>
         {data.map((image: any) => (
           <>
             <Image
@@ -30,8 +30,8 @@ export default async function ProductGallery() {
               layout='responsive'
               className=' object-contain'
             />
-            <div className='flex flex-col justify-center items-center absolute top-1/2 left-1/2 -translate-x-1/2  bg-white/70 dark:bg-black/60 py-2 w-full'>
-              <h1 className='text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-b from-orange-100 to-orange-600 dark:from-white dark:to-gray-200 bg-clip-text text-transparent py-2'>
+            <div className='flex flex-col justify-center items-center absolute top-2/3 md:top-1/2 left-1/2 -translate-x-1/2  bg-white/40 dark:bg-black/60 py-2 w-full'>
+              <h1 className='text-3xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-b from-orange-100 to-orange-600 dark:from-white dark:to-gray-200 bg-clip-text text-transparent py-2'>
                 {image.bannerImageTitle}
               </h1>
             </div>

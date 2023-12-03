@@ -27,7 +27,7 @@ export default function ActivityGallery({
         <>
           {item.images && item.slug.current === params.slug && (
             <div
-              key={item._id}
+              key={item.Id}
               className=' py-6 rounded-lg mb-4  dark:bg-gray-600'>
               <div className='p-2 md:px-10'>
                 <div className='relative  md:h-[50vh] overflow-hidden flex justify-center items-center rounded-md '>
@@ -47,7 +47,7 @@ export default function ActivityGallery({
                 {item.images.map((image: any, imageIndex: any) => (
                   <div
                     onClick={() => handleItemClick(productIndex, imageIndex)}
-                    key={imageIndex}
+                    key={image._id}
                     className='cursor-pointer'>
                     <Image
                       src={urlForImage(image).url()}
