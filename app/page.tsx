@@ -6,6 +6,7 @@ import PlacesToStay from "./components/PlacesToStay";
 import HomePageCards from "./components/HomePageCard";
 import HomePageMainCards from "./components/HomePageMainCards";
 import Motion from "./components/Motion";
+import Transfer from "./components/Transfer";
 
 export const revalidate = 60;
 
@@ -39,7 +40,11 @@ export default function Home() {
           <div className='md:border-t-2 md:border-l-2 md:border-blue-300/50 dark:border-gray-400 rounded-lg'>
             <HomePageCards />
           </div>
-          <div></div>
+        </div>
+        <div className='bg-blue-200/30 dark:bg-gray-500'>
+          <Motion>
+            <Transfer />
+          </Motion>
         </div>
       </div>
     </main>
