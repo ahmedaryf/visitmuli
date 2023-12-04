@@ -7,6 +7,7 @@ import HomePageCards from "./components/HomePageCard";
 import HomePageMainCards from "./components/HomePageMainCards";
 import Motion from "./components/Motion";
 import Transfer from "./components/Transfer";
+import ChatBot from "./components/ChatBot";
 
 export const revalidate = 60;
 
@@ -46,6 +47,7 @@ export default function Home() {
             <Transfer />
           </Motion>
         </div>
+        <ChatBot />
       </div>
     </main>
   );

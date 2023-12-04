@@ -27,7 +27,9 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/components/Framer.jsx"
+    "app/components/Framer.jsx",
+    "app/components/ChatBot.js",
+    "app/components/ChatBot.jsx"
   ],
   "exclude": ["node_modules"]
 }
