@@ -15,6 +15,7 @@ import { photoGallery } from "./schemas/photoGallery";
 import { activity } from "./schemas/activitySchema";
 import { productGallery } from "./schemas/productGallery";
 import { transfer } from "./schemas/transfer";
+import { accordions } from "./schemas/accordions";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -34,5 +35,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     activity,
     productGallery,
     transfer,
+    accordions,
   ],
 };

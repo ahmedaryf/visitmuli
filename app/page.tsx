@@ -8,10 +8,19 @@ import HomePageMainCards from "./components/HomePageMainCards";
 import Motion from "./components/Motion";
 import Transfer from "./components/Transfer";
 import ChatBot from "./components/ChatBot";
+import Accordions from "./components/Accordions";
+import { client } from "@/sanity/lib/client";
 
 export const revalidate = 60;
 
-export default function Home() {
+async function accordionsData() {
+  const query = `*[_type == "accordions"] | order(id asc)`;
+  const accordionData = await client.fetch(query);
+  return accordionData;
+}
+
+export default async function Home() {
+  const accordionData = await accordionsData();
   return (
     <main className=''>
       <div>
@@ -46,6 +55,9 @@ export default function Home() {
           <Motion>
             <Transfer />
           </Motion>
+        </div>
+        <div>
+          <Accordions data={accordionData} />
         </div>
         <ChatBot />
       </div>
