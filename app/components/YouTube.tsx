@@ -8,8 +8,8 @@ const youtubeId = [
 ];
 
 const opts: YouTubeProps["opts"] = {
-  height: "290",
-  width: "440",
+  height: "390",
+  width: "640",
   playerVars: {
     autoplay: 0,
   },
