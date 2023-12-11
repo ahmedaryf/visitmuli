@@ -5,6 +5,7 @@ import PortableText from "react-portable-text";
 import { urlForImage } from "@/sanity/lib/image";
 import UpcomingEvents from "../components/UpcomingEvents";
 import Products from "../components/Products";
+import Motion from "../components/Motion";
 
 export const revalidate = 60;
 
@@ -72,19 +73,22 @@ export default async function Surf() {
               </div>
             );
           })}
+
           {data.map((item: any) =>
             item.images.map((image: any) => (
               <div key={image._id} className='px-4 mb-10'>
-                <Image
-                  src={urlForImage(image).url()}
-                  width={1000}
-                  height={800}
-                  alt={image.title}
-                  className=' aspect-[16/9] object-cover'
-                />
-                <div className='prose dark:prose-invert text-justify custom-prose'>
-                  <PortableText content={image.description} />
-                </div>
+                <Motion>
+                  <Image
+                    src={urlForImage(image).url()}
+                    width={1000}
+                    height={800}
+                    alt={image.title}
+                    className=' aspect-[16/9] object-cover'
+                  />
+                  <div className='prose dark:prose-invert text-justify custom-prose'>
+                    <PortableText content={image.description} />
+                  </div>
+                </Motion>
               </div>
             ))
           )}

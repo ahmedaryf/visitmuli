@@ -3,6 +3,7 @@ import { urlForImage } from "@/sanity/lib/image";
 import Image from "next/image";
 import React from "react";
 import GalleryImages from "../components/Gallery";
+import YouTubeComponent from "../components/YouTube";
 export const revalidate = 60;
 
 async function getData() {
@@ -10,9 +11,15 @@ async function getData() {
   const data = await client.fetch(query);
   return data;
 }
+async function getYouTubeData() {
+  const query = `*[_type == "youtube"]`;
+  const data = await client.fetch(query);
+  return data;
+}
 
 export default async function Gallery() {
   const data = await getData();
+  const youTubeData = await getYouTubeData();
   const bannerImage = data[0]?.bannerImage;
   const images = data[0]?.images;
   return (
@@ -33,8 +40,12 @@ export default async function Gallery() {
           </h1>
         </div>
       </div>
-      <div className='px-2 md:px-24 bg-gradient-to-b from-transparent to-white/50 dark:from-black  dark:to-gray-700 min-h-screen '>
+      <div className='px-2 md:px-24 bg-gradient-to-b from-transparent to-white/50 dark:from-black  dark:to-gray-700 pb-24'>
+        <h3 className='text-4xl text-center font-bold'>Photos</h3>
         <GalleryImages images={images} />
+      </div>
+      <div>
+        <YouTubeComponent url={youTubeData} />
       </div>
     </div>
   );

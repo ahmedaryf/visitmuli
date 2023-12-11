@@ -18,6 +18,7 @@ import { transfer } from "./schemas/transfer";
 import { accordions } from "./schemas/accordions";
 import { formData } from "./schemas/formData";
 import { blog } from "./schemas/blog";
+import { youTube } from "./schemas/youTube";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -40,5 +41,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     accordions,
     formData,
     blog,
+    youTube,
   ],
 };
