@@ -28,14 +28,14 @@ const VideoComponent = () => {
       {isMobile && (
         <div className=''>
           <video autoPlay loop muted playsInline>
-            <source src='/video/beach-v.mov' />
+            <source src='/video/beach-v2.mp4' />
           </video>
         </div>
       )}
       {!isMobile && (
         <div className=''>
           <video autoPlay loop muted playsInline>
-            <source src='/video/beach-2.mov' />
+            <source src='/video/beach-h2.mp4' />
           </video>
         </div>
       )}
