@@ -20,8 +20,8 @@ export default function GalleryImages({ images }: any) {
   };
 
   return (
-    <div className='p-4 bg-gradient-to-b from-transparent to-white/50 dark:from-black  dark:to-gray-700'>
-      <div className=' px-2 my-3 grid grid-cols-gallery gap-4'>
+    <div className='p-4 bg-gradient-to-b from-transparent to-white/50 dark:from-black  dark:to-gray-700 rounded-lg'>
+      <div className=' px-2 my-3 grid grid-cols-gallery gap-4 '>
         {images.map((item: any, index: any) => (
           <div
             key={index}
@@ -60,7 +60,7 @@ export default function GalleryImages({ images }: any) {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3 }}
               exit={{ opacity: 0, scale: 0.7, transition: { duration: 0.4 } }}
-              className='rounded-lg bg-gold relative'
+              className='rounded-lg relative'
               ref={imageContainerRef}>
               <Image
                 src={urlForImage(selectedImage).url()}
