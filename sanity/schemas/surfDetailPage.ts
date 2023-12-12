@@ -45,6 +45,11 @@ export const surfDetailPage = {
               type: "array",
               of: [{ type: "block" }],
             },
+            {
+              name: "video",
+              title: "YouTube URL",
+              type: "string",
+            },
           ],
         },
       ],

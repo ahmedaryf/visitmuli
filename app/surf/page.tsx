@@ -7,6 +7,7 @@ import UpcomingEvents from "../components/UpcomingEvents";
 import Products from "../components/Products";
 import Motion from "../components/Motion";
 import StickyBoxComponent from "../components/StickyBox";
+import SurfVideo from "../components/SurfVideo";
 
 export const revalidate = 60;
 
@@ -79,13 +80,17 @@ export default async function Surf() {
             item.images.map((image: any) => (
               <div key={image._id} className='px-4 mb-10'>
                 <Motion>
-                  <Image
-                    src={urlForImage(image).url()}
-                    width={1000}
-                    height={800}
-                    alt={image.title}
-                    className=' aspect-[16/9] object-cover'
-                  />
+                  {image.video ? (
+                    <SurfVideo url={image.video} />
+                  ) : (
+                    <Image
+                      src={urlForImage(image).url()}
+                      width={1000}
+                      height={800}
+                      alt={image.title}
+                      className=' aspect-[16/9] object-cover'
+                    />
+                  )}
                   <div className='prose dark:prose-invert text-justify custom-prose'>
                     <PortableText content={image.description} />
                   </div>

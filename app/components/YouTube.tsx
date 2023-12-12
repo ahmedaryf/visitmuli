@@ -2,11 +2,6 @@
 import React from "react";
 import YouTube, { YouTubeProps } from "react-youtube";
 
-const youtubeId = [
-  { url: "DepOLRHrJ_Y?si=CSJqZOZoz-WnAiw0" },
-  { url: "99EzE-ZA-_I?si=C9F1IlKHmjBpS3IF" },
-];
-
 const opts: YouTubeProps["opts"] = {
   height: "390",
   width: "640",
