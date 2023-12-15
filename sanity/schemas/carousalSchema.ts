@@ -1,6 +1,6 @@
 export const carousalSchema = {
   name: "carousal",
-  title: "Carousal Home Page",
+  title: "Carousal (Home Page)",
   type: "document",
   fields: [
     {

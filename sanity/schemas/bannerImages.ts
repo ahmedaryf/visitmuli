@@ -1,6 +1,6 @@
 export const bannerImages = {
   name: "bannerImages",
-  title: "Banner Images",
+  title: "Activity banner Image",
   type: "document",
   fields: [
     {

@@ -5,7 +5,7 @@ export const youTube = {
   fields: [
     {
       name: "url",
-      title: "Url",
+      title: "Youtube Video ID",
       type: "string",
     },
   ],

@@ -1,6 +1,6 @@
 export const products = {
   name: "products",
-  title: "Products",
+  title: "Products (Surf Page)",
   type: "document",
   fields: [
     {

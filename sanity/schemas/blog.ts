@@ -1,6 +1,6 @@
 export const blog = {
   name: "blog",
-  title: "Blog",
+  title: "Blog Posts",
   type: "document",
   fields: [
     {

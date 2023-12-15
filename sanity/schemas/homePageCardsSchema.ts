@@ -1,6 +1,6 @@
 export const homePageCardsSchema = {
   name: "homePageCardsSchema",
-  title: "Home Page Sidebar",
+  title: "Sidebar (Home Page Adds)",
   type: "document",
   fields: [
     {

@@ -1,6 +1,6 @@
 export const homePageMainCards = {
   name: "homePageMainCards",
-  title: "Home Page Island Essentials",
+  title: "Island Essentials (Home Page)",
   type: "document",
   fields: [
     {

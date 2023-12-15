@@ -1,6 +1,6 @@
 export const surfSummarySchema = {
   name: "surfSummery",
-  title: "Surfing Home Page",
+  title: "Surfing (Home Page)",
   type: "document",
   fields: [
     {

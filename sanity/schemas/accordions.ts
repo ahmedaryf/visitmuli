@@ -1,6 +1,6 @@
 export const accordions = {
   name: "accordions",
-  title: "Accordions",
+  title: "Accordions (FAQ)",
   type: "document",
   fields: [
     {

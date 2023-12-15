@@ -39,7 +39,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     productGallery,
     transfer,
     accordions,
-    formData,
     blog,
     youTube,
   ],

@@ -15,12 +15,12 @@ export const accomodationDetails = {
       type: "image",
       options: { hotspot: true },
     },
-    {
-      name: "mainImage",
-      title: "Main Image",
-      type: "image",
-      options: { hotspot: true },
-    },
+    // {
+    //   name: "mainImage",
+    //   title: "Main Image",
+    //   type: "image",
+    //   options: { hotspot: true },
+    // },
 
     {
       name: "description",
