@@ -18,7 +18,7 @@ export default async function Transfer() {
       <div className='md:w-[60vw] mx-auto'>
         <div className='p-4'>
           <h3 className='text-3xl md:text-6xl font-bold bg-gradient-to-b from-gray-700/80 to-gray-500 dark:from-white dark:to-gray-200 bg-clip-text text-transparent text-center mb-4 '>
-            Transfer
+            Muli Transfer
           </h3>
           <div className='grid grid-cols-1 md:grid-cols-2'>
             <div className=''>

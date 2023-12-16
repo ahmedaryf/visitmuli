@@ -23,24 +23,24 @@ export default async function Home() {
   const accordionData = await accordionsData();
   return (
     <main className=''>
-      <div>
+      <section>
         <HeroSection />
-      </div>
+      </section>
 
-      <div>
+      <section>
         <AboutMuli />
-      </div>
-      <div>
+      </section>
+      <section>
         <Motion>
           <SurfSummary />
         </Motion>
-      </div>
-      <div>
+      </section>
+      <section>
         <Motion>
           <PlacesToStay />
         </Motion>
-      </div>
-      <div className='bg-gradient-to-b from-transparent to-white/50 dark:from-black  dark:to-black/90'>
+      </section>
+      <section className='bg-gradient-to-b from-transparent to-white/50 dark:from-black  dark:to-black/90'>
         <div className='md:grid md:grid-cols-4 md:max-w-[95vw] lg:max-w-[90vw] mx-auto pt-24 '>
           <div className='col-span-3'>
             <Motion>
@@ -60,7 +60,7 @@ export default async function Home() {
           <Accordions data={accordionData} />
         </div>
         <ChatBot />
-      </div>
+      </section>
     </main>
   );
 }

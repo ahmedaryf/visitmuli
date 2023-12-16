@@ -18,9 +18,9 @@ export default async function PlacesToStay() {
   return (
     <div className='pb-6 pt-6 md:pt-10 md:px-6 bg-gradient-to-b from-transparent to-white/50 dark:from-black  dark:to-gray-700'>
       <div className='md:max-w-[90vw] lg:max-w-[80vw] mx-auto'>
-        <h2 className='text-3xl md:text-6xl font-bold bg-gradient-to-b from-gray-700/80 to-gray-500 dark:from-white dark:to-gray-200 bg-clip-text text-transparent text-center pt-6 mb-4 py-1'>
+        <h3 className='text-3xl md:text-6xl font-bold bg-gradient-to-b from-gray-700/80 to-gray-500 dark:from-white dark:to-gray-200 bg-clip-text text-transparent text-center pt-6 mb-4 py-1'>
           Cozy Retreats
-        </h2>
+        </h3>
         <div className='md:grid grid-cols-2'>
           {aboutData.map((item: any) => {
             return (
