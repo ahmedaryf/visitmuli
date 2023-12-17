@@ -8,9 +8,9 @@ import Footer from "./components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Muli Meemu Atoll | Maldives | Surfing Destination",
+  title: "Muli, Meemu Atoll | Maldives | Surfing Destination",
   description:
-    "Discover Surfing Paradise in Muli Meemu Atoll Maldives | Surf Adventures Await",
+    "Discover Surfing Paradise in Muli, Meemu Atoll Maldives | Surf Adventures Await",
 };
 
 export default function RootLayout({
