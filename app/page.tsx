@@ -57,7 +57,9 @@ export default async function Home() {
           </Motion>
         </div>
         <div>
-          <Accordions data={accordionData} />
+          <Motion>
+            <Accordions data={accordionData} />
+          </Motion>
         </div>
         <ChatBot />
       </section>

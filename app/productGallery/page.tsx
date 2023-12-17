@@ -2,8 +2,9 @@ import { client } from "@/sanity/lib/client";
 import { urlForImage } from "@/sanity/lib/image";
 import Image from "next/image";
 import React from "react";
-import ProductGalleryCard from "../components/ProductGalleryCard";
 import BackButton from "../components/BackButton";
+
+import ProductsGalleryCard from "../components/ProductsGalleryCard";
 
 export const revalidate = 60;
 
@@ -12,13 +13,19 @@ async function getData() {
   const data = await client.fetch(query);
   return data;
 }
+async function getProductData() {
+  const query = `*[_type == "products"]`;
+  const data = await client.fetch(query);
+  return data;
+}
 
 export default async function ProductGallery() {
   const data = await getData();
+  const productData = await getProductData();
 
   return (
     <div className='bg-[#00314E] dark:bg-black'>
-      <div className='w-full md:h-[55vh] overflow-hidden relative pt-20'>
+      <div className='w-full md:max-h-[65vh] overflow-hidden relative pt-20'>
         {data.map((image: any) => (
           <>
             <Image
@@ -42,7 +49,10 @@ export default async function ProductGallery() {
         <div className='ps-8 pt-6 mb-4 md:mb-0 w-9 text-xl md:text-2xl'>
           <BackButton />
         </div>
-        <ProductGalleryCard imageData={data} />
+        {/* <ProductGalleryCard imageData={data} /> */}
+      </div>
+      <div className='mt-4 md:mt-6'>
+        <ProductsGalleryCard product={productData} />
       </div>
     </div>
   );

@@ -49,14 +49,6 @@ export default async function Slug({ params }: { params: { slug: string } }) {
                 )}
               </div>
             </div>
-            <Link href={"/productGallery"}>
-              <div className=' mt-6 flex justify-end items-center'>
-                <p className=' text-blue-600 font-semibold text-xs md:text-base hover:underline me-2'>
-                  Product Gallery
-                </p>
-                <BiRightArrow />
-              </div>
-            </Link>
           </div>
         </div>
       )}

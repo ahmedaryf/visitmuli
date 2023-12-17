@@ -26,7 +26,7 @@ export default async function Transfer() {
                 src={urlForImage(data[0].image).url()}
                 width={400}
                 height={300}
-                alt={data[0].title}
+                alt='image'
                 className='aspect-[16/9] object-cover rounded-md'
               />
             </div>

@@ -3,13 +3,11 @@ import { urlForImage } from "@/sanity/lib/image";
 import Image from "next/image";
 import React, { useState } from "react";
 import { differenceInMilliseconds } from "date-fns";
-import Link from "next/link";
 
-export default function Products({ product }: any) {
+export default function ProductsGalleryCard({ product }: any) {
   const [selectedItems, setSelectedItems] = useState(
     Array(product.length).fill(0)
   );
-  const finalProductData = product.slice(0, 2);
 
   function isNew(product: any) {
     const TWO_DAYS_IN_MILLISECONDS = 1 * 24 * 60 * 60 * 1000;
@@ -29,11 +27,11 @@ export default function Products({ product }: any) {
   };
 
   return (
-    <div className='px-6'>
-      {finalProductData.map((item: any, productIndex: number) => (
+    <div className='px-6 grid grid-cols-1 md:grid-cols-4 gap-4'>
+      {product.map((item: any, productIndex: number) => (
         <div
-          key={productIndex}
-          className='px-4 lg:px-12 py-6 border-2 border-blue-300/40 dark:border-gray-400 rounded-lg shadow-xl mb-4 bg-white dark:bg-gray-600'>
+          key={item._id}
+          className='px-4 lg:px-12 py-6 border-2 border-blue-300/40 dark:border-gray-400 rounded-lg shadow-xl mb-4 bg-white dark:bg-gray-600 w-full'>
           {isNew(item) ? (
             <div className='flex justify-end'>
               <p className='bg-green-200 dark:bg-gray-400 text-xs px-2 rounded-lg text-white'>
@@ -46,11 +44,11 @@ export default function Products({ product }: any) {
           <h5 className='text-xl md:text-2xl lg:text-2xl font-bold bg-gradient-to-b from-blue-200 to-blue-700 dark:from-white dark:to-gray-100 bg-clip-text text-transparent text-center tracking-wider'>
             {item.productName}
           </h5>
-          <div className=' p-2 min-h-[28vh] overflow-hidden flex justify-center items-center'>
+          <div className=' p-2 min-h-[35vh] overflow-hidden flex justify-center items-center'>
             <Image
               src={urlForImage(item.images[selectedItems[productIndex]]).url()}
-              width={150}
-              height={100}
+              width={200}
+              height={150}
               alt={item.productName}
               className='mx-auto'
             />
@@ -60,7 +58,7 @@ export default function Products({ product }: any) {
             {item.images.map((image: any, imageIndex: any) => (
               <div
                 onClick={() => handleItemClick(productIndex, imageIndex)}
-                key={imageIndex}
+                key={image._id}
                 className='cursor-pointer'>
                 <Image
                   src={urlForImage(image).url()}
@@ -92,13 +90,6 @@ export default function Products({ product }: any) {
               </p>
             )}
           </div>
-          <Link href={"/productGallery"}>
-            <div className=' mt-6 '>
-              <p className='text-end text-blue-600 font-semibold text-xs hover:underline'>
-                View All
-              </p>
-            </div>
-          </Link>
         </div>
       ))}
     </div>
