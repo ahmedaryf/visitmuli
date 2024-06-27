@@ -26,7 +26,7 @@ export default function Accordions({ data }: any) {
               </button>
               <Collapse isOpened={openAccordion === item.id}>
                 <div className='text-sm md:text-base dark:prose-invert custom-prose text-justify px-4 bg-blue-100/10 dark:bg-gray-500 py-4 rounded-b-md'>
-                  {item.content && <PortableText content={item.answer} />}
+                  {item.answer && <PortableText content={item.answer} />}
                 </div>
               </Collapse>
             </div>
