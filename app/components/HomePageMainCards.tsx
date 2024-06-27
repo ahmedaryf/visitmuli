@@ -21,29 +21,32 @@ export default async function HomePageMainCards() {
         Island Essentials
       </h4>
       <div className='flex flex-wrap justify-around gap-4 mt-6 px-4'>
-        {data.map((item: any) => (
-          <div
-            key={item._id}
-            className='border-2 border-blue-300/50 dark:border-gray-300 bg-white dark:bg-gray-700 md:w-64 p-4 rounded-lg shadow-xl'>
-            <Image
-              src={urlForImage(item.image).url()}
-              alt={item.title}
-              width={500}
-              height={500}
-            />
-            <h5 className='text-center mt-4 mb-2 font-semibold'>
-              {item.title}
-            </h5>
-            <div className='text-justify line-clamp-3'>
-              <PortableText content={item.content} />
+        {data &&
+          data.map((item: any) => (
+            <div
+              key={item._id}
+              className='border-2 border-blue-300/50 dark:border-gray-300 bg-white dark:bg-gray-700 md:w-64 p-4 rounded-lg shadow-xl'>
+              <Image
+                src={urlForImage(item.image).url()}
+                alt={item.title}
+                width={500}
+                height={500}
+              />
+              <h5 className='text-center mt-4 mb-2 font-semibold'>
+                {item.title}
+              </h5>
+              {item.content && (
+                <div className='text-justify line-clamp-3'>
+                  <PortableText content={item.content} />
+                </div>
+              )}
+              <div className='pt-5 font-semibold cursor-pointer'>
+                <Link href={`../mainCard/${item.slug.current}`}>
+                  Read more...
+                </Link>
+              </div>
             </div>
-            <div className='pt-5 font-semibold cursor-pointer'>
-              <Link href={`../mainCard/${item.slug.current}`}>
-                Read more...
-              </Link>
-            </div>
-          </div>
-        ))}
+          ))}
       </div>
     </div>
   );

@@ -56,43 +56,45 @@ export default function ImageCarousalServer({ imageData }: any) {
               animate={{ x: `calc(-${current * 100}% - ${current}rem)` }}
               transition={{ duration: 2, ease: [0.32, 0.72, 0, 1] }}
               className='flex flex-nowrap gap-4 object-cover '>
-              {finalImageData.map((item: any) => {
-                return (
-                  <Image
-                    key={item._id}
-                    src={urlForImage(item.image).url()}
-                    alt='image'
-                    width={3500}
-                    height={2500}
-                    className=' object-cover aspect-[4/3] md:aspect-[16/9]'
-                  />
-                );
-              })}
+              {finalImageData &&
+                finalImageData.map((item: any) => {
+                  return (
+                    <Image
+                      key={item._id}
+                      src={urlForImage(item.image).url()}
+                      alt='image'
+                      width={3500}
+                      height={2500}
+                      className=' object-cover aspect-[4/3] md:aspect-[16/9]'
+                    />
+                  );
+                })}
             </motion.div>
 
             <AnimatePresence>
               <div className='absolute left-0 md:bottom-16 lg:bottom-24 md:w-[45vw] text-white'>
-                {finalImageData.map((item: any, index: any) => {
-                  return index === current ? (
-                    <motion.div
-                      initial={{ x: "200", opacity: 0 }}
-                      animate={{ x: 0, opacity: 1 }}
-                      transition={{ duration: 2 }}
-                      key={index}
-                      className='flex flex-col'>
-                      <div className='bg-gradient-to-r from-black/40 to-transparent ps-12 md:ps-8 pe-10 py-4'>
-                        <h3 className='md:font-semibold mb-2 [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)]'>
-                          {item.title}
-                        </h3>
-                        <p className='text-sm md:text-base text-justify [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)] pe-8 line-clamp-2 md:line-clamp-none'>
-                          {item.description}
-                        </p>
-                      </div>
-                    </motion.div>
-                  ) : (
-                    ""
-                  );
-                })}
+                {finalImageData &&
+                  finalImageData.map((item: any, index: any) => {
+                    return index === current ? (
+                      <motion.div
+                        initial={{ x: "200", opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        transition={{ duration: 2 }}
+                        key={index}
+                        className='flex flex-col'>
+                        <div className='bg-gradient-to-r from-black/40 to-transparent ps-12 md:ps-8 pe-10 py-4'>
+                          <h3 className='md:font-semibold mb-2 [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)]'>
+                            {item.title}
+                          </h3>
+                          <p className='text-sm md:text-base text-justify [text-shadow:_4px_1px_2px_rgb(0_0_0_/_30%)] pe-8 line-clamp-2 md:line-clamp-none'>
+                            {item.description}
+                          </p>
+                        </div>
+                      </motion.div>
+                    ) : (
+                      ""
+                    );
+                  })}
               </div>
               <motion.div
                 key={3}
@@ -102,19 +104,20 @@ export default function ImageCarousalServer({ imageData }: any) {
                 transition={{ duration: 2, ease: [0.32, 0.72, 0, 1] }}
                 className='absolute bottom-2 md:bottom-10 left-1/2 transform -translate-x-1/2'>
                 <div className='flex px-2 md:gap-2 py-2 rounded-lg'>
-                  {finalImageData.map((_: any, index: any) => {
-                    return (
-                      <button key={index} onClick={() => setCurrent(index)}>
-                        <div
-                          className={`w-14 rounded relative flex justify-center`}>
+                  {finalImageData &&
+                    finalImageData.map((_: any, index: any) => {
+                      return (
+                        <button key={index} onClick={() => setCurrent(index)}>
                           <div
-                            className={`w-3 h-3 rounded-full  ${
-                              current === index ? "bg-orange-100" : "bg-white"
-                            }`}></div>
-                        </div>
-                      </button>
-                    );
-                  })}
+                            className={`w-14 rounded relative flex justify-center`}>
+                            <div
+                              className={`w-3 h-3 rounded-full  ${
+                                current === index ? "bg-orange-100" : "bg-white"
+                              }`}></div>
+                          </div>
+                        </button>
+                      );
+                    })}
                 </div>
               </motion.div>
             </AnimatePresence>

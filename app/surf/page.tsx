@@ -31,17 +31,18 @@ export default async function Surf() {
   return (
     <div className='pb-24 md:px-6 bg-gradient-to-b from-transparent to-white/50 dark:from-black  dark:to-gray-700 w-screen'>
       <div className='w-full md:h-[90vh] overflow-hidden relative'>
-        {data.map((image: any) => (
-          <Image
-            key={image._id}
-            src={urlForImage(image.bannerImage).url()}
-            alt='Image'
-            width={3000}
-            height={200}
-            layout='responsive'
-            className=' aspect-[16/9]'
-          />
-        ))}
+        {data &&
+          data.map((image: any) => (
+            <Image
+              key={image._id}
+              src={urlForImage(image.bannerImage).url()}
+              alt='Image'
+              width={3000}
+              height={200}
+              layout='responsive'
+              className=' aspect-[16/9]'
+            />
+          ))}
         <div className='flex flex-col justify-center items-center absolute top-1/2 left-1/2 -translate-x-1/2  bg-white/40 dark:bg-black/60 py-2 w-full'>
           <h1 className='text-4xl md:text-6xl lg:text-8xl font-bold bg-gradient-to-b from-orange-100 to-orange-600 dark:from-white dark:to-gray-200 bg-clip-text text-transparent'>
             Muli Surf Guide
@@ -54,50 +55,58 @@ export default async function Surf() {
 
       <div className='grid grid-cols-1 md:grid-cols-3 md:gap-8 md:px-4 mt-16  md:w-[90vw] mx-auto'>
         <div className='col-span-2'>
-          {data.map((item: any) => {
-            return (
-              <div key={item._id} className='px-4'>
-                <div className=''>
-                  <Image
-                    src={urlForImage(item.image).url()}
-                    alt={item.title}
-                    width={1000}
-                    height={800}
-                    className='mx-auto aspect-[16/9] pb-4 rounded-md object-cover'
-                  />
-                </div>
-
-                <div
-                  className='prose dark:prose-invert custom-prose text-justify pt-6 md:pt-0'
-                  style={{ marginTop: -20 }}>
-                  <PortableText content={item.content} />
-                </div>
-              </div>
-            );
-          })}
-
-          {data.map((item: any) =>
-            item.images.map((image: any) => (
-              <div key={image._id} className='px-4 mb-10'>
-                <Motion>
-                  {image.video ? (
-                    <SurfVideo url={image.video} />
-                  ) : (
+          {data &&
+            data.map((item: any) => {
+              return (
+                <div key={item._id} className='px-4'>
+                  <div className=''>
                     <Image
-                      src={urlForImage(image).url()}
+                      src={urlForImage(item.image).url()}
+                      alt={item.title}
                       width={1000}
                       height={800}
-                      alt={image.title}
-                      className=' aspect-[16/9] object-cover'
+                      className='mx-auto aspect-[16/9] pb-4 rounded-md object-cover'
                     />
-                  )}
-                  <div className='prose dark:prose-invert text-justify custom-prose'>
-                    <PortableText content={image.description} />
                   </div>
-                </Motion>
-              </div>
-            ))
-          )}
+
+                  <div
+                    className='prose dark:prose-invert custom-prose text-justify pt-6 md:pt-0'
+                    style={{ marginTop: -20 }}>
+                    <PortableText content={item.content} />
+                  </div>
+                </div>
+              );
+            })}
+
+          {data &&
+            data.map(
+              (item: any) =>
+                item &&
+                item.images.map((image: any) => (
+                  <div key={image._id} className='px-4 mb-10'>
+                    <Motion>
+                      {image.video ? (
+                        <SurfVideo url={image.video} />
+                      ) : (
+                        <Image
+                          src={urlForImage(image).url()}
+                          width={1000}
+                          height={800}
+                          alt={image.title}
+                          className=' aspect-[16/9] object-cover'
+                        />
+                      )}
+                      {image.description ? (
+                        <div className='prose dark:prose-invert text-justify custom-prose'>
+                          <PortableText content={image.description} />
+                        </div>
+                      ) : (
+                        ""
+                      )}
+                    </Motion>
+                  </div>
+                ))
+            )}
         </div>
         {/* Sidebar */}
         <StickyBoxComponent>

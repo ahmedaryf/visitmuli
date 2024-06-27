@@ -17,11 +17,12 @@ export default function YouTubeComponent({ url }: any) {
         <h3 className='text-4xl text-center font-bold pt-4'>Videos</h3>
 
         <div className=' p-4 grid grid-cols-1 md:grid-cols-2 gap-6'>
-          {url.map((uId: any, index: any) => (
-            <div key={index} className='youtubePlayer'>
-              <YouTube videoId={uId.url} opts={opts} />
-            </div>
-          ))}
+          {url &&
+            url.map((uId: any, index: any) => (
+              <div key={index} className='youtubePlayer'>
+                <YouTube videoId={uId.url} opts={opts} />
+              </div>
+            ))}
         </div>
       </div>
     </div>

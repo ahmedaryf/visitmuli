@@ -41,11 +41,11 @@ export default async function UpcomingEvents() {
           <div>
             <PortableText content={item.description} />
           </div>
-          <div className='bg-blue-200 dark:bg-gray-500 py-1 border border-blue-300 dark:border-gray-200 hover:bg-blue-100 dark:hover:bg-gray-400 rounded-lg mt-6 cursor-pointer'>
+          {/* <div className='bg-blue-200 dark:bg-gray-500 py-1 border border-blue-300 dark:border-gray-200 hover:bg-blue-100 dark:hover:bg-gray-400 rounded-lg mt-6 cursor-pointer'>
             <p className='text-center text-blue-600 dark:text-white font-semibold '>
               Details
             </p>
-          </div>
+          </div> */}
         </div>
       ))}
     </div>

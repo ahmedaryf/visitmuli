@@ -22,35 +22,36 @@ export default async function HomePage() {
           Surf Adventures Await
         </h2>
         <div className='md:grid grid-cols-2'>
-          {aboutData.map((item: any) => {
-            return (
-              <>
-                <div key={item._id} className='m-auto  overflow-hidden px-4'>
-                  <Image
-                    src={urlForImage(item.image).url()}
-                    alt='Muli'
-                    objectFit='cover'
-                    width={500}
-                    height={500}
-                    className='rounded-md '
-                  />
-                </div>
-                <div className=' px-2 '>
-                  <div
-                    className='prose dark:prose-invert text-justify px-4 md:px-0 pt-4 md:pt-0'
-                    style={{ marginTop: -20 }}>
-                    <PortableText content={item.content} />
+          {aboutData &&
+            aboutData.map((item: any) => {
+              return (
+                <>
+                  <div key={item._id} className='m-auto  overflow-hidden px-4'>
+                    <Image
+                      src={urlForImage(item.image).url()}
+                      alt='Muli'
+                      objectFit='cover'
+                      width={500}
+                      height={500}
+                      className='rounded-md '
+                    />
                   </div>
+                  <div className=' px-2 '>
+                    <div
+                      className='prose dark:prose-invert text-justify px-4 md:px-0 pt-4 md:pt-0'
+                      style={{ marginTop: -20 }}>
+                      <PortableText content={item.content} />
+                    </div>
 
-                  <Link
-                    href={"/surf"}
-                    className='rounded font-bold  mt-2 ps-4 md:ps-0'>
-                    Read more...
-                  </Link>
-                </div>
-              </>
-            );
-          })}
+                    <Link
+                      href={"/surf"}
+                      className='rounded font-bold  mt-2 ps-4 md:ps-0'>
+                      Read more...
+                    </Link>
+                  </div>
+                </>
+              );
+            })}
         </div>
       </div>
     </div>

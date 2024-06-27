@@ -30,77 +30,80 @@ export default function Products({ product }: any) {
 
   return (
     <div className='px-6'>
-      {finalProductData.map((item: any, productIndex: number) => (
-        <div
-          key={productIndex}
-          className='px-4 lg:px-12 py-6 border-2 border-blue-300/40 dark:border-gray-400 rounded-lg shadow-xl mb-4 bg-white dark:bg-gray-600'>
-          {isNew(item) ? (
-            <div className='flex justify-end'>
-              <p className='bg-green-200 dark:bg-gray-400 text-xs px-2 rounded-lg text-white'>
-                New
-              </p>
-            </div>
-          ) : (
-            ""
-          )}
-          <h5 className='text-xl md:text-2xl lg:text-2xl font-bold bg-gradient-to-b from-blue-200 to-blue-700 dark:from-white dark:to-gray-100 bg-clip-text text-transparent text-center tracking-wider'>
-            {item.productName}
-          </h5>
-          <div className=' p-2 min-h-[28vh] overflow-hidden flex justify-center items-center'>
-            <Image
-              src={urlForImage(item.images[selectedItems[productIndex]]).url()}
-              width={150}
-              height={100}
-              alt={item.productName}
-              className='mx-auto'
-            />
-          </div>
-
-          <div className='flex gap-2 items-center justify-center mb-4'>
-            {item.images.map((image: any, imageIndex: any) => (
-              <div
-                onClick={() => handleItemClick(productIndex, imageIndex)}
-                key={imageIndex}
-                className='cursor-pointer'>
-                <Image
-                  src={urlForImage(image).url()}
-                  alt={item.productName}
-                  width={50}
-                  height={50}
-                  className={`${
-                    imageIndex === selectedItems[productIndex] && "opacity-50"
-                  }`}
-                />
+      {finalProductData &&
+        finalProductData.map((item: any, productIndex: number) => (
+          <div
+            key={productIndex}
+            className='px-4 lg:px-12 py-6 border-2 border-blue-300/40 dark:border-gray-400 rounded-lg shadow-xl mb-4 bg-white dark:bg-gray-600'>
+            {isNew(item) ? (
+              <div className='flex justify-end'>
+                <p className='bg-green-200 dark:bg-gray-400 text-xs px-2 rounded-lg text-white'>
+                  New
+                </p>
               </div>
-            ))}
-          </div>
-
-          <div className='flex gap-4 justify-between'>
-            <p className='text-xs text-gray-500 dark:text-gray-100 font-semibold'>
-              Color: {item.color}
-            </p>
-            <p className='text-xs text-gray-600 dark:text-gray-100 font-semibold'>
-              Price: ${item.price}
-            </p>
-            {item.quantity < 1 ? (
-              <p className='text-xs font-semibold text-orange-500 dark:text-gray-100'>
-                Out of stock
-              </p>
             ) : (
-              <p className='text-xs text-gray-500 dark:text-gray-100 font-semibold'>
-                In stock: {item.quantity}
-              </p>
+              ""
             )}
-          </div>
-          <Link href={"/productGallery"}>
-            <div className=' mt-6 '>
-              <p className='text-end text-blue-600 font-semibold text-xs hover:underline'>
-                View All
-              </p>
+            <h5 className='text-xl md:text-2xl lg:text-2xl font-bold bg-gradient-to-b from-blue-200 to-blue-700 dark:from-white dark:to-gray-100 bg-clip-text text-transparent text-center tracking-wider'>
+              {item.productName}
+            </h5>
+            <div className=' p-2 min-h-[28vh] overflow-hidden flex justify-center items-center'>
+              <Image
+                src={urlForImage(
+                  item.images[selectedItems[productIndex]]
+                ).url()}
+                width={150}
+                height={100}
+                alt={item.productName}
+                className='mx-auto'
+              />
             </div>
-          </Link>
-        </div>
-      ))}
+
+            <div className='flex gap-2 items-center justify-center mb-4'>
+              {item.images.map((image: any, imageIndex: any) => (
+                <div
+                  onClick={() => handleItemClick(productIndex, imageIndex)}
+                  key={imageIndex}
+                  className='cursor-pointer'>
+                  <Image
+                    src={urlForImage(image).url()}
+                    alt={item.productName}
+                    width={50}
+                    height={50}
+                    className={`${
+                      imageIndex === selectedItems[productIndex] && "opacity-50"
+                    }`}
+                  />
+                </div>
+              ))}
+            </div>
+
+            <div className='flex gap-4 justify-between'>
+              <p className='text-xs text-gray-500 dark:text-gray-100 font-semibold'>
+                Color: {item.color}
+              </p>
+              <p className='text-xs text-gray-600 dark:text-gray-100 font-semibold'>
+                Price: ${item.price}
+              </p>
+              {item.quantity < 1 ? (
+                <p className='text-xs font-semibold text-orange-500 dark:text-gray-100'>
+                  Out of stock
+                </p>
+              ) : (
+                <p className='text-xs text-gray-500 dark:text-gray-100 font-semibold'>
+                  In stock: {item.quantity}
+                </p>
+              )}
+            </div>
+            <Link href={"/productGallery"}>
+              <div className=' mt-6 '>
+                <p className='text-end text-blue-600 font-semibold text-xs hover:underline'>
+                  View All
+                </p>
+              </div>
+            </Link>
+          </div>
+        ))}
     </div>
   );
 }
