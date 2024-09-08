@@ -47,6 +47,7 @@ export const accomodationDetails = {
               name: "slug",
               title: "Slug",
               type: "slug",
+              options: { source: "title" },
             },
             {
               name: "guesthouseImage",
