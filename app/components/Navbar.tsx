@@ -111,7 +111,7 @@ export default function Navbar() {
                 href={"/"}
                 className='text-xl flex justify-center items-center'>
                 <Image
-                  src={"/logo/logo.JPG"}
+                  src={"/logo/logo.PNG"}
                   alt='visitmuli Logo'
                   width={60}
                   height={60}
