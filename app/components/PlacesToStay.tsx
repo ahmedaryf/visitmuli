@@ -4,10 +4,14 @@ import Image from "next/image";
 import PortableText from "react-portable-text";
 import Link from "next/link";
 
-export const revalidate = 60;
+export const revalidate = 3600;
 
 async function getData() {
-  const query = `*[_type == "placesToStay"]`;
+  const query = `*[_type == "placesToStay"]{
+  image,
+  content,
+  _id
+  }`;
   const data = client.fetch(query);
   return data;
 }
@@ -21,20 +25,21 @@ export default async function PlacesToStay() {
         <h3 className='text-3xl md:text-6xl font-bold bg-gradient-to-b from-gray-700/80 to-gray-500 dark:from-white dark:to-gray-200 bg-clip-text text-transparent text-center pt-6 mb-4 py-1'>
           Cozy Retreats
         </h3>
-        <div className='md:grid grid-cols-2'>
+        <div className=''>
           {aboutData &&
             aboutData.map((item: any) => {
               return (
-                <>
-                  <div key={item._id} className='m-auto  overflow-hidden px-4'>
-                    <Image
-                      src={urlForImage(item.image).url()}
-                      alt='Muli'
-                      objectFit='cover'
-                      width={500}
-                      height={500}
-                      className='rounded-md '
-                    />
+                <div key={item._id} className='md:grid grid-cols-2'>
+                  <div className='m-auto  overflow-hidden px-4'>
+                    {item.image && (
+                      <Image
+                        src={urlForImage(item.image).url()}
+                        alt='Muli'
+                        width={500}
+                        height={500}
+                        className='rounded-md aspect-[16/9] object-cover'
+                      />
+                    )}
                   </div>
                   <div className=' px-2 '>
                     <div
@@ -49,7 +54,7 @@ export default async function PlacesToStay() {
                       Read more...
                     </Link>
                   </div>
-                </>
+                </div>
               );
             })}
         </div>

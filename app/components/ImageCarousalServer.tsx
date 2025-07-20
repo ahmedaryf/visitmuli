@@ -38,10 +38,10 @@ export default function ImageCarousalServer({ imageData }: any) {
   };
 
   return (
-    <div className='flex flex-col dark:bg-black pt-0'>
+    <div className='flex flex-col dark:bg-black pt-0 w-screen'>
       <MotionConfig>
         <div className='flex flex-col justify-center items-center'>
-          <div className='relative md:w-[95vw] flex  overflow-hidden justify-center items-center'>
+          <div className='relative flex  overflow-hidden justify-center items-center'>
             <div className='flex absolute items-center justify-between z-20 left-2 right-2'>
               <BiSolidChevronLeft
                 onClick={onPrevClick}
@@ -55,17 +55,17 @@ export default function ImageCarousalServer({ imageData }: any) {
             <motion.div
               animate={{ x: `calc(-${current * 100}% - ${current}rem)` }}
               transition={{ duration: 2, ease: [0.32, 0.72, 0, 1] }}
-              className='flex flex-nowrap gap-4 object-cover '>
+              className='flex flex-nowrap'>
               {finalImageData &&
-                finalImageData.map((item: any) => {
+                finalImageData.map((item: any, index: number) => {
                   return (
                     <Image
-                      key={item._id}
+                      key={index}
                       src={urlForImage(item.image).url()}
                       alt='image'
-                      width={3500}
+                      width={4500}
                       height={2500}
-                      className=' object-cover aspect-[4/3] md:aspect-[16/9]'
+                      className='w-screen object-cover aspect-[16/9]'
                     />
                   );
                 })}

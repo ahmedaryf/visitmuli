@@ -9,10 +9,18 @@ import Motion from "../components/Motion";
 import StickyBoxComponent from "../components/StickyBox";
 import SurfVideo from "../components/SurfVideo";
 
-export const revalidate = 60;
+export const revalidate = 3600;
 
 async function getData() {
-  const query = `*[_type == "surfDetailPage"]`;
+  const query = `*[_type == "surfDetailPage"]{
+  bannerImage,
+  image,
+  content,
+  description,
+  video,
+  _id,
+  title
+  }`;
   const data = await client.fetch(query);
   return data;
 }
@@ -33,15 +41,17 @@ export default async function Surf() {
       <div className='w-full md:h-[90vh] overflow-hidden relative'>
         {data &&
           data.map((image: any) => (
-            <Image
-              key={image._id}
-              src={urlForImage(image.bannerImage).url()}
-              alt='Image'
-              width={3000}
-              height={200}
-              layout='responsive'
-              className=' aspect-[16/9]'
-            />
+            <div key={image._id}>
+              {image.bannerImage && (
+                <Image
+                  src={urlForImage(image.bannerImage).url()}
+                  alt='Image'
+                  width={3000}
+                  height={200}
+                  className=' aspect-[16/9]'
+                />
+              )}{" "}
+            </div>
           ))}
         <div className='flex flex-col justify-center items-center absolute top-1/2 left-1/2 -translate-x-1/2  bg-white/40 dark:bg-black/60 py-2 w-full'>
           <h1 className='text-4xl md:text-6xl lg:text-8xl font-bold bg-gradient-to-b from-orange-100 to-orange-600 dark:from-white dark:to-gray-200 bg-clip-text text-transparent'>
@@ -60,19 +70,21 @@ export default async function Surf() {
               return (
                 <div key={item._id} className='px-4'>
                   <div className=''>
-                    <Image
-                      src={urlForImage(item.image).url()}
-                      alt={item.title}
-                      width={1000}
-                      height={800}
-                      className='mx-auto aspect-[16/9] pb-4 rounded-md object-cover'
-                    />
+                    {item.image && (
+                      <Image
+                        src={urlForImage(item.image).url()}
+                        alt={item.title}
+                        width={1000}
+                        height={800}
+                        className='mx-auto aspect-[16/9] pb-4 rounded-md object-cover'
+                      />
+                    )}
                   </div>
 
                   <div
                     className='prose dark:prose-invert custom-prose text-justify pt-6 md:pt-0'
                     style={{ marginTop: -20 }}>
-                    <PortableText content={item.content} />
+                    {item.content && <PortableText content={item.content} />}
                   </div>
                 </div>
               );
@@ -81,7 +93,7 @@ export default async function Surf() {
           {data &&
             data.map(
               (item: any) =>
-                item &&
+                item.images &&
                 item.images.map((image: any) => (
                   <div key={image._id} className='px-4 mb-10'>
                     <Motion>
@@ -98,7 +110,9 @@ export default async function Surf() {
                       )}
                       {image.description ? (
                         <div className='prose dark:prose-invert text-justify custom-prose'>
-                          <PortableText content={image.description} />
+                          {image.description && (
+                            <PortableText content={image.description} />
+                          )}
                         </div>
                       ) : (
                         ""

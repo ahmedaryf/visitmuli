@@ -5,7 +5,10 @@ import Link from "next/link";
 import PortableText from "react-portable-text";
 
 async function getData() {
-  const query = `*[_type == "transfer"]`;
+  const query = `*[_type == "transfer"]{
+  image,
+ description
+  }`;
   const data = await client.fetch(query);
   return data;
 }
@@ -22,17 +25,21 @@ export default async function Transfer() {
           </h3>
           <div className='grid grid-cols-1 md:grid-cols-2'>
             <div className=''>
-              <Image
-                src={urlForImage(data[0].image).url()}
-                width={400}
-                height={300}
-                alt='image'
-                className='aspect-[16/9] object-cover rounded-md'
-              />
+              {data[0].image && (
+                <Image
+                  src={urlForImage(data[0].image).url()}
+                  width={400}
+                  height={300}
+                  alt='image'
+                  className='aspect-[16/9] object-cover rounded-md'
+                />
+              )}
             </div>
             <div>
               <div className='prose dark:prose-invert text-justify custom-prose'>
-                <PortableText content={data[0].description} />
+                {data[0].description && (
+                  <PortableText content={data[0].description} />
+                )}
               </div>
               <div className='flex gap-4 items-end'>
                 <Link href={"https://projets.mv"}>

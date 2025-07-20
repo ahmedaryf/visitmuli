@@ -5,10 +5,17 @@ import Link from "next/link";
 import React from "react";
 import PortableText from "react-portable-text";
 
-export const revalidate = 60;
+export const revalidate = 3600;
 
 async function getData() {
-  const query = `*[_type == "homePageMainCards"]`;
+  const query = `*[_type == "homePageMainCards"]{
+  image,
+  content,
+  title,
+  slug,
+  _id,
+ 
+  }`;
   const data = await client.fetch(query);
   return data;
 }
@@ -25,25 +32,33 @@ export default async function HomePageMainCards() {
           data.map((item: any) => (
             <div
               key={item._id}
-              className='border-2 border-blue-300/50 dark:border-gray-300 bg-white dark:bg-gray-700 md:w-64 p-4 rounded-lg shadow-xl'>
-              <Image
-                src={urlForImage(item.image).url()}
-                alt={item.title}
-                width={500}
-                height={500}
-              />
-              <h5 className='text-center mt-4 mb-2 font-semibold'>
+              className='border-2 border-blue-300/50 dark:border-gray-300 bg-white dark:bg-gray-700 md:w-72 p-4 rounded-lg shadow-xl'>
+              {item.image && (
+                <Image
+                  src={urlForImage(item.image).url()}
+                  alt={item.title}
+                  width={500}
+                  height={500}
+                  className='aspect-[16/9] object-cover'
+                />
+              )}
+
+              <h5 className='text-sm text-center mt-4 mb-2 font-semibold'>
                 {item.title}
               </h5>
+
               {item.content && (
-                <div className='text-justify line-clamp-3'>
+                <div className='text-sm line-clamp-3 leading-6 mb-4'>
                   <PortableText content={item.content} />
                 </div>
               )}
-              <div className='pt-5 font-semibold cursor-pointer'>
-                <Link href={`../mainCard/${item.slug.current}`}>
-                  Read more...
-                </Link>
+
+              <div className='pt-5 text-sm font-semibold cursor-pointer mt-auto'>
+                {item.slug && (
+                  <Link href={`../mainCard/${item.slug.current}`}>
+                    Read more...
+                  </Link>
+                )}
               </div>
             </div>
           ))}

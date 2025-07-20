@@ -8,12 +8,20 @@ import Image from "next/image";
 export const revalidate = 60;
 
 async function getData() {
-  const query = `*[_type == "activity"]`;
+  const query = `*[_type == "activity"]{
+  image,
+  title,
+  slug,
+  _id
+  }`;
   const data = await client.fetch(query);
   return data;
 }
 async function getBannerImage() {
-  const query = `*[_type == "bannerImages" && name == "Activity Page"]`;
+  const query = `*[_type == "bannerImages" && name == "Activity Page"]{
+  bannerImage,
+  _id
+  }`;
   const data = await client.fetch(query);
   return data;
 }
@@ -34,15 +42,17 @@ export default async function Activities() {
     <div className='pb-12 md:px-6 md:pb-24 bg-gradient-to-b dark:from-black/90 dark:to-gray-700 flex flex-col items-center'>
       <div className='w-full md:h-[70vh] overflow-hidden relative'>
         {bannerImageData.map((image: any) => (
-          <Image
-            key={image._id}
-            src={urlForImage(image.bannerImage).url()}
-            alt='Image'
-            width={3000}
-            height={200}
-            layout='responsive'
-            className=' aspect-[16/9] object-cover'
-          />
+          <div key={image._id}>
+            {image.bannerImage && (
+              <Image
+                src={urlForImage(image.bannerImage).url()}
+                alt='Image'
+                width={3000}
+                height={200}
+                className=' aspect-[16/9] object-cover'
+              />
+            )}
+          </div>
         ))}
         <div className='w-full flex flex-col justify-center items-center absolute top-1/2 left-1/2 -translate-x-1/2 bg-white/40 dark:bg-black/60 py-2'>
           <h1 className='text-4xl md:text-5xl lg:text-7xl font-bold bg-gradient-to-b from-orange-100 to-orange-600 dark:from-white dark:to-gray-200 bg-clip-text text-transparent py-2'>

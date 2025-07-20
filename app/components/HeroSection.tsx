@@ -1,10 +1,14 @@
 import { client } from "@/sanity/lib/client";
 import ImageCarousalServer from "./ImageCarousalServer";
+import HeroSwiper from "./HeroSwiper";
 
-export const revalidate = 600;
+export const revalidate = 3600;
 
 async function getData() {
-  const query = `*[_type == "carousal"]`;
+  const query = `*[_type == "carousal"]{
+  image,
+  _id 
+  }`;
   const data = await client.fetch(query);
   return data;
 }
@@ -14,7 +18,7 @@ export default async function HeroSection() {
 
   return (
     <div className=' bg-pattern'>
-      <ImageCarousalServer imageData={data} />
+      <HeroSwiper data={data} />
     </div>
   );
 }
