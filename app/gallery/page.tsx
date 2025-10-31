@@ -26,7 +26,7 @@ export default async function Gallery() {
     <div>
       <div className='flex flex-col items-center justify-center pb-6 dark:bg-black'>
         <div className=' relative w-screen h-full md:h-[50vh] overflow-hidden object-cover'>
-          {
+          {bannerImage && (
             <Image
               src={urlForImage(bannerImage).url()}
               width={3000}
@@ -34,19 +34,17 @@ export default async function Gallery() {
               alt='Banner Image'
               className=' aspect-[16/9] md:absolute bottom-0 left-0 object-cover'
             />
-          }
-          <h1 className='absolute top-1/2 left-1/2 -translate-x-1/2 text-6xl md:text-7xl lg:text-8xl font-bold bg-gradient-to-b from-orange-100 to-orange-600 dark:from-white dark:to-gray-200 bg-clip-text text-transparent w-full text-center py-2'>
-            {data[0].title}
-          </h1>
+          )}
+          {/* <h1 className='absolute top-1/2 left-1/2 -translate-x-1/2 text-6xl md:text-7xl lg:text-8xl font-bold bg-gradient-to-b from-orange-100 to-orange-600 dark:from-white dark:to-gray-200 bg-clip-text text-transparent w-full text-center py-2'>
+            {data && data[0].title}
+          </h1> */}
         </div>
       </div>
       <div className='px-2 md:px-24 bg-gradient-to-b from-transparent to-white/50 dark:from-black  dark:to-gray-700 pb-24'>
         <h3 className='text-4xl text-center font-bold'>Photos</h3>
-        <GalleryImages images={images} />
+        {images && <GalleryImages images={images} />}
       </div>
-      <div>
-        <YouTubeComponent url={youTubeData} />
-      </div>
+      <div>{youTubeData && <YouTubeComponent url={youTubeData} />}</div>
     </div>
   );
 }
