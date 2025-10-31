@@ -3,7 +3,7 @@ import { urlForImage } from "@/sanity/lib/image";
 import Image from "next/image";
 import PortableText from "react-portable-text";
 
-export const revalidate = 3600;
+export const revalidate = 60;
 
 async function getData() {
   const query = `*[_type == "aboutMuliDetails"]{

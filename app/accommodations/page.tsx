@@ -9,7 +9,7 @@ import { MdSurfing } from "react-icons/md";
 import { TbSpeedboat } from "react-icons/tb";
 import { IoStar } from "react-icons/io5";
 
-export const revalidate = 3600;
+export const revalidate = 60;
 
 async function getData() {
   const query = `*[_type == "accommodationDetails"]{

@@ -11,7 +11,7 @@ import ChatBot from "./components/ChatBot";
 import Accordions from "./components/Accordions";
 import { client } from "@/sanity/lib/client";
 
-export const revalidate = 3600;
+export const revalidate = 60;
 
 async function accordionsData() {
   const query = `*[_type == "accordions"] | order(id asc){
@@ -21,7 +21,11 @@ async function accordionsData() {
   question,
   _id
   }`;
-  const accordionData = await client.fetch(query);
+  const accordionData = await client.fetch(
+    query,
+    {},
+    { next: { revalidate: 60 } }
+  );
   return accordionData;
 }
 
