@@ -25,7 +25,7 @@ export default async function Transfer() {
           </h3>
           <div className='grid grid-cols-1 md:grid-cols-2'>
             <div className=''>
-              {data[0].image && (
+              {data[0]?.image && (
                 <Image
                   src={urlForImage(data[0].image).url()}
                   width={400}
@@ -37,7 +37,7 @@ export default async function Transfer() {
             </div>
             <div>
               <div className='prose dark:prose-invert text-justify custom-prose'>
-                {data[0].description && (
+                {data[0]?.description && (
                   <PortableText content={data[0].description} />
                 )}
               </div>
