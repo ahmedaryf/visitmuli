@@ -50,13 +50,19 @@ export const accomodationDetails = {
               name: "slug",
               title: "Slug",
               type: "slug",
-              options: { source: "title" },
+              options: {
+                source: (doc: any, options: any) =>
+                  (options.parent as any)?.guesthouseName,
+                maxLength: 96,
+              },
+              validation: (rule: any) => rule.required(),
             },
             {
               name: "guesthouseImage",
               title: "Guesthouse Image",
               type: "image",
               options: { hotspot: true },
+              validation: (rule: any) => rule.required(),
             },
             {
               name: "guesthouseDescription",
@@ -67,6 +73,7 @@ export const accomodationDetails = {
                   type: "block",
                 },
               ],
+              validation: (rule: any) => rule.required(),
             },
             {
               name: "images",
