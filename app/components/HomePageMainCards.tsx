@@ -27,7 +27,7 @@ export default async function HomePageMainCards() {
       <h4 className='text-3xl md:text-6xl font-bold bg-gradient-to-b from-gray-700/80 to-gray-500 dark:from-white dark:to-gray-200 bg-clip-text text-transparent text-center mb-4 '>
         Island Essentials
       </h4>
-      <div className='flex flex-wrap justify-around gap-4 mt-6 px-4'>
+      <div className='flex flex-wrap justify-around gap-6 lg:gap-12 mt-6 px-4'>
         {data &&
           data.map((item: any) => (
             <div

@@ -6,6 +6,8 @@ import { IoIosMail } from "react-icons/io";
 import { FaYoutubeSquare } from "react-icons/fa";
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className='min-h-[60vh] w-screen bg-gradient-to-b from-blue-500 to-blue-700 dark:from-gray-700 dark:border-t border-white dark:to-gray-700 flex flex-col justify-between py-6 text-white'>
       <div className=' md:flex justify-between items-start px-10'>
@@ -94,12 +96,11 @@ export default function Footer() {
         </div>
       </div>
       <div className='text-center self-center'>
-        <h5>Copyright © 2023 visitmuli.com</h5>
-        <Link href={"https://www.ahmedareef.com/"}>
-          <h5 className='text-xs text-gray-400 mt-2'>
-            Developed by Ahmed Areef
-          </h5>
-        </Link>
+        <h5 className='text-sm'>
+          Copyright © 2023 - {currentYear} visitmuli.com
+        </h5>
+
+        <h5 className='text-xs text-gray-400 mt-2'>Developed by Ahmed Areef</h5>
       </div>
     </footer>
   );

@@ -37,7 +37,7 @@ export default async function PlacesToStay() {
                         alt='Muli'
                         width={500}
                         height={500}
-                        className='rounded-md aspect-[16/9] object-cover'
+                        className='rounded-md aspect-[16/9] object-cover w-full'
                       />
                     )}
                   </div>

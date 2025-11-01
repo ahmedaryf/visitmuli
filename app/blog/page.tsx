@@ -18,7 +18,7 @@ export default async function Blog() {
         <h1 className='text-4xl md:text-7xl text-center pt-24 font-bold'>
           Blog Posts
         </h1>
-        <div className='p-4 mt-8 md:mt-16'>
+        <div className='p-4 mt-8 md:mt-16 flex flex-col gap-8 lg:gap-12'>
           {posts.map((post: any) => (
             <div key={post._id}>
               <Link href={`/blog/${post.slug.current}`} prefetch>

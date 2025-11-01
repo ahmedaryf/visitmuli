@@ -6,7 +6,7 @@ import React from "react";
 export default function ActivityCards({ data }: any) {
   return (
     <div className=''>
-      <div className='flex flex-wrap gap-4 justify-center'>
+      <div className='flex flex-wrap gap-6 lg:gap-12 justify-center'>
         {data &&
           data.map((item: any) => (
             <div

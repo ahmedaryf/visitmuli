@@ -18,7 +18,7 @@ async function getData() {
 export default async function UpcomingEvents() {
   const data = await getData();
   return (
-    <div className='px-6'>
+    <div className='px-6 flex flex-col gap-6'>
       {data.map((item: any) => (
         <div
           key={item._id}
