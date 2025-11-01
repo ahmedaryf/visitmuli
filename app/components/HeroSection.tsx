@@ -2,7 +2,7 @@ import { client } from "@/sanity/lib/client";
 import ImageCarousalServer from "./ImageCarousalServer";
 import HeroSwiper from "./HeroSwiper";
 
-export const revalidate = 3600;
+export const revalidate = 60;
 
 async function getData() {
   const query = `*[_type == "carousal"]{

@@ -8,22 +8,26 @@ export const surfDetailPage = {
       title: "Banner Image",
       type: "image",
       options: { hotspot: true },
+      validation: (rule: any) => rule.required(),
     },
     {
       name: "title",
       title: "Title",
       type: "string",
+      validation: (rule: any) => rule.required(),
     },
     {
       name: "content",
       title: "Content",
       type: "array",
       of: [{ type: "block" }],
+      validation: (rule: any) => rule.required(),
     },
     {
       name: "image",
       title: "Main Image",
       type: "image",
+      validation: (rule: any) => rule.required(),
     },
     {
       name: "images",

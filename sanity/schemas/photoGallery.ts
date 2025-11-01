@@ -7,11 +7,13 @@ export const photoGallery = {
       name: "bannerImage",
       title: "Banner Image ",
       type: "image",
+      validation: (rule: any) => rule.required(),
     },
     {
       name: "title",
       title: "Title",
       type: "string",
+      validation: (rule: any) => rule.required(),
     },
     {
       name: "images",

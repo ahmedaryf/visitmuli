@@ -7,22 +7,26 @@ export const products = {
       name: "productName",
       title: "Product Name",
       type: "string",
+      validation: (rule: any) => rule.required(),
     },
     {
       name: "slug",
       title: "Slug",
       type: "slug",
       options: { source: "productName" },
+      validation: (rule: any) => rule.required(),
     },
     {
       name: "color",
       title: "Color",
       type: "string",
+      validation: (rule: any) => rule.required(),
     },
     {
       name: "price",
       title: "Price",
       type: "number",
+      validation: (rule: any) => rule.required(),
     },
     {
       name: "quantity",

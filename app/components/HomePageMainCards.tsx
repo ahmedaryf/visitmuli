@@ -5,7 +5,7 @@ import Link from "next/link";
 import React from "react";
 import PortableText from "react-portable-text";
 
-export const revalidate = 3600;
+export const revalidate = 60;
 
 async function getData() {
   const query = `*[_type == "homePageMainCards"]{

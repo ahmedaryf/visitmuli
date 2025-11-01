@@ -7,6 +7,7 @@ export const accomodationDetails = {
       name: "name",
       title: "Name",
       type: "string",
+      validation: (rule: any) => rule.required(),
     },
 
     {
@@ -14,6 +15,7 @@ export const accomodationDetails = {
       title: "Banner Image",
       type: "image",
       options: { hotspot: true },
+      validation: (rule: any) => rule.required(),
     },
     // {
     //   name: "mainImage",
@@ -27,6 +29,7 @@ export const accomodationDetails = {
       title: "Description",
       type: "array",
       of: [{ type: "block" }],
+      validation: (rule: any) => rule.required(),
     },
 
     {

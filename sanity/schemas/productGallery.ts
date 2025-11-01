@@ -7,12 +7,14 @@ export const productGallery = {
       name: "bannerImageTitle",
       title: "Banner Image Title",
       type: "string",
+      validation: (rule: any) => rule.required(),
     },
     {
       name: "bannerImage",
       title: "Banner Image",
       options: { hotspot: true },
       type: "image",
+      validation: (rule: any) => rule.required(),
     },
     {
       name: "productImage",

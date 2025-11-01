@@ -7,6 +7,7 @@ export const youTube = {
       name: "url",
       title: "Youtube Video ID",
       type: "string",
+      validation: (rule: any) => rule.required(),
     },
   ],
 };

@@ -4,7 +4,7 @@ import Image from "next/image";
 import PortableText from "react-portable-text";
 import Link from "next/link";
 
-export const revalidate = 3600;
+export const revalidate = 60;
 async function getData() {
   const query = `*[_type == "homePageCardsSchema"]{
   image,

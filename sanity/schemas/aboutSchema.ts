@@ -7,6 +7,7 @@ export const aboutSchema = {
       name: "title",
       title: "Title",
       type: "string",
+      validation: (rule: any) => rule.required(),
     },
     {
       name: "description",
@@ -17,12 +18,14 @@ export const aboutSchema = {
           type: "block",
         },
       ],
+      validation: (rule: any) => rule.required(),
     },
     {
       name: "image",
       title: "Image",
       type: "image",
       options: { hotspot: true },
+      validation: (rule: any) => rule.required(),
     },
   ],
 };

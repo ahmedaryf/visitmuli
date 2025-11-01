@@ -7,17 +7,20 @@ export const blog = {
       name: "title",
       title: "Title",
       type: "string",
+      validation: (rule: any) => rule.required(),
     },
     {
       name: "slug",
       title: "Slug",
       type: "slug",
       options: { source: "title" },
+      validation: (rule: any) => rule.required(),
     },
     {
       name: "summary",
       title: "summary",
       type: "string",
+      validation: (rule: any) => rule.required(),
     },
     {
       name: "content",
@@ -28,6 +31,7 @@ export const blog = {
           type: "block",
         },
       ],
+      validation: (rule: any) => rule.required(),
     },
     {
       name: "images",

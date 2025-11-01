@@ -9,7 +9,7 @@ import Motion from "../components/Motion";
 import StickyBoxComponent from "../components/StickyBox";
 import SurfVideo from "../components/SurfVideo";
 
-export const revalidate = 3600;
+export const revalidate = 60;
 
 async function getData() {
   const query = `*[_type == "surfDetailPage"]{
