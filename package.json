@@ -14,7 +14,7 @@
     "@sanity/vision": "^3.19.2",
     "@tawk.to/tawk-messenger-react": "^2.0.2",
     "framer-motion": "^10.16.4",
-    "next": "14.0.2",
+    "next": "14.2.35",
     "next-sanity": "^5.5.10",
     "next-themes": "^0.2.1",
     "react": "^18",
