@@ -97,7 +97,7 @@ export default function Footer() {
       </div>
       <div className='text-center self-center'>
         <h5 className='text-sm'>
-          Copyright © 2023 - {currentYear} visitmuli.com
+          Copyright © 2023 - {currentYear} aquainkmaldives
         </h5>
 
         <h5 className='text-xs text-gray-400 mt-2'>Developed by Ahmed Areef</h5>
