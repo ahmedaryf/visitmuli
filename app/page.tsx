@@ -24,7 +24,7 @@ async function accordionsData() {
   const accordionData = await client.fetch(
     query,
     {},
-    { next: { revalidate: 60 } }
+    { next: { revalidate: 60 } },
   );
   return accordionData;
 }
@@ -45,13 +45,18 @@ export default async function Home() {
           <SurfSummary />
         </Motion>
       </section>
-      <section>
+      {/* <section>
         <Motion>
           <PlacesToStay />
         </Motion>
-      </section>
+      </section> */}
       <section className='bg-gradient-to-b from-transparent to-white/50 dark:from-black  dark:to-black/90'>
-        <div className='md:grid md:grid-cols-4 md:max-w-[95vw] lg:max-w-[90vw] mx-auto pt-24 '>
+        <div className=' md:max-w-[95vw] lg:max-w-[90vw] mx-auto pt-24 '>
+          <Motion>
+            <HomePageMainCards />
+          </Motion>
+        </div>
+        {/* <div className='md:grid md:grid-cols-4 md:max-w-[95vw] lg:max-w-[90vw] mx-auto pt-24 '>
           <div className='col-span-3'>
             <Motion>
               <HomePageMainCards />
@@ -60,7 +65,7 @@ export default async function Home() {
           <div className='md:border-t-2 md:border-l-2 md:border-blue-300/50 dark:border-gray-400 rounded-lg'>
             <HomePageCards />
           </div>
-        </div>
+        </div> */}
         <div className='bg-blue-200/30 dark:bg-gray-500'>
           <Motion>
             <Transfer />

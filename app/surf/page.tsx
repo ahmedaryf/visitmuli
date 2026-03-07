@@ -55,10 +55,10 @@ export default async function Surf() {
           ))}
         <div className='flex flex-col justify-center items-center absolute top-1/2 left-1/2 -translate-x-1/2  bg-white/40 dark:bg-black/60 py-2 w-full'>
           <h1 className='text-4xl md:text-6xl lg:text-8xl font-bold bg-gradient-to-b from-orange-100 to-orange-600 dark:from-white dark:to-gray-200 bg-clip-text text-transparent'>
-            Muli Surf Guide
+            Surf Guide
           </h1>
           <h5 className='text-orange-600 dark:text-gray-300 font-semibold text-xs md:text-xl'>
-            Riding Waves: Your Ultimate Surf Guide Experience
+            Your Ultimate Surf Guide Experience
           </h5>
         </div>
       </div>
@@ -119,7 +119,7 @@ export default async function Surf() {
                       )}
                     </Motion>
                   </div>
-                ))
+                )),
             )}
         </div>
         {/* Sidebar */}

@@ -39,11 +39,11 @@ export default async function AboutPage() {
         ))}
         <div className='w-full flex flex-col justify-center items-center absolute top-1/2 left-1/2 -translate-x-1/2 bg-white/40 dark:bg-black/60 py-2'>
           <h1 className='text-4xl md:text-6xl lg:text-8xl font-bold bg-gradient-to-b from-orange-100 to-orange-600 dark:from-white dark:to-gray-200 bg-clip-text text-transparent'>
-            Welcome to Muli
+            Aqua Ink Maldives
           </h1>
-          <h5 className='text-orange-600 dark:text-gray-300 font-semibold text-xs md:text-xl'>
+          {/* <h5 className='text-orange-600 dark:text-gray-300 font-semibold text-xs md:text-xl'>
             The Ultimate Surf Haven: Where Every Wave is an Adventure!
-          </h5>
+          </h5> */}
         </div>
       </div>
 
