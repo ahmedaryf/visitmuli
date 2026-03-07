@@ -16,10 +16,10 @@ const navLinks = [
     name: "Home",
     url: "/",
   },
-  {
-    name: "Surf",
-    url: "/surf",
-  },
+  // {
+  //   name: "Surf",
+  //   url: "/surf",
+  // },
   {
     name: "About",
     url: "/about",
@@ -37,10 +37,10 @@ const navLinks = [
     name: "Gallery",
     url: "/gallery",
   },
-  {
-    name: "Blog",
-    url: "/blog",
-  },
+  // {
+  //   name: "Blog",
+  //   url: "/blog",
+  // },
 ];
 
 const containerVars = {

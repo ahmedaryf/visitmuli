@@ -22,7 +22,7 @@ export default async function AboutMuli() {
   return (
     <div className='pb-6 md:px-6 bg-gradient-to-b from-transparent to-white/50 dark:from-black  dark:to-gray-700 pt-6 md:pt-10'>
       <div className='md:max-w-[90vw] lg:max-w-[80vw] mx-auto'>
-        <h1 className='text-4xl md:text-8xl font-bold bg-gradient-to-b from-gray-700/80 to-gray-500 dark:from-white dark:to-gray-200 bg-clip-text text-transparent text-center pt-6 mb-4 '>
+        <h1 className='text-4xl md:text-6xl font-bold bg-gradient-to-b from-gray-700/80 to-gray-500 dark:from-white dark:to-gray-200 bg-clip-text text-transparent text-center pt-6 mb-4 md:mb-8 '>
           Aqua Ink Maldives
         </h1>
         <div className=''>

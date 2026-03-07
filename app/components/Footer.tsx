@@ -10,7 +10,7 @@ export default function Footer() {
 
   return (
     <footer className='min-h-[60vh] w-screen bg-gradient-to-b from-blue-500 to-blue-700 dark:from-gray-700 dark:border-t border-white dark:to-gray-700 flex flex-col justify-between py-6 text-white'>
-      <div className=' md:flex justify-between items-start px-10'>
+      <div className=' md:flex justify-between items-start px-10 md:px-0 md:w-[80vw] mx-auto md:mt-12'>
         <div className='flex md:hidden gap-2 md:gap-4 justify-center items-center'>
           <Link
             href={"https://www.facebook.com/people/visitmuli/61553317496665/"}>
@@ -27,25 +27,27 @@ export default function Footer() {
           </Link>
         </div>
         <div className='mt-12 md:mt-0'>
-          <h1 className='text-xl font-bold mb-2 md:mb-4 tracking-wider'>
+          <h1 className='text-base md:text-xl font-bold mb-2 md:mb-4 tracking-wider'>
             Contact & Reservations
           </h1>
           <div className='flex gap-2 items-center mb-2'>
             <FaPhone size={20} />
             <Link href={"tel:9609518486"}>
-              <p className='text-sm md:text-sm'>Phone: (+960) 9518486</p>
+              <p className='text-xs md:text-sm'>Phone: (+960) 9518486</p>
             </Link>
           </div>
           <div className='flex gap-2 items-center mb-2'>
             <IoIosMail size={24} />
-            <Link href='mailto:visitmuli@gmail.com'>
-              <p className='text-sm md:text-sm'>Email: visitmuli@gmail.com</p>
+            <Link href='mailto:aquainkmaldives@gmail.com'>
+              <p className='text-xs md:text-sm'>
+                Email: aquainkmaldives@gmail.com
+              </p>
             </Link>
           </div>
           <div className='flex gap-2 items-center'>
             <FaWhatsapp size={24} />
             <Link href={"https://wa.me/7605186"}>
-              <p className='text-sm md:text-sm'>WhatsApp (+960) 7605186</p>
+              <p className='text-xs md:text-sm'>WhatsApp (+960) 7605186</p>
             </Link>
           </div>
         </div>
@@ -67,38 +69,28 @@ export default function Footer() {
         </div>
 
         <div className='mt-12 md:mt-0 mb-24 md:mb-0'>
-          <h1 className='text-xl font-bold mb-2 md:mb-4 tracking-wider'>
+          <h1 className='text-base md:text-xl font-bold mb-2 md:mb-4 tracking-wider'>
             Links
           </h1>
           <div>
-            <div className='mb-2 text-sm'>
-              <Link href={"https://meem.gov.mv/"}>Meem Atoll</Link>
-            </div>
-            <div className='mb-2 text-sm'>
+            <div className='mb-2 text-xs md:text-sm'>
               <Link href={"https://www.tourism.gov.mv/"}>Maldives Tourism</Link>
             </div>
-            <div className='mb-2 text-sm'>
+            <div className='mb-2 text-xs md:text-sm'>
               <Link href={"https://www.meteorology.gov.mv/"}>
                 Maldives Weather
               </Link>
             </div>
-            <div className='mb-2 text-sm'>
+            <div className='mb-2 text-xs md:text-sm'>
               <Link href={"https://imuga.immigration.gov.mv/"}>
                 Maldives Immigration
-              </Link>
-            </div>
-            <div className='mb-2 text-sm'>
-              <Link href={"https://bodyboardingmv.org/"}>
-                bodyboardingmv.org
               </Link>
             </div>
           </div>
         </div>
       </div>
       <div className='text-center self-center'>
-        <h5 className='text-sm'>
-          Copyright © 2023 - {currentYear} aquainkmaldives
-        </h5>
+        <h5 className='text-xs'>© 2023 - {currentYear} Aqua Ink Maldives</h5>
 
         <h5 className='text-xs text-gray-400 mt-2'>Developed by Ahmed Areef</h5>
       </div>
