@@ -37,10 +37,10 @@ const navLinks = [
     name: "Gallery",
     url: "/gallery",
   },
-  // {
-  //   name: "Blog",
-  //   url: "/blog",
-  // },
+  {
+    name: "Packages",
+    url: "/packages",
+  },
 ];
 
 const containerVars = {
