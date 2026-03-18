@@ -43,26 +43,6 @@ export default async function Transfer() {
                   <PortableText content={data[0].description} />
                 )}
               </div>
-              <div className='flex gap-4 items-end'>
-                <Link href={"https://projets.mv"}>
-                  <Image
-                    src={"/images/project.png"}
-                    alt='project'
-                    width={70}
-                    height={70}
-                    className=' object-contain'
-                  />
-                </Link>
-                <Link href={"https://malasspeed.com"}>
-                  <Image
-                    src={"/images/malas-speed.png"}
-                    alt='project'
-                    width={70}
-                    height={70}
-                    className=' object-contain'
-                  />
-                </Link>
-              </div>
             </div>
           </div>
         </div>
