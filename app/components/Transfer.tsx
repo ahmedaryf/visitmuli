@@ -1,7 +1,7 @@
 import { client } from "@/sanity/lib/client";
 import { urlForImage } from "@/sanity/lib/image";
 import Image from "next/image";
-import Link from "next/link";
+
 import PortableText from "react-portable-text";
 
 export const revalidate = 60;
